@@ -2,37 +2,162 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Notes\n\n\nTodo\n\n\n\n\nReview caching strategy, including tags and contexts.\n\n\n\n\nTests\n\n\n\n\nAdditional test coverage\n\n\nImprove test performance\n\n\nImplement more PHPUnit and KernelTestBase tests\n\n\nInput specific tests including Entity autocomplete, managed file, dates.\n\n\n\n\nAdd test method to element plugin\n\n\n\n\nManaged file\n\n\nEntity autocomplete\n\n\n\n\n\n\n\n\nMissing Tests\n\n\n\n\n\\Drupal\\yamlform\\Controller\\YamlFormOptionsController::autocomplete\n\n\nsrc/Plugin/Field\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldFormatter\\YamlFormEntityReferenceEntityFormatter\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldType\\YamlFormEntityReferenceItem\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldWidget\\EntityReferenceAutocompleteWidget\n\n\n\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\n\n\nShould submitted values be casted to datatypes?\n\n  For example, should number inputs be casted to integers.\n\n\n\n\n\n\nShould empty values be hidden by default?\n\n\n\n\n\n\nShould we support private file uploads?  \n\n\n\n\n\n\nHow should handlers deal with their global settings?\n\n\n\n\n\n\nIs the YamlForm entity doing too much?", 
-            "title": "Home"
+            "text": "Table of Contents\n\n\n\n\nAbout this module\n\n\nDemo\n\n\nGoals\n\n\nConcepts\n\n\nExample\n\n\nFeatures\n\n\nSecurity\n\n\nInstallation\n \n\n\nExtending\n\n\nNotes\n\n\nReferences/Related Projects\n\n\n\n\nAbout this Module\n\n\nThe YAML form module enables the creation of forms and questionnaires.\n\n\nThis module should be considered one of the following... \n\n\n\n\n\n\nA lightweight, fast, developer centric, FAPI based form builder and submission \n   manager for Drupal 8.\n \n\n\n\n\n\n\nA temporary solution while other form builders are ported to Drupal 8. \n\n\n\n\n\n\nA proof of concept/prototype for a Drupal 8 form builder.\n\n\n\n\n\n\nThe primary use case for this module is...\n\n\n\n\nAdmin duplicates and customizes an existing form/template.\n\n\nAdmin tests and publishes the new form.\n\n\nUser fills in and submits the form.\n\n\nSubmission is stored in the database.\n\n\nAdmin receives an email notification. \n\n\nUser receives an email confirmation.\n\n\nAdmin views submissions online.\n\n\nAdmin downloads all submissions as a CVS.\n\n\n\n\nDon't use this module if you...\n\n\n\n\nWant \nViews\n integration.\n\n\nPrefer drag-n-drop form builders.\n\n\nHave 'untrusted' users building forms. \n\n\n\n\nUse this module if you...\n\n\n\n\nUnderstand \nRender Arrays\n,\n  \nFAPI\n,\n  and \nYAML\n.\n\n\nPrefer\n  \nCLI\n\n  over \nGUI\n.\n\n\nHave 'trusted' developers building and customizing forms. \n\n\n\n\nAdditional things to consider...\n\n\n\n\nResults can be exported as a CVS for use in \n  \nGoogle Sheets\n\n  or \nExcel\n.\n\n\nThe alternatives: \n  \nContact\n,\n  \nEform\n,\n  \nWebform\n,\n  \nGoogle Forms\n,\n  \nWebform.com\n,\n  \nWufoo\n,\n  \netc...\n\n\nHow can you help extend and improve this module?\n\n\n\n\nDemo\n\n\n\n\nEvaluate this project online using \nsimplytest.me\n.\n\n\nWatch a demo\n of the YAML form module.\n\n\n\n\nGoals\n\n\n\n\nA stable, maintainable, and tested API for building forms and submission handling. \n\n\nA pluggable/extensible API for custom submission handling. \n\n\nA focused and limited feature set to ensure maintainability. \n\n\n\n\nConcepts\n\n\n\n\nWhat is the simplest and fastest way to create a form builder and submission\n  manager in Drupal 8?\n\n\nHow much can Drupal 8's Form and Entity API be leveraged to\n  build a form builder and submission manager?\n\n\nBuilding and maintaining a form building UI consumes a lot of time \n  and resources.\n\n\nYAML as a markup language is simple... so simple it could be presented as the \n  UI for building and maintaining forms in Drupal.\n\n\nReplace complexity with extensibility\n\n\n\n\nExample\n\n\nHere is an example of a contact form's render array written in YAML.\n\n\nname:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\nsubject:\n  '#title': 'Subject'\n  '#type': textfield\n  '#required': true\nmessage:\n  '#title': 'Message'\n  '#type': textarea\n  '#required': true\n\n\n\nFeatures\n\n\nForms\n \n\n\n\n\nCreate forms using Drupal's Form API (FAPI)\n\n\nCustom confirmation page, message, and redirection\n\n\nReusable and customizable list of common select menu, radios, and checkbox \n  options. This includes countries, states, etc...\n\n\nReuse options for autocompletion\n\n\nStarter templates for common forms\n\n\nAbility to duplicate existing forms and templates\n\n\nPrepopulate form with querystring parameters\n\n\nSet custom URL aliases for the form and its confirmation page\n\n\nPreview and save draft support\n\n\n\n\nInputs\n\n\n\n\nSupport for every\n  \nform element\n\n  included in Drupal 8 core. This includes file uploads and entity references.\n\n\nConditional logic using FAPI States API\n\n\nPrivate inputs/elements\n\n\nSupport for form functionality and elements provide by contrib modules \n  including\n  \nHoneypot\n,\n  \nMollom\n,\n  \nCAPTCHA\n,\n  \nElements\n,\n  \nSelect (or other)\n,\n  and more...\n\n\n\n\nSubmissions/Results\n\n\n\n\nView submissions as HTML, plain text, and YAML\n\n\nExport results as a CSV to Google Sheets or MS Excel\n\n\nFine grain access control by roles and users\n\n\nUsers can view previous submissions\n\n\nLimit total number of submissions or user specific submissions.\n\n\nDrush support for exporting CVS and purging submissions\n\n\n\n\nEmails/Handlers\n\n\n\n\nExtensible form submission handler plugin  \n\n\nHandles email notifications and confirmations \n\n\nPreview and resend emails\n\n\n\n\nIntegration\n\n\n\n\nBlock integration\n\n\nNode integration\n\n\nToken support\n\n\nYAML editor via \nCodeMirror\n\n\n\n\nInternationalization\n\n\n\n\nTranslation integration\n\n\nTracks submission language\n\n\n\n\nDevelopment\n\n\n\n\nGenerate test submissions using devel generate and customizable test datasets\n\n\n\n\nStill Under Development\n\n\n\n\nValidation of inputs YAML and render array.\n\n\n\n\nSecurity\n\n\nThis module allows developers to have full access to Drupal's Render API,\nthis includes the ability to set \ncallbacks\n,\nwhich are PHP functions that are executed during the rendering process.\nThis means anyone who can administer and build a YAML form can call any PHP code\non your website.\n\n\n\n\nOnly the most trusted users should be granted permission to administer and\n  build YAML forms.\n\n\n\n\nPlease note: Administering and exporting a YAML form's results is a dedicated\nand secure role.\n\n\nInstallation\n\n\n\n\nCopy/upload the yamlform.module to the modules directory of your Drupal\n   installation.\n\n\n(optional) Install CodeMirror 5.11+ in /libraries/codemirror directory.\n   If CodeMirror is not installed, it will be loaded from\n   \nhttps://cdnjs.cloudflare.com/ajax/libs/codemirror/5.11.0/\n.\n\n\nEnable the 'YAML form' module in 'Extend'. (/admin/modules)\n\n\nSetup permissions. (/admin/people/permissions#module-yamlform)\n\n\nBegin building a new YAML form or duplicate an existing one.\n   (/admin/structure/yamlform)\n\n\nPublish your new YAML form as a...\n\n\nPage:\n By linking to the published YAML form.\n  (/yamlform/contact)  \n\n\nNode:\n By creating a new node that references the YAML form.\n  (/node/add/yamlform)\n\n\nBlock:\n By placing a YAML form block on your site.\n  (/admin/structure/block)\n\n\n\n\n\n\n\n\nNotes\n\n\n\n\nToken are supported and actively used by the YAML form module. \n  It is recommended that the\n\n\nToken module\n is installed.\n\n\n\n\nExtending\n\n\nYAML form will use \nDrupal 8's plugin API\n\nto manage all customizations.  \n\n\nEach YamlFormHandler plugin should live in a dedicated module and handler\nnamespace.  For example, if a developer wanted to setup MailChimp integration,\nthey would create the YAML form MailChimp module (yamlform_mailchimp.module)\nwhich would contain the YamlFormMailChimpHandler.\n\n\nThis approach/pattern will allow any popular YamlFormHandler plugins\n(that include tests) to be easily contributed back to the main YAML form module.\n\n\nThe goal is to allow YAML forms to be extended without creating any new hooks \nand solely use the YamlFormHandler plugin for customizing form building and \nsubmission handling.    \n\n\nNotes\n\n\n\n\nInput names will be used to store data.\n\n\nDuplicate input names are not allowed.\n\n\nThe \n#tree\n \n  property, which is used to allow collections of form elements, is not allowed.\n\n\nElement callback properties are not supported within a YAML input.\n  This includes \n#element_validate\n, \n#after_build\n, \n#post_render\n, \n#pre_render\n, \n#process\n, \n#submit\n, \n#value_callback\n, and \n#validate\n.\n\n\nOnce there has been a form submission, existing input names should never be\n  deleted, they can be be hidden (via \n'#access': false\n).\n\n\n\n\nReferences/Related Projects\n\n\n\n\nYAML\n\n\nComparison of Form Building Modules\n\n\nContact\n \n\n\nContact module 8.1 and beyond roadmap\n\n\nGoodbye Webform? Contact Forms Are In the Drupal 8 Core\n\n\n\n\n\n\nEform\n\n\nWhen to use Entityform\n\n\n\n\n\n\nWebform\n \n\n\nPort Webform to Drupal 8\n\n\n\n\n\n\n\n\nAuthor/Maintainer\n\n\n\n\nJacob Rockowitz", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/#table-of-contents", 
+            "text": "About this module  Demo  Goals  Concepts  Example  Features  Security  Installation    Extending  Notes  References/Related Projects", 
+            "title": "Table of Contents"
+        }, 
+        {
+            "location": "/#about-this-module", 
+            "text": "The YAML form module enables the creation of forms and questionnaires.  This module should be considered one of the following...     A lightweight, fast, developer centric, FAPI based form builder and submission \n   manager for Drupal 8.      A temporary solution while other form builders are ported to Drupal 8.     A proof of concept/prototype for a Drupal 8 form builder.    The primary use case for this module is...   Admin duplicates and customizes an existing form/template.  Admin tests and publishes the new form.  User fills in and submits the form.  Submission is stored in the database.  Admin receives an email notification.   User receives an email confirmation.  Admin views submissions online.  Admin downloads all submissions as a CVS.   Don't use this module if you...   Want  Views  integration.  Prefer drag-n-drop form builders.  Have 'untrusted' users building forms.    Use this module if you...   Understand  Render Arrays ,\n   FAPI ,\n  and  YAML .  Prefer\n   CLI \n  over  GUI .  Have 'trusted' developers building and customizing forms.    Additional things to consider...   Results can be exported as a CVS for use in \n   Google Sheets \n  or  Excel .  The alternatives: \n   Contact ,\n   Eform ,\n   Webform ,\n   Google Forms ,\n   Webform.com ,\n   Wufoo ,\n   etc...  How can you help extend and improve this module?", 
+            "title": "About this Module"
+        }, 
+        {
+            "location": "/#demo", 
+            "text": "Evaluate this project online using  simplytest.me .  Watch a demo  of the YAML form module.", 
+            "title": "Demo"
+        }, 
+        {
+            "location": "/#goals", 
+            "text": "A stable, maintainable, and tested API for building forms and submission handling.   A pluggable/extensible API for custom submission handling.   A focused and limited feature set to ensure maintainability.", 
+            "title": "Goals"
+        }, 
+        {
+            "location": "/#concepts", 
+            "text": "What is the simplest and fastest way to create a form builder and submission\n  manager in Drupal 8?  How much can Drupal 8's Form and Entity API be leveraged to\n  build a form builder and submission manager?  Building and maintaining a form building UI consumes a lot of time \n  and resources.  YAML as a markup language is simple... so simple it could be presented as the \n  UI for building and maintaining forms in Drupal.  Replace complexity with extensibility", 
+            "title": "Concepts"
+        }, 
+        {
+            "location": "/#example", 
+            "text": "Here is an example of a contact form's render array written in YAML.  name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\nsubject:\n  '#title': 'Subject'\n  '#type': textfield\n  '#required': true\nmessage:\n  '#title': 'Message'\n  '#type': textarea\n  '#required': true", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "Forms     Create forms using Drupal's Form API (FAPI)  Custom confirmation page, message, and redirection  Reusable and customizable list of common select menu, radios, and checkbox \n  options. This includes countries, states, etc...  Reuse options for autocompletion  Starter templates for common forms  Ability to duplicate existing forms and templates  Prepopulate form with querystring parameters  Set custom URL aliases for the form and its confirmation page  Preview and save draft support   Inputs   Support for every\n   form element \n  included in Drupal 8 core. This includes file uploads and entity references.  Conditional logic using FAPI States API  Private inputs/elements  Support for form functionality and elements provide by contrib modules \n  including\n   Honeypot ,\n   Mollom ,\n   CAPTCHA ,\n   Elements ,\n   Select (or other) ,\n  and more...   Submissions/Results   View submissions as HTML, plain text, and YAML  Export results as a CSV to Google Sheets or MS Excel  Fine grain access control by roles and users  Users can view previous submissions  Limit total number of submissions or user specific submissions.  Drush support for exporting CVS and purging submissions   Emails/Handlers   Extensible form submission handler plugin    Handles email notifications and confirmations   Preview and resend emails   Integration   Block integration  Node integration  Token support  YAML editor via  CodeMirror   Internationalization   Translation integration  Tracks submission language   Development   Generate test submissions using devel generate and customizable test datasets   Still Under Development   Validation of inputs YAML and render array.", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/#security", 
+            "text": "This module allows developers to have full access to Drupal's Render API,\nthis includes the ability to set  callbacks ,\nwhich are PHP functions that are executed during the rendering process.\nThis means anyone who can administer and build a YAML form can call any PHP code\non your website.   Only the most trusted users should be granted permission to administer and\n  build YAML forms.   Please note: Administering and exporting a YAML form's results is a dedicated\nand secure role.", 
+            "title": "Security"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "Copy/upload the yamlform.module to the modules directory of your Drupal\n   installation.  (optional) Install CodeMirror 5.11+ in /libraries/codemirror directory.\n   If CodeMirror is not installed, it will be loaded from\n    https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.11.0/ .  Enable the 'YAML form' module in 'Extend'. (/admin/modules)  Setup permissions. (/admin/people/permissions#module-yamlform)  Begin building a new YAML form or duplicate an existing one.\n   (/admin/structure/yamlform)  Publish your new YAML form as a...  Page:  By linking to the published YAML form.\n  (/yamlform/contact)    Node:  By creating a new node that references the YAML form.\n  (/node/add/yamlform)  Block:  By placing a YAML form block on your site.\n  (/admin/structure/block)     Notes   Token are supported and actively used by the YAML form module. \n  It is recommended that the  Token module  is installed.", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#extending", 
+            "text": "YAML form will use  Drupal 8's plugin API \nto manage all customizations.    Each YamlFormHandler plugin should live in a dedicated module and handler\nnamespace.  For example, if a developer wanted to setup MailChimp integration,\nthey would create the YAML form MailChimp module (yamlform_mailchimp.module)\nwhich would contain the YamlFormMailChimpHandler.  This approach/pattern will allow any popular YamlFormHandler plugins\n(that include tests) to be easily contributed back to the main YAML form module.  The goal is to allow YAML forms to be extended without creating any new hooks \nand solely use the YamlFormHandler plugin for customizing form building and \nsubmission handling.", 
+            "title": "Extending"
         }, 
         {
             "location": "/#notes", 
-            "text": "", 
+            "text": "Input names will be used to store data.  Duplicate input names are not allowed.  The  #tree  \n  property, which is used to allow collections of form elements, is not allowed.  Element callback properties are not supported within a YAML input.\n  This includes  #element_validate ,  #after_build ,  #post_render ,  #pre_render ,  #process ,  #submit ,  #value_callback , and  #validate .  Once there has been a form submission, existing input names should never be\n  deleted, they can be be hidden (via  '#access': false ).", 
             "title": "Notes"
         }, 
         {
-            "location": "/#todo", 
+            "location": "/#referencesrelated-projects", 
+            "text": "YAML  Comparison of Form Building Modules  Contact    Contact module 8.1 and beyond roadmap  Goodbye Webform? Contact Forms Are In the Drupal 8 Core    Eform  When to use Entityform    Webform    Port Webform to Drupal 8", 
+            "title": "References/Related Projects"
+        }, 
+        {
+            "location": "/#authormaintainer", 
+            "text": "Jacob Rockowitz", 
+            "title": "Author/Maintainer"
+        }, 
+        {
+            "location": "/todo/", 
+            "text": "Todo\n\n\n\n\nReview caching strategy, including tags and contexts.\n\n\n\n\nTests\n\n\n\n\nAdditional test coverage\n\n\nImprove test performance\n\n\nImplement more PHPUnit and KernelTestBase tests\n\n\nInput specific tests including Entity autocomplete, managed file, dates.\n\n\n\n\nAdd test method to element plugin\n\n\n\n\nManaged file\n\n\nEntity autocomplete\n\n\n\n\n\n\n\n\nMissing Tests\n\n\n\n\n\\Drupal\\yamlform\\Controller\\YamlFormOptionsController::autocomplete\n\n\nsrc/Plugin/Field\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldFormatter\\YamlFormEntityReferenceEntityFormatter\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldType\\YamlFormEntityReferenceItem\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldWidget\\EntityReferenceAutocompleteWidget\n\n\n\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\n\n\nShould submitted values be casted to datatypes?\n\n  For example, should number inputs be casted to integers.\n\n\n\n\n\n\nShould empty values be hidden by default?\n\n\n\n\n\n\nShould we support private file uploads?  \n\n\n\n\n\n\nHow should handlers deal with their global settings?\n\n\n\n\n\n\nIs the YamlForm entity doing too much?", 
+            "title": "Todo"
+        }, 
+        {
+            "location": "/todo/#todo", 
             "text": "Review caching strategy, including tags and contexts.", 
             "title": "Todo"
         }, 
         {
-            "location": "/#tests", 
+            "location": "/todo/#tests", 
             "text": "Additional test coverage  Improve test performance  Implement more PHPUnit and KernelTestBase tests  Input specific tests including Entity autocomplete, managed file, dates.   Add test method to element plugin   Managed file  Entity autocomplete     Missing Tests   \\Drupal\\yamlform\\Controller\\YamlFormOptionsController::autocomplete  src/Plugin/Field  \\Drupal\\yamlform\\Plugin\\Field\\FieldFormatter\\YamlFormEntityReferenceEntityFormatter  \\Drupal\\yamlform\\Plugin\\Field\\FieldType\\YamlFormEntityReferenceItem  \\Drupal\\yamlform\\Plugin\\Field\\FieldWidget\\EntityReferenceAutocompleteWidget", 
             "title": "Tests"
         }, 
         {
-            "location": "/#questions", 
+            "location": "/todo/#questions", 
             "text": "Should submitted values be casted to datatypes? \n  For example, should number inputs be casted to integers.    Should empty values be hidden by default?    Should we support private file uploads?      How should handlers deal with their global settings?    Is the YamlForm entity doing too much?", 
             "title": "Questions"
         }, 
         {
-            "location": "/development/", 
-            "text": "Development\n\n\nCommands\n\n\nReinstall YAML form module.\n\n\ndrush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; drush en -y yamlform; drush en -y yamlform_test;\n\ndrush php-eval 'module_load_include('install', 'yamlform'); yamlform_uninstall();'\ndrush cron;\ndrush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; \ndrush en -y yamlform; drush en -y yamlform_test;\n\n\n\nInstall extra modules.\n\n\ndrush en -y yamlform captcha honeypot select_or_other;\n\n\n\nCreate test roles and users.\n\n\ndrush role-create developer\ndrush role-add-perm developer 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview,administer yamlform,administer blocks,administer nodes'\ndrush user-create developer --password=\"developer\"\ndrush user-add-role developer developer\n\ndrush role-create admin\ndrush role-add-perm admin 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview,administer yamlform submission'\ndrush user-create admin --password=\"admin\"\ndrush user-add-role admin admin\n\ndrush role-create manager\ndrush role-add-perm manager 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview'\ndrush user-create manager --password=\"manager\"\ndrush user-add-role manager manager\n\ndrush role-create user\ndrush user-create user --password=\"user\"\ndrush user-add-role user user\n\n\n\nCreate test submissions for 'Contact' and 'Example: Inputs' form.\n\n\ndrush yamlform-generate contact\ndrush yamlform-generate example_inputs\n\n\n\nTest update hooks\n\n\ndrush php-eval 'module_load_include('install', 'yamlform'); ($message = yamlform_update_8001()) ? drupal_set_message($message) : NULL;'\n\n\n\nAccess developer information\n\n\ndrush role-add-perm anonymous 'access devel information'\ndrush role-add-perm authenticated 'access devel information'\n\n\n\nReinstall\n\n\ndrush -y site-install\\\n  --account-mail=\"example@example.com\"\\\n  --account-name=\"webteam\"\\\n  --account-pass=\"drupal.admin\"\\\n  --site-mail=\"example@example.com\"\\\n  --site-name=\"Drupal 8 (dev)\";\n\n# Enable core modules\ndrush -y pm-enable\\\n  book\\\n  simpletest\\\n  telephone\\\n  language\\\n  locale\\\n  content_translation\\\n  config_translation;\n\n# Disable core modules\ndrush -y pm-uninstall\\\n  update;\n\n# Enable contrib modules\ndrush -y pm-enable\\\n  devel\\\n  devel_generate\\\n  kint\\\n  webprofiler\\\n  yamlform\\\n  yamlform_test\\\n  yamlform_translation_test;\n\n\n\nCode Sources and Design Patterns\n\n\nBelow is just a reference to where most of the code snippets and/or \ndesign pattern were taken from to build this module.\n\n\n\n\nUI/Naming convention: Webform module (Copied)\n\n\nYamlForm to YamlFormSubmission bundle: Vocabulary to Term entities\n\n\nYamlFormSubmission entity_type and entity_id: Comment entity\n\n\nYamlFormSubmission preview: CommentForm\n\n\nYamlFormHandler plugin: ImageEffect\n\n\nYamlFormEntityReferenceItem field type: FileItem", 
-            "title": "Development"
+            "location": "/roadmap/", 
+            "text": "Releases\n\n\nAlpha 1\n\n\n\n\nFeature parity with Webform and EForm modules.\n\n\n\n\nPhase 2 (after stable release)\n\n\n\n\nHTML email handler\n\n\nAdvanced Views integration\n\n\nWizard\n\n\nCustom elements (via yamlform_elements or contrib modules)\n\n\nemail_confirm\n\n\ncredit_card\n\n\n\n\nWhat Webform \n EntityForm features are missing?\n\n\n\n\nForm settings\n\n\nPaging\n\n\nLimit submission by IP and/or cookie.\n\n\nConfidential submissions. Anonymous submissions with no IP address.\n\n\nResetting sid per form.\n\n\n\n\n\n\nResults\n\n\nAnalysis of submitted data\n\n\nSubmission sorting\n\n\n\n\n\n\nDownload\n\n\nExcel support\n\n\nLast download\n\n\nDefault download settings.\n\n\n\n\n\n\nEmail\n\n\nHTML Mail\n\n\n\n\n\n\nSettings\n\n\nSet default date format\n\n\nProvide Anonymous Links\n\n\nSave session id with Submission\n\n\n\n\n\n\n\n\nFeatures\n\n\nFeatures to be handled via YamlFormHandler plugin\n\n\n\n\nEmail\n\n\nAdvanced Throttling\n\n\nSMS\n\n\nPayment\n\n\nMailChimp\n\n\nREST API", 
+            "title": "Roadmap"
         }, 
         {
-            "location": "/development/#development", 
+            "location": "/roadmap/#releases", 
             "text": "", 
+            "title": "Releases"
+        }, 
+        {
+            "location": "/roadmap/#alpha-1", 
+            "text": "Feature parity with Webform and EForm modules.", 
+            "title": "Alpha 1"
+        }, 
+        {
+            "location": "/roadmap/#phase-2-after-stable-release", 
+            "text": "HTML email handler  Advanced Views integration  Wizard  Custom elements (via yamlform_elements or contrib modules)  email_confirm  credit_card", 
+            "title": "Phase 2 (after stable release)"
+        }, 
+        {
+            "location": "/roadmap/#what-webform-entityform-features-are-missing", 
+            "text": "Form settings  Paging  Limit submission by IP and/or cookie.  Confidential submissions. Anonymous submissions with no IP address.  Resetting sid per form.    Results  Analysis of submitted data  Submission sorting    Download  Excel support  Last download  Default download settings.    Email  HTML Mail    Settings  Set default date format  Provide Anonymous Links  Save session id with Submission", 
+            "title": "What Webform &amp; EntityForm features are missing?"
+        }, 
+        {
+            "location": "/roadmap/#features", 
+            "text": "", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/roadmap/#features-to-be-handled-via-yamlformhandler-plugin", 
+            "text": "Email  Advanced Throttling  SMS  Payment  MailChimp  REST API", 
+            "title": "Features to be handled via YamlFormHandler plugin"
+        }, 
+        {
+            "location": "/issues/", 
+            "text": "Unable to tidy the bulk export of YamlForm and YamlFormOptions config files \nbecause Drupal's YAML utility is not a service.\n\n\n\n\nRegression: Form throws LogicException when trying to render a form with \nobject as an element's default value.\n  \n\n\n\n\nImpacts previewing entity autocomplete inputs.\n\n\n\n\n\n\nAccess control is not applied to config entity queries\n\n\n\n\nYAML forms that the current user can't access are not being hidden via the EntityQuery.\n\n\nSee: Drupal\\yamlform\\YamlFormEntityListBuilder\n\n\n\n\n\n\nConfig entity does NOT support \nEntity Validation API\n.\n\n\n\n\nValidation constraints are only applicable to content entities and fields.\n\n\nIn D8 all config entity validation is handled via \n    \\Drupal\\Core\\Form\\FormInterface::validateForm\n\n\nWorkaround: Create YamlFormEntityInputsValidator service.      \n\n\n\n\n\n\nForms System Issues for Drupal core\n\n\n\n\nAllow FAPI usage of the datalist element\n\n\nMultistep Form Wizard\n \n\n\nImplement Form API support for new HTML5 elements", 
+            "title": "Known Issues"
+        }, 
+        {
+            "location": "/maintainers/", 
+            "text": "Notes and references for maintainers of the YAML form module.\n\n\nReferences\n\n\n\n\nCreate a project (module or theme) on Drupal.org\n\n\n\n\nCoding Standards\n\n\nThe YAML form module follows all \ncoding standards\n \nestablished by the Drupal community.\n\n\nBelow are all additional standards that should be followed.\n\n\n\n\n[Policy, no patch] PHP 5.4 short array syntax coding standards\n\n  The release.md document includes command to convert all array to use the\n  shorthand syntax.\n\n\n\n\nBecoming a co-maintainer\n\n\nEveryone is welcome to contribute to the YAML form module by posting questions,\nissues, feature requests, and patches to the YAML form module's \nissue queue\n.\nFor the YAML form module to succeed, it needs multiple maintainers to ensure \nthat it is maintainable. \n\n\nPleases read \nBest practices for co-maintaining projects\n\nfor how to become a co-maintainer of YAML form module.\n\n\nBelow are some specific tips and tasks for becoming a co-maintainer of the \nYAML form module\n\n\n\n\n\n\nReview and edit the \ntest script\n which documents every \n  feature and function currently provide by the YAML form module.  \n\n\n\n\n\n\nPost issues and patches to help improve and/or fix this issues with the\n  test script.\n\n\n\n\n\n\nImproving documentation and reviewing the YAML form module's APIs are two key\n  tasks to ensuring that the YAML form module is maintainable.\n\n\n\n\n\n\nReview, improve, and write self documenting SimpleTests and PHPUnit tests.\n\n\n\n\n\n\nWrite a contrib module that extends the YAML form module.\n\n\n\n\n\n\nCode Sources and Design Patterns\n\n\nBelow is where most of the code snippets and/or design pattern were taken from \nto build this module.\n\n\n\n\nUI/Naming convention: Webform module (Copied)\n\n\nYamlForm to YamlFormSubmission bundle: Vocabulary to Term entities\n\n\nYamlFormSubmission entity_type and entity_id: Comment entity\n\n\nYamlFormSubmission preview: CommentForm\n\n\nYamlFormHandler plugin: ImageEffect", 
+            "title": "Maintainers"
+        }, 
+        {
+            "location": "/maintainers/#references", 
+            "text": "Create a project (module or theme) on Drupal.org", 
+            "title": "References"
+        }, 
+        {
+            "location": "/maintainers/#coding-standards", 
+            "text": "The YAML form module follows all  coding standards  \nestablished by the Drupal community.  Below are all additional standards that should be followed.   [Policy, no patch] PHP 5.4 short array syntax coding standards \n  The release.md document includes command to convert all array to use the\n  shorthand syntax.", 
+            "title": "Coding Standards"
+        }, 
+        {
+            "location": "/maintainers/#becoming-a-co-maintainer", 
+            "text": "Everyone is welcome to contribute to the YAML form module by posting questions,\nissues, feature requests, and patches to the YAML form module's  issue queue .\nFor the YAML form module to succeed, it needs multiple maintainers to ensure \nthat it is maintainable.   Pleases read  Best practices for co-maintaining projects \nfor how to become a co-maintainer of YAML form module.  Below are some specific tips and tasks for becoming a co-maintainer of the \nYAML form module    Review and edit the  test script  which documents every \n  feature and function currently provide by the YAML form module.      Post issues and patches to help improve and/or fix this issues with the\n  test script.    Improving documentation and reviewing the YAML form module's APIs are two key\n  tasks to ensuring that the YAML form module is maintainable.    Review, improve, and write self documenting SimpleTests and PHPUnit tests.    Write a contrib module that extends the YAML form module.", 
+            "title": "Becoming a co-maintainer"
+        }, 
+        {
+            "location": "/maintainers/#code-sources-and-design-patterns", 
+            "text": "Below is where most of the code snippets and/or design pattern were taken from \nto build this module.   UI/Naming convention: Webform module (Copied)  YamlForm to YamlFormSubmission bundle: Vocabulary to Term entities  YamlFormSubmission entity_type and entity_id: Comment entity  YamlFormSubmission preview: CommentForm  YamlFormHandler plugin: ImageEffect", 
+            "title": "Code Sources and Design Patterns"
+        }, 
+        {
+            "location": "/development/", 
+            "text": "Commands\n\n\nReinstall YAML form module.\n\n\ndrush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; drush en -y yamlform; drush en -y yamlform_test;\n\ndrush php-eval 'module_load_include('install', 'yamlform'); yamlform_uninstall();'\ndrush cron;\ndrush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; \ndrush en -y yamlform; drush en -y yamlform_test;\n\n\n\nInstall extra modules.\n\n\ndrush en -y yamlform captcha honeypot select_or_other;\n\n\n\nCreate test roles and users.\n\n\ndrush role-create developer\ndrush role-add-perm developer 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview,administer yamlform,administer blocks,administer nodes'\ndrush user-create developer --password=\"developer\"\ndrush user-add-role developer developer\n\ndrush role-create admin\ndrush role-add-perm admin 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview,administer yamlform submission'\ndrush user-create admin --password=\"admin\"\ndrush user-add-role admin admin\n\ndrush role-create manager\ndrush role-add-perm manager 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview'\ndrush user-create manager --password=\"manager\"\ndrush user-add-role manager manager\n\ndrush role-create user\ndrush user-create user --password=\"user\"\ndrush user-add-role user user\n\n\n\nCreate test submissions for 'Contact' and 'Example: Inputs' form.\n\n\ndrush yamlform-generate contact\ndrush yamlform-generate example_inputs\n\n\n\nTest update hooks\n\n\ndrush php-eval 'module_load_include('install', 'yamlform'); ($message = yamlform_update_8001()) ? drupal_set_message($message) : NULL;'\n\n\n\nAccess developer information\n\n\ndrush role-add-perm anonymous 'access devel information'\ndrush role-add-perm authenticated 'access devel information'\n\n\n\nReinstall\n\n\ndrush -y site-install\\\n  --account-mail=\"example@example.com\"\\\n  --account-name=\"webteam\"\\\n  --account-pass=\"drupal.admin\"\\\n  --site-mail=\"example@example.com\"\\\n  --site-name=\"Drupal 8 (dev)\";\n\n# Enable core modules\ndrush -y pm-enable\\\n  book\\\n  simpletest\\\n  telephone\\\n  language\\\n  locale\\\n  content_translation\\\n  config_translation;\n\n# Disable core modules\ndrush -y pm-uninstall\\\n  update;\n\n# Enable contrib modules\ndrush -y pm-enable\\\n  devel\\\n  devel_generate\\\n  kint\\\n  webprofiler\\\n  yamlform\\\n  yamlform_test\\\n  yamlform_translation_test;\n\n\n\nCode Sources and Design Patterns\n\n\nBelow is just a reference to where most of the code snippets and/or \ndesign pattern were taken from to build this module.\n\n\n\n\nUI/Naming convention: Webform module (Copied)\n\n\nYamlForm to YamlFormSubmission bundle: Vocabulary to Term entities\n\n\nYamlFormSubmission entity_type and entity_id: Comment entity\n\n\nYamlFormSubmission preview: CommentForm\n\n\nYamlFormHandler plugin: ImageEffect\n\n\nYamlFormEntityReferenceItem field type: FileItem", 
             "title": "Development"
         }, 
         {
@@ -81,103 +206,8 @@
             "title": "Code Sources and Design Patterns"
         }, 
         {
-            "location": "/issues/", 
-            "text": "Issues\n\n\nKnown Issues Affecting the YAML form module\n\n\n\n\n\n\nUnable to tidy the bulk export of YamlForm and YamlFormOptions config files \n  because Drupal's YAML utility is not a service.\n\n\n\n\n\n\nRegression: Form throws LogicException when trying to render a form with \n  object as an element's default value.\n  \n\n\n\n\nImpacts previewing entity autocomplete inputs.\n\n\n\n\n\n\n\n\nAccess control is not applied to config entity queries\n\n\n\n\nYAML forms that the current user can't access are not being hidden via the EntityQuery.\n\n\nSee: Drupal\\yamlform\\YamlFormEntityListBuilder\n\n\n\n\n\n\n\n\nConfig entity does NOT support \nEntity Validation API\n.\n\n\n\n\nValidation constraints are only applicable to content entities and fields.\n\n\nIn D8 all config entity validation is handled via \n  \\Drupal\\Core\\Form\\FormInterface::validateForm\n\n\nWorkaround: Create YamlFormEntityInputsValidator service.      \n\n\n\n\n\n\n\n\nForms System Issues for Drupal core\n\n\n\n\nAllow FAPI usage of the datalist element\n\n\nMultistep Form Wizard\n \n\n\nImplement Form API support for new HTML5 elements", 
-            "title": "Issues"
-        }, 
-        {
-            "location": "/issues/#issues", 
-            "text": "", 
-            "title": "Issues"
-        }, 
-        {
-            "location": "/issues/#known-issues-affecting-the-yaml-form-module", 
-            "text": "Unable to tidy the bulk export of YamlForm and YamlFormOptions config files \n  because Drupal's YAML utility is not a service.    Regression: Form throws LogicException when trying to render a form with \n  object as an element's default value.      Impacts previewing entity autocomplete inputs.     Access control is not applied to config entity queries   YAML forms that the current user can't access are not being hidden via the EntityQuery.  See: Drupal\\yamlform\\YamlFormEntityListBuilder     Config entity does NOT support  Entity Validation API .   Validation constraints are only applicable to content entities and fields.  In D8 all config entity validation is handled via \n  \\Drupal\\Core\\Form\\FormInterface::validateForm  Workaround: Create YamlFormEntityInputsValidator service.", 
-            "title": "Known Issues Affecting the YAML form module"
-        }, 
-        {
-            "location": "/issues/#forms-system-issues-for-drupal-core", 
-            "text": "Allow FAPI usage of the datalist element  Multistep Form Wizard    Implement Form API support for new HTML5 elements", 
-            "title": "Forms System Issues for Drupal core"
-        }, 
-        {
-            "location": "/maintainers/", 
-            "text": "Maintainers\n\n\nNotes and references for maintainers of the YAML form module.\n\n\nReferences\n\n\n\n\nCreate a project (module or theme) on Drupal.org\n\n\n\n\nCoding Standards\n\n\nThe YAML form module follows all \ncoding standards\n \nestablished by the Drupal community.\n\n\nBelow are all additional standards that should be followed.\n\n\n\n\n[Policy, no patch] PHP 5.4 short array syntax coding standards\n\n  The release.md document includes command to convert all array to use the\n  shorthand syntax.\n\n\n\n\nBecoming a co-maintainer of the YAML form module\n\n\nEveryone is welcome to contribute to the YAML form module by posting questions,\nissues, feature requests, and patches to the YAML form module's \nissue queue\n.\nFor the YAML form module to succeed, it needs multiple maintainers to ensure \nthat it is maintainable. \n\n\nPleases read \nBest practices for co-maintaining projects\n\nfor how to become a co-maintainer of YAML form module.\n\n\nBelow are some specific tips and tasks for becoming a co-maintainer of the \nYAML form module\n\n\n\n\n\n\nReview and edit the test script (test-script.md) which documents every \n  feature and function currently provide by the YAML form module.  \n\n\n\n\n\n\nPost issues and patches to help improve and/or fix this issues with the\n  test script.\n\n\n\n\n\n\nImproving documentation and reviewing the YAML form module's APIs are two key\n  tasks to ensuring that the YAML form module is maintainable.\n\n\n\n\n\n\nReview, improve, and write self documenting SimpleTests and PHPUnit tests.\n\n\n\n\n\n\nWrite a contrib module that extends the YAML form module.\n\n\n\n\n\n\nCode Sources and Design Patterns\n\n\nBelow is where most of the code snippets and/or design pattern were taken from \nto build this module.\n\n\n\n\nUI/Naming convention: Webform module (Copied)\n\n\nYamlForm to YamlFormSubmission bundle: Vocabulary to Term entities\n\n\nYamlFormSubmission entity_type and entity_id: Comment entity\n\n\nYamlFormSubmission preview: CommentForm\n\n\nYamlFormHandler plugin: ImageEffect", 
-            "title": "Maintainers"
-        }, 
-        {
-            "location": "/maintainers/#maintainers", 
-            "text": "Notes and references for maintainers of the YAML form module.", 
-            "title": "Maintainers"
-        }, 
-        {
-            "location": "/maintainers/#references", 
-            "text": "Create a project (module or theme) on Drupal.org", 
-            "title": "References"
-        }, 
-        {
-            "location": "/maintainers/#coding-standards", 
-            "text": "The YAML form module follows all  coding standards  \nestablished by the Drupal community.  Below are all additional standards that should be followed.   [Policy, no patch] PHP 5.4 short array syntax coding standards \n  The release.md document includes command to convert all array to use the\n  shorthand syntax.", 
-            "title": "Coding Standards"
-        }, 
-        {
-            "location": "/maintainers/#becoming-a-co-maintainer-of-the-yaml-form-module", 
-            "text": "Everyone is welcome to contribute to the YAML form module by posting questions,\nissues, feature requests, and patches to the YAML form module's  issue queue .\nFor the YAML form module to succeed, it needs multiple maintainers to ensure \nthat it is maintainable.   Pleases read  Best practices for co-maintaining projects \nfor how to become a co-maintainer of YAML form module.  Below are some specific tips and tasks for becoming a co-maintainer of the \nYAML form module    Review and edit the test script (test-script.md) which documents every \n  feature and function currently provide by the YAML form module.      Post issues and patches to help improve and/or fix this issues with the\n  test script.    Improving documentation and reviewing the YAML form module's APIs are two key\n  tasks to ensuring that the YAML form module is maintainable.    Review, improve, and write self documenting SimpleTests and PHPUnit tests.    Write a contrib module that extends the YAML form module.", 
-            "title": "Becoming a co-maintainer of the YAML form module"
-        }, 
-        {
-            "location": "/maintainers/#code-sources-and-design-patterns", 
-            "text": "Below is where most of the code snippets and/or design pattern were taken from \nto build this module.   UI/Naming convention: Webform module (Copied)  YamlForm to YamlFormSubmission bundle: Vocabulary to Term entities  YamlFormSubmission entity_type and entity_id: Comment entity  YamlFormSubmission preview: CommentForm  YamlFormHandler plugin: ImageEffect", 
-            "title": "Code Sources and Design Patterns"
-        }, 
-        {
-            "location": "/roadmap/", 
-            "text": "Roadmap\n\n\nReleases\n\n\nAlpha 1\n\n\n\n\nFeature parity with Webform and EForm modules.\n\n\n\n\nPhase 2 (after stable release)\n\n\n\n\nHTML email handler\n\n\nAdvanced Views integration\n\n\nWizard\n\n\nCustom elements (via yamlform_elements or contrib modules)\n\n\nemail_confirm\n\n\ncredit_card\n\n\n\n\nWhat Webform \n EntityForm features are missing?\n\n\n\n\nForm settings\n\n\nPaging\n\n\nLimit submission by IP and/or cookie.\n\n\nConfidential submissions. Anonymous submissions with no IP address.\n\n\nResetting sid per form.\n\n\n\n\n\n\nResults\n\n\nAnalysis of submitted data\n\n\nSubmission sorting\n\n\n\n\n\n\nDownload\n\n\nExcel support\n\n\nLast download\n\n\nDefault download settings.\n\n\n\n\n\n\nEmail\n\n\nHTML Mail\n\n\n\n\n\n\nSettings\n\n\nSet default date format\n\n\nProvide Anonymous Links\n\n\nSave session id with Submission\n\n\n\n\n\n\n\n\nFeatures\n\n\nFeatures to be handled via YamlFormHandler plugin\n\n\n\n\nEmail\n\n\nAdvanced Throttling\n\n\nSMS\n\n\nPayment\n\n\nMailChimp\n\n\nREST API", 
-            "title": "Roadmap"
-        }, 
-        {
-            "location": "/roadmap/#roadmap", 
-            "text": "", 
-            "title": "Roadmap"
-        }, 
-        {
-            "location": "/roadmap/#releases", 
-            "text": "", 
-            "title": "Releases"
-        }, 
-        {
-            "location": "/roadmap/#alpha-1", 
-            "text": "Feature parity with Webform and EForm modules.", 
-            "title": "Alpha 1"
-        }, 
-        {
-            "location": "/roadmap/#phase-2-after-stable-release", 
-            "text": "HTML email handler  Advanced Views integration  Wizard  Custom elements (via yamlform_elements or contrib modules)  email_confirm  credit_card", 
-            "title": "Phase 2 (after stable release)"
-        }, 
-        {
-            "location": "/roadmap/#what-webform-entityform-features-are-missing", 
-            "text": "Form settings  Paging  Limit submission by IP and/or cookie.  Confidential submissions. Anonymous submissions with no IP address.  Resetting sid per form.    Results  Analysis of submitted data  Submission sorting    Download  Excel support  Last download  Default download settings.    Email  HTML Mail    Settings  Set default date format  Provide Anonymous Links  Save session id with Submission", 
-            "title": "What Webform &amp; EntityForm features are missing?"
-        }, 
-        {
-            "location": "/roadmap/#features", 
-            "text": "", 
-            "title": "Features"
-        }, 
-        {
-            "location": "/roadmap/#features-to-be-handled-via-yamlformhandler-plugin", 
-            "text": "Email  Advanced Throttling  SMS  Payment  MailChimp  REST API", 
-            "title": "Features to be handled via YamlFormHandler plugin"
-        }, 
-        {
             "location": "/test/", 
-            "text": "Test Script\n\n\nThis is a step-by-step guide for manually testing and reviewing every feature,\nrole/permission, and use case provided by the YAML form module.\n\n\nNotes\n\n\n\n\nContact form will be used for most examples.\n\n\nIncognito tab is the quickest way to test anonymous access to a form/feature.\n\n\n\n\n\n\nInstallation\n\n\n\n\nUpdate settings.php to allow the yamlform_test.module to be installed.\n\n\n$settings['extension_discovery_scan_tests'] = TRUE;\n\n\nEnable the YAML form and YAML form test module.\n\n\n\n\n\n\nSetup\n\n\nSee: development-tools.md for commands.\n\n\n\n\nCreate test roles and users.\n\n\nCreate test submissions.\n\n\n\n\n\n\nAdministration\n\n\nForms (admin/structure/yamlform)\n\n\n\n\nReview forms provided by the yamlform.module and yamlform_test.module\n\n\nTest filter\n\n\nFilter a title, description, and/or inputs (which is not visible)\n\n\n\n\n\n\nTest sorting\n\n\nInputs validation\n\n\nRequired: Leave blank\n\n\nValid YAML: Enter invalid YAML\n\n\nIs array: Enter simple string value\n\n\nDuplicate inputs name: Enter two inputs with the same names\n\n\nIgnore properties: Enter input with #tree, #submit, etc... properties.\n\n\n\n\n\n\n\n\nResults\n\n\nManage (admin/structure/yamlform/results/manage)\n\n\n\n\nReview submissions\n\n\nTest filter\n\n\nFilter by submission data (which is not visible)\n\n\n\n\n\n\nTest sorting\n\n\n\n\nPurge (admin/structure/yamlform/results/purge)\n\n\n\n\nTest purging less than 1000 submissions without batch processing.\n\n\nTest purging more than 1000 submissions with batch processing.\n\n\n\n\nAdmin settings (admin/structure/yamlform/settings)\n\n\n\n\nReview default values\n\n\nReview labels and descriptions\n\n\nTest updating values\n\n\nTest optional token support\n\n\n\n\nYAML form options (admin/structure/yamlform/settings/options/manage)\n\n\n\n\nReview default YAML form options\n\n\nCreate, update, and delete YAML form options\n\n\n\n\nYAML form elements (admin/structure/yamlform/settings/elements)\n\n\n\n\nReview YAML form element titles and descriptions.\n\n\n\n\nYAML form handlers (admin/structure/yamlform/settings/handlers)\n\n\n\n\nReview YAML form handler titles and descriptions.\n\n\n\n\n\n\nForms (admin/structure/yamlform)\n\n\nCreate new YAML form (admin/structure/yamlform/add)\n\n\n\n\nCheck default inputs\n\n\nTest duplicate link\n\n\nMessage about previous submissions should be displayed\n\n\n\n\nDuplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)\n\n\n\n\nDuplicate a 'Template: Registration' form.\n\n\nConfirm all inputs and settings are duplicated.\n\n\n\n\nTest YAML form inputs (yamlform/example_inputs/test)\n\n\n\n\nTest 'kitchen sink' list of supported inputs\n\n\nVerify each input collects and displays submitted data correctly\n\n\n\n\nYAML form (yamlform/contact)\n\n\n\n\nCheck system path (yamlform/contact)\n\n\nCheck submit alias (form/contact)\n\n\nCheck confirmation alias (form/contact/confirmation)\n\n\nThis page is not used by the form which redirects to the homepage.\n\n\n\n\n\n\n\n\nYAML form settings (admin/structure/yamlform/manage/contact/settings)\n\n\n\n\nReview form\n\n\nReview hide/show logic (ie #States API).\n\n\nReview default values\n\n\nReview help text\n\n\n\n\nYAML form access (admin/structure/yamlform/manage/contact/access)\n\n\nYAML form handlers (admin/structure/yamlform/manage/contact/handlers)\n\n\n\n\nTest contact form handlers\n\n\nCreate, update, and delete YAML form handler\n\n\nCheck that cardinality is support\n\n\nEmail handler support multiple instances\n\n\nNull and Test handler only support a single instance\n\n\n\n\n\n\nTest disabling a handler\n\n\n\n\nYAML form email handlers (admin/structure/yamlform/manage/contact/handlers)\n\n\n\n\nTest email handlers\n\n\nTest debug setting\n\n\n\n\n\n\nResults\n\n\nSubmissions (admin/structure/yamlform/manage/contact/results/submissions)\n\n\n\n\nCheck submission columns\n\n\nCheck sorting\n\n\nTest filter\n\n\nFilter by submission data (which is not visible)\n\n\n\n\n\n\n\n\nTable (admin/structure/yamlform/manage/contact/results/table)\n\n\n\n\nCheck inputs columns (which are not sortable)\n\n\nCheck 'Example: Inputs'\n\n\nadmin/structure/yamlform/manage/example_inputs/results/table\n\n\n\n\n\n\n\n\nExport (admin/structure/yamlform/manage/contact/results/export)\n\n\n\n\nUnchecking 'Download CSV' allows you to view the CVS as plain text.\n\n\n'Download CSV' is only available when there is less than 1000 submissions.\n\n\n\n\n\n\n\n\nClear (admin/structure/yamlform/manage/contact/results/clear)\n\n\n\n\nTest clearing submissions.\n\n\n\n\nSubmission (admin/structure/yamlform/manage/contact/results/submissions)\n\n\nView tab\n\n\n\n\nTest submission navigation\n\n\n\n\nHTML\n\n\n\n\nView submission as HTML\n\n\n\n\nPlain text\n\n\n\n\nView submission as plain text\n\n\n\n\nData (YAML)\n\n\n\n\nView submission as data (YAML)\n\n\n\n\nEdit tab\n\n\n\n\nEdit submission\n\n\nSimple confirmation message should always be displayed\n\n\n\n\n\n\nFeatures\n\n\nInputs\n\n\n\n\nAll inputs (yamlform/test_inputs)\n\n\nDate inputs (yamlform/test_inputs_dates)\n\n\nEntity autocomplete (yamlform/test_inputs_entity_autocomplete)\n\n\nPreview is broken and throwing serialization error.\n\n\n\n\n\n\nText format (yamlform/test_inputs_text_format)\n\n\nIgnored properties (yamlform/test_inputs_ignored_properties)\n\n\n\n\nClosed (yamlform/test_form_closed)\n\n\n\n\nCheck that form is closed for anonymous user\n\n\nCheck that form is available to admin user but displays are warning.\n\n\n\n\nPrepopulate (yamlform/test_form_prepopulate)\n\n\n\n\nCheck that name is prepopulated using query string variable.\n\n\n\n\nSubmit text (yamlform/test_form_submit_text)\n\n\n\n\nCheck that submit text is customized.\n\n\n\n\nPreview (yamlform/test_preview)\n\n\n\n\nCheck custom preview and next submission buttons.\n\n\nCheck custom preview message.\n\n\nCheck optional and required preview.\n\n\n\n\nDraft (yamlform/test_draft)\n\n\n\n\nCheck saving and reloading draft\n\n\nCheck autosave occurs with validation errors.\n\n\nCheck autosave occurs when previewing.\n\n\n\n\nConfirmation\n\n\n\n\nInline (yamlform/test_confirmation_inline)\n\n\nMessage (yamlform/test_confirmation_message)\n\n\nPage (yamlform/test_confirmation_page)\n\n\nURL (yamlform/test_confirmation_url)\n\n\n\n\nLimits (yamlform/test_limit)\n\n\n\n\nCheck only 1 submission is allowed for authenticated user.\n\n\nCheck only 3 submission are allowed for all users.\n\n\nCheck that admin can post new submission if their limit has no been reached.\n\n\n\n\nResults Disabled (yamlform/test_results_disabled)\n\n\n\n\nCheck that results can be disabled. (Applies to users)\n\n\n\n\nPrivate access (yamlform/private)\n\n\n\n\nCheck that private input is only accessible to submission administrators.\n\n\n\n\n\n\nAccess Rules\n\n\n\n\nCreate test roles and users. (See NOTES.txt)\n\n\n\n\nAccount/Roles\n\n\n\n\ndeveloper: Administer YAML forms and YAML form submissions.\n\n\nadmin: Administer YAML form submissions.\n\n\nmanager: Used to test managing a YAML form's submissions.\n\n\nuser: Used to test accessing and managing one's own submission.\n\n\n\n\nCheck 'developer' role\n\n\n\n\nAlready done via the above tests.\n\n\n\n\nCheck 'admin' role\n\n\n\n\nLogin as admin/admin.\n\n\nCheck that all forms and submission are accessible (admin/structure/yamlform)\n\n\nConfirm that managing form is disabled. This includes..\n\n\nAdd form (admin/structure/yamlform/add)\n\n\nEdit form (admin/structure/yamlform/manage/contact)\n\n\nDelete form (admin/structure/yamlform/manage/contact/delete)\n\n\n\n\n\n\nPurging all submissions is also disabled. (admin/structure/yamlform/results/purge)\n\n\nOnly developer can purge all submissions.\n\n\n\n\n\n\n\n\nCheck 'manager' role\n\n\n\n\nAs an 'admin' or 'developer' grant the 'manager' role access and manager \n  any submissions to a form.\n  (admin/structure/yamlform/manage/contact/access)\n\n\nAssigning the 'manager' role to some permissions and the 'manager' user\n  to other permissions, this will test both role and user based access rules.\n\n\n\n\n\n\nLogin as manager/manager.\n\n\nCheck CRUD operations on 'Contact' form (admin/structure/yamlform/manage/contact)\n\n\nCheck navigating between all submissions.\n\n\n\n\nCheck 'user' role\n\n\n\n\nAs an 'admin' or 'developer' grant the 'user' role access and manager own \n  submission to a form.\n  (admin/structure/yamlform/manage/contact/access)\n\n\nAssigning the 'user' role to some permissions and the 'user' user\n  to other permissions, this will test both role and user based access rules.\n\n\n\n\n\n\nLogin as user/user.\n\n\nNote: You might see \"You have already submitted this form. View your previous submissions.\"\n  because devel generated 'Contact' form submissions are randomly assigned to \n  existing users.\n\n\nCreate a 'Contact' form submission (yamlform/contact)\n\n\nCheck CRUD operations on 'Contact' form (yamlform/contact/submissions)\n\n\nCheck navigating between own submissions.\n\n\n\n\n\n\nTranslation\n\n\nNotes\n\n\n\n\nUse \nGoogle Translate\n to create test \n  translations\n\n\nMultilingual Drupal 8\n\n\nDrupal 8 multilingual tidbits 16: configuration translation development\n\n\n\n\nSetup\n\n\n\n\nEnable YAML form translation test module (yamlform_translation_test.module)\n\n\n\n\nCheck languages\n\n\n\n\nCheck that 'Spanish' is added to languages. (admin/config/regional/language)\n\n\n\n\nCheck YAML form settings translation\n\n\n\n\nCheck 'Spanish' translation (admin/structure/yamlform/settings/translate/es/edit) \n\n\n\n\nCheck 'Contact' form translation\n\n\n\n\nCheck 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)\n\n\nCheck 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)\n\n\n\n\nCheck that the translated inputs can no be altered\n\n\nOnce a YAML form is translated only the Inputs (YAML) values be changed.\n  \n\n\n\n\n\n\nGoto 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)\n\n\n\n\nAlter an element/property\n\n\nRemove an element/property\n\n\nAdd an element/property    \n\n\n\n\n\n\n\n\nGoto 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)\n\n\n\n\nAlter an element/property\n\n\nRemove an element/property\n\n\nAdd an element/property    \n\n\n\n\n\n\n\n\nTest 'Contact' form\n\n\n\n\nTest 'Contact' form submission via Spanish\n  (es/yamlform/contact/test)", 
-            "title": "Test"
-        }, 
-        {
-            "location": "/test/#test-script", 
-            "text": "This is a step-by-step guide for manually testing and reviewing every feature,\nrole/permission, and use case provided by the YAML form module.", 
+            "text": "This is a step-by-step guide for manually testing and reviewing every feature,\nrole/permission, and use case provided by the YAML form module.\n\n\nNotes\n\n\n\n\nContact form will be used for most examples.\n\n\nIncognito tab is the quickest way to test anonymous access to a form/feature.\n\n\n\n\n\n\nInstallation\n\n\n\n\nUpdate settings.php to allow the yamlform_test.module to be installed.\n\n\n$settings['extension_discovery_scan_tests'] = TRUE;\n\n\nEnable the YAML form and YAML form test module.\n\n\n\n\n\n\nSetup\n\n\nSee: development-tools.md for commands.\n\n\n\n\nCreate test roles and users.\n\n\nCreate test submissions.\n\n\n\n\n\n\nAdministration\n\n\nForms (admin/structure/yamlform)\n\n\n\n\nReview forms provided by the yamlform.module and yamlform_test.module\n\n\nTest filter\n\n\nFilter a title, description, and/or inputs (which is not visible)\n\n\n\n\n\n\nTest sorting\n\n\nInputs validation\n\n\nRequired: Leave blank\n\n\nValid YAML: Enter invalid YAML\n\n\nIs array: Enter simple string value\n\n\nDuplicate inputs name: Enter two inputs with the same names\n\n\nIgnore properties: Enter input with #tree, #submit, etc... properties.\n\n\n\n\n\n\n\n\nResults\n \n\n\nManage (admin/structure/yamlform/results/manage)\n\n\n\n\nReview submissions\n\n\nTest filter\n\n\nFilter by submission data (which is not visible)\n\n\n\n\n\n\nTest sorting\n\n\n\n\nPurge (admin/structure/yamlform/results/purge)\n\n\n\n\nTest purging less than 1000 submissions without batch processing.\n\n\nTest purging more than 1000 submissions with batch processing.\n\n\n\n\nAdmin settings (admin/structure/yamlform/settings)\n\n\n\n\nReview default values\n\n\nReview labels and descriptions\n\n\nTest updating values\n\n\nTest optional token support\n\n\n\n\nYAML form options (admin/structure/yamlform/settings/options/manage)\n\n\n\n\nReview default YAML form options\n\n\nCreate, update, and delete YAML form options\n\n\n\n\nYAML form elements (admin/structure/yamlform/settings/elements)\n\n\n\n\nReview YAML form element titles and descriptions.\n\n\n\n\nYAML form handlers (admin/structure/yamlform/settings/handlers)\n\n\n\n\nReview YAML form handler titles and descriptions.\n\n\n\n\n\n\nForms\n\n\n(admin/structure/yamlform)\n\n\nCreate new YAML form (admin/structure/yamlform/add)\n\n\n\n\nCheck default inputs\n\n\nTest duplicate link\n\n\nMessage about previous submissions should be displayed\n\n\n\n\nDuplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)\n\n\n\n\nDuplicate a 'Template: Registration' form.\n\n\nConfirm all inputs and settings are duplicated.\n\n\n\n\nTest YAML form inputs (yamlform/example_inputs/test)\n\n\n\n\nTest 'kitchen sink' list of supported inputs\n\n\nVerify each input collects and displays submitted data correctly\n\n\n\n\nYAML form (yamlform/contact)\n\n\n\n\nCheck system path (yamlform/contact)\n\n\nCheck submit alias (form/contact)\n\n\nCheck confirmation alias (form/contact/confirmation)\n\n\nThis page is not used by the form which redirects to the homepage.\n\n\n\n\n\n\n\n\nYAML form settings (admin/structure/yamlform/manage/contact/settings)\n\n\n\n\nReview form\n\n\nReview hide/show logic (ie #States API).\n\n\nReview default values\n\n\nReview help text\n\n\n\n\nYAML form access (admin/structure/yamlform/manage/contact/access)\n\n\nSee: Access Rules \n\n\nYAML form handlers (admin/structure/yamlform/manage/contact/handlers)\n\n\n\n\nTest contact form handlers\n\n\nCreate, update, and delete YAML form handler\n\n\nCheck that cardinality is support\n\n\nEmail handler support multiple instances\n\n\nNull and Test handler only support a single instance\n\n\n\n\n\n\nTest disabling a handler\n\n\n\n\nYAML form email handlers (admin/structure/yamlform/manage/contact/handlers)\n\n\n\n\nTest email handlers\n\n\nTest debug setting\n\n\n\n\n\n\nResults\n\n\nSubmissions (admin/structure/yamlform/manage/contact/results/submissions)\n\n\n\n\nCheck submission columns\n\n\nCheck sorting\n\n\nTest filter\n\n\nFilter by submission data (which is not visible)\n\n\n\n\n\n\n\n\nTable (admin/structure/yamlform/manage/contact/results/table)\n\n\n\n\nCheck inputs columns (which are not sortable)\n\n\nCheck 'Example: Inputs'\n\n\nadmin/structure/yamlform/manage/example_inputs/results/table\n\n\n\n\n\n\n\n\nExport (admin/structure/yamlform/manage/contact/results/export)\n\n\n\n\nUnchecking 'Download CSV' allows you to view the CVS as plain text.\n\n\n'Download CSV' is only available when there is less than 1000 submissions.\n\n\n\n\n\n\n\n\nClear (admin/structure/yamlform/manage/contact/results/clear)\n\n\n\n\nTest clearing submissions.\n\n\n\n\nSubmission (admin/structure/yamlform/manage/contact/results/submissions)\n\n\nView tab\n\n\n\n\nTest submission navigation\n\n\n\n\nHTML\n\n\n\n\nView submission as HTML\n\n\n\n\nPlain text\n\n\n\n\nView submission as plain text\n\n\n\n\nData (YAML)\n\n\n\n\nView submission as data (YAML)\n\n\n\n\nEdit tab\n\n\n\n\nEdit submission\n\n\nSimple confirmation message should always be displayed\n\n\n\n\n\n\nFeatures\n\n\nInputs\n\n\n\n\nAll inputs (yamlform/test_inputs)\n\n\nDate inputs (yamlform/test_inputs_dates)\n\n\nEntity autocomplete (yamlform/test_inputs_entity_autocomplete)\n\n\nPreview is broken and throwing serialization error.\n\n\n\n\n\n\nText format (yamlform/test_inputs_text_format)\n\n\nIgnored properties (yamlform/test_inputs_ignored_properties)\n\n\n\n\nClosed (yamlform/test_form_closed)\n\n\n\n\nCheck that form is closed for anonymous user\n\n\nCheck that form is available to admin user but displays are warning.\n\n\n\n\nPrepopulate (yamlform/test_form_prepopulate)\n\n\n\n\nCheck that name is prepopulated using query string variable.\n\n\n\n\nSubmit text (yamlform/test_form_submit_text)\n\n\n\n\nCheck that submit text is customized.\n\n\n\n\nPreview (yamlform/test_preview)\n\n\n\n\nCheck custom preview and next submission buttons.\n\n\nCheck custom preview message.\n\n\nCheck optional and required preview.\n\n\n\n\nDraft (yamlform/test_draft)\n\n\n\n\nCheck saving and reloading draft\n\n\nCheck autosave occurs with validation errors.\n\n\nCheck autosave occurs when previewing.\n\n\n\n\nConfirmation\n\n\n\n\nInline (yamlform/test_confirmation_inline)\n\n\nMessage (yamlform/test_confirmation_message)\n\n\nPage (yamlform/test_confirmation_page)\n\n\nURL (yamlform/test_confirmation_url)\n\n\n\n\nLimits (yamlform/test_limit)\n\n\n\n\nCheck only 1 submission is allowed for authenticated user.\n\n\nCheck only 3 submission are allowed for all users.\n\n\nCheck that admin can post new submission if their limit has no been reached.\n\n\n\n\nResults Disabled (yamlform/test_results_disabled)\n\n\n\n\nCheck that results can be disabled. (Applies to users)\n\n\n\n\nPrivate access (yamlform/private)\n\n\n\n\nCheck that private input is only accessible to submission administrators.\n\n\n\n\n\n\nAccess Rules\n\n\n\n\nCreate test roles and users. (See NOTES.txt)\n\n\n\n\nAccount/Roles\n\n\n\n\ndeveloper: Administer YAML forms and YAML form submissions.\n\n\nadmin: Administer YAML form submissions.\n\n\nmanager: Used to test managing a YAML form's submissions.\n\n\nuser: Used to test accessing and managing one's own submission.\n\n\n\n\nCheck 'developer' role\n\n\n\n\nAlready done via the above tests.\n\n\n\n\nCheck 'admin' role\n\n\n\n\nLogin as admin/admin.\n\n\nCheck that all forms and submission are accessible (admin/structure/yamlform)\n\n\nConfirm that managing form is disabled. This includes..\n\n\nAdd form (admin/structure/yamlform/add)\n\n\nEdit form (admin/structure/yamlform/manage/contact)\n\n\nDelete form (admin/structure/yamlform/manage/contact/delete)\n\n\n\n\n\n\nPurging all submissions is also disabled. (admin/structure/yamlform/results/purge)\n\n\nOnly developer can purge all submissions.\n\n\n\n\n\n\n\n\nCheck 'manager' role\n\n\n\n\nAs an 'admin' or 'developer' grant the 'manager' role access and manager \n  any submissions to a form.\n  (admin/structure/yamlform/manage/contact/access)\n\n\nAssigning the 'manager' role to some permissions and the 'manager' user\n  to other permissions, this will test both role and user based access rules.\n\n\n\n\n\n\nLogin as manager/manager.\n\n\nCheck CRUD operations on 'Contact' form (admin/structure/yamlform/manage/contact)\n\n\nCheck navigating between all submissions.\n\n\n\n\nCheck 'user' role\n\n\n\n\nAs an 'admin' or 'developer' grant the 'user' role access and manager own \n  submission to a form.\n  (admin/structure/yamlform/manage/contact/access)\n\n\nAssigning the 'user' role to some permissions and the 'user' user\n  to other permissions, this will test both role and user based access rules.\n\n\n\n\n\n\nLogin as user/user.\n\n\nNote: You might see \"You have already submitted this form. View your previous submissions.\"\n  because devel generated 'Contact' form submissions are randomly assigned to \n  existing users.\n\n\nCreate a 'Contact' form submission (yamlform/contact)\n\n\nCheck CRUD operations on 'Contact' form (yamlform/contact/submissions)\n\n\nCheck navigating between own submissions.\n\n\n\n\n\n\nTranslation\n\n\nNotes\n\n\n\n\nUse \nGoogle Translate\n to create test \n  translations\n\n\nMultilingual Drupal 8\n\n\nDrupal 8 multilingual tidbits 16: configuration translation development\n\n\n\n\nSetup\n\n\n\n\nEnable YAML form translation test module (yamlform_translation_test.module)\n\n\n\n\nCheck languages\n\n\n\n\nCheck that 'Spanish' is added to languages. (admin/config/regional/language)\n\n\n\n\nCheck YAML form settings translation\n\n\n\n\nCheck 'Spanish' translation (admin/structure/yamlform/settings/translate/es/edit) \n\n\n\n\nCheck 'Contact' form translation\n\n\n\n\nCheck 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)\n\n\nCheck 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)\n\n\n\n\nCheck that the translated inputs can no be altered\n \n\n\nOnce a YAML form is translated only the Inputs (YAML) values be changed.\n  \n\n\n\n\n\n\nGoto 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)\n\n\n\n\nAlter an element/property\n\n\nRemove an element/property\n\n\nAdd an element/property    \n\n\n\n\n\n\n\n\nGoto 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)\n\n\n\n\nAlter an element/property\n\n\nRemove an element/property\n\n\nAdd an element/property    \n\n\n\n\n\n\n\n\nTest 'Contact' form\n \n\n\n\n\nTest 'Contact' form submission via Spanish\n  (es/yamlform/contact/test)", 
             "title": "Test Script"
         }, 
         {
@@ -197,248 +227,83 @@
         }, 
         {
             "location": "/test/#administration", 
-            "text": "", 
+            "text": "Forms (admin/structure/yamlform)   Review forms provided by the yamlform.module and yamlform_test.module  Test filter  Filter a title, description, and/or inputs (which is not visible)    Test sorting  Inputs validation  Required: Leave blank  Valid YAML: Enter invalid YAML  Is array: Enter simple string value  Duplicate inputs name: Enter two inputs with the same names  Ignore properties: Enter input with #tree, #submit, etc... properties.     Results    Manage (admin/structure/yamlform/results/manage)   Review submissions  Test filter  Filter by submission data (which is not visible)    Test sorting   Purge (admin/structure/yamlform/results/purge)   Test purging less than 1000 submissions without batch processing.  Test purging more than 1000 submissions with batch processing.   Admin settings (admin/structure/yamlform/settings)   Review default values  Review labels and descriptions  Test updating values  Test optional token support   YAML form options (admin/structure/yamlform/settings/options/manage)   Review default YAML form options  Create, update, and delete YAML form options   YAML form elements (admin/structure/yamlform/settings/elements)   Review YAML form element titles and descriptions.   YAML form handlers (admin/structure/yamlform/settings/handlers)   Review YAML form handler titles and descriptions.", 
             "title": "Administration"
         }, 
         {
-            "location": "/test/#forms-adminstructureyamlform", 
-            "text": "Review forms provided by the yamlform.module and yamlform_test.module  Test filter  Filter a title, description, and/or inputs (which is not visible)    Test sorting  Inputs validation  Required: Leave blank  Valid YAML: Enter invalid YAML  Is array: Enter simple string value  Duplicate inputs name: Enter two inputs with the same names  Ignore properties: Enter input with #tree, #submit, etc... properties.", 
-            "title": "Forms (admin/structure/yamlform)"
+            "location": "/test/#forms", 
+            "text": "(admin/structure/yamlform)  Create new YAML form (admin/structure/yamlform/add)   Check default inputs  Test duplicate link  Message about previous submissions should be displayed   Duplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)   Duplicate a 'Template: Registration' form.  Confirm all inputs and settings are duplicated.   Test YAML form inputs (yamlform/example_inputs/test)   Test 'kitchen sink' list of supported inputs  Verify each input collects and displays submitted data correctly   YAML form (yamlform/contact)   Check system path (yamlform/contact)  Check submit alias (form/contact)  Check confirmation alias (form/contact/confirmation)  This page is not used by the form which redirects to the homepage.     YAML form settings (admin/structure/yamlform/manage/contact/settings)   Review form  Review hide/show logic (ie #States API).  Review default values  Review help text   YAML form access (admin/structure/yamlform/manage/contact/access)  See: Access Rules   YAML form handlers (admin/structure/yamlform/manage/contact/handlers)   Test contact form handlers  Create, update, and delete YAML form handler  Check that cardinality is support  Email handler support multiple instances  Null and Test handler only support a single instance    Test disabling a handler   YAML form email handlers (admin/structure/yamlform/manage/contact/handlers)   Test email handlers  Test debug setting", 
+            "title": "Forms"
         }, 
         {
             "location": "/test/#results", 
-            "text": "Manage (admin/structure/yamlform/results/manage)   Review submissions  Test filter  Filter by submission data (which is not visible)    Test sorting   Purge (admin/structure/yamlform/results/purge)   Test purging less than 1000 submissions without batch processing.  Test purging more than 1000 submissions with batch processing.", 
+            "text": "Submissions (admin/structure/yamlform/manage/contact/results/submissions)   Check submission columns  Check sorting  Test filter  Filter by submission data (which is not visible)     Table (admin/structure/yamlform/manage/contact/results/table)   Check inputs columns (which are not sortable)  Check 'Example: Inputs'  admin/structure/yamlform/manage/example_inputs/results/table     Export (admin/structure/yamlform/manage/contact/results/export)   Unchecking 'Download CSV' allows you to view the CVS as plain text.  'Download CSV' is only available when there is less than 1000 submissions.     Clear (admin/structure/yamlform/manage/contact/results/clear)   Test clearing submissions.   Submission (admin/structure/yamlform/manage/contact/results/submissions)  View tab   Test submission navigation   HTML   View submission as HTML   Plain text   View submission as plain text   Data (YAML)   View submission as data (YAML)   Edit tab   Edit submission  Simple confirmation message should always be displayed", 
             "title": "Results"
-        }, 
-        {
-            "location": "/test/#admin-settings-adminstructureyamlformsettings", 
-            "text": "Review default values  Review labels and descriptions  Test updating values  Test optional token support", 
-            "title": "Admin settings (admin/structure/yamlform/settings)"
-        }, 
-        {
-            "location": "/test/#yaml-form-options-adminstructureyamlformsettingsoptionsmanage", 
-            "text": "Review default YAML form options  Create, update, and delete YAML form options", 
-            "title": "YAML form options (admin/structure/yamlform/settings/options/manage)"
-        }, 
-        {
-            "location": "/test/#yaml-form-elements-adminstructureyamlformsettingselements", 
-            "text": "Review YAML form element titles and descriptions.", 
-            "title": "YAML form elements (admin/structure/yamlform/settings/elements)"
-        }, 
-        {
-            "location": "/test/#yaml-form-handlers-adminstructureyamlformsettingshandlers", 
-            "text": "Review YAML form handler titles and descriptions.", 
-            "title": "YAML form handlers (admin/structure/yamlform/settings/handlers)"
-        }, 
-        {
-            "location": "/test/#forms-adminstructureyamlform_1", 
-            "text": "", 
-            "title": "Forms (admin/structure/yamlform)"
-        }, 
-        {
-            "location": "/test/#create-new-yaml-form-adminstructureyamlformadd", 
-            "text": "Check default inputs  Test duplicate link  Message about previous submissions should be displayed", 
-            "title": "Create new YAML form (admin/structure/yamlform/add)"
-        }, 
-        {
-            "location": "/test/#duplicate-existing-yaml-form-adminstructureyamlformmanagetemplate_registrationduplicate", 
-            "text": "Duplicate a 'Template: Registration' form.  Confirm all inputs and settings are duplicated.", 
-            "title": "Duplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)"
-        }, 
-        {
-            "location": "/test/#test-yaml-form-inputs-yamlformexample_inputstest", 
-            "text": "Test 'kitchen sink' list of supported inputs  Verify each input collects and displays submitted data correctly", 
-            "title": "Test YAML form inputs (yamlform/example_inputs/test)"
-        }, 
-        {
-            "location": "/test/#yaml-form-yamlformcontact", 
-            "text": "Check system path (yamlform/contact)  Check submit alias (form/contact)  Check confirmation alias (form/contact/confirmation)  This page is not used by the form which redirects to the homepage.", 
-            "title": "YAML form (yamlform/contact)"
-        }, 
-        {
-            "location": "/test/#yaml-form-settings-adminstructureyamlformmanagecontactsettings", 
-            "text": "Review form  Review hide/show logic (ie #States API).  Review default values  Review help text", 
-            "title": "YAML form settings (admin/structure/yamlform/manage/contact/settings)"
-        }, 
-        {
-            "location": "/test/#yaml-form-access-adminstructureyamlformmanagecontactaccess", 
-            "text": "", 
-            "title": "YAML form access (admin/structure/yamlform/manage/contact/access)"
-        }, 
-        {
-            "location": "/test/#yaml-form-handlers-adminstructureyamlformmanagecontacthandlers", 
-            "text": "Test contact form handlers  Create, update, and delete YAML form handler  Check that cardinality is support  Email handler support multiple instances  Null and Test handler only support a single instance    Test disabling a handler", 
-            "title": "YAML form handlers (admin/structure/yamlform/manage/contact/handlers)"
-        }, 
-        {
-            "location": "/test/#yaml-form-email-handlers-adminstructureyamlformmanagecontacthandlers", 
-            "text": "Test email handlers  Test debug setting", 
-            "title": "YAML form email handlers (admin/structure/yamlform/manage/contact/handlers)"
-        }, 
-        {
-            "location": "/test/#results_1", 
-            "text": "", 
-            "title": "Results"
-        }, 
-        {
-            "location": "/test/#submissions-adminstructureyamlformmanagecontactresultssubmissions", 
-            "text": "Check submission columns  Check sorting  Test filter  Filter by submission data (which is not visible)", 
-            "title": "Submissions (admin/structure/yamlform/manage/contact/results/submissions)"
-        }, 
-        {
-            "location": "/test/#table-adminstructureyamlformmanagecontactresultstable", 
-            "text": "Check inputs columns (which are not sortable)  Check 'Example: Inputs'  admin/structure/yamlform/manage/example_inputs/results/table", 
-            "title": "Table (admin/structure/yamlform/manage/contact/results/table)"
-        }, 
-        {
-            "location": "/test/#export-adminstructureyamlformmanagecontactresultsexport", 
-            "text": "Unchecking 'Download CSV' allows you to view the CVS as plain text.  'Download CSV' is only available when there is less than 1000 submissions.", 
-            "title": "Export (admin/structure/yamlform/manage/contact/results/export)"
-        }, 
-        {
-            "location": "/test/#clear-adminstructureyamlformmanagecontactresultsclear", 
-            "text": "Test clearing submissions.", 
-            "title": "Clear (admin/structure/yamlform/manage/contact/results/clear)"
-        }, 
-        {
-            "location": "/test/#submission-adminstructureyamlformmanagecontactresultssubmissions", 
-            "text": "", 
-            "title": "Submission (admin/structure/yamlform/manage/contact/results/submissions)"
-        }, 
-        {
-            "location": "/test/#view-tab", 
-            "text": "Test submission navigation   HTML   View submission as HTML   Plain text   View submission as plain text   Data (YAML)   View submission as data (YAML)", 
-            "title": "View tab"
-        }, 
-        {
-            "location": "/test/#edit-tab", 
-            "text": "Edit submission  Simple confirmation message should always be displayed", 
-            "title": "Edit tab"
         }, 
         {
             "location": "/test/#features", 
-            "text": "", 
+            "text": "Inputs   All inputs (yamlform/test_inputs)  Date inputs (yamlform/test_inputs_dates)  Entity autocomplete (yamlform/test_inputs_entity_autocomplete)  Preview is broken and throwing serialization error.    Text format (yamlform/test_inputs_text_format)  Ignored properties (yamlform/test_inputs_ignored_properties)   Closed (yamlform/test_form_closed)   Check that form is closed for anonymous user  Check that form is available to admin user but displays are warning.   Prepopulate (yamlform/test_form_prepopulate)   Check that name is prepopulated using query string variable.   Submit text (yamlform/test_form_submit_text)   Check that submit text is customized.   Preview (yamlform/test_preview)   Check custom preview and next submission buttons.  Check custom preview message.  Check optional and required preview.   Draft (yamlform/test_draft)   Check saving and reloading draft  Check autosave occurs with validation errors.  Check autosave occurs when previewing.   Confirmation   Inline (yamlform/test_confirmation_inline)  Message (yamlform/test_confirmation_message)  Page (yamlform/test_confirmation_page)  URL (yamlform/test_confirmation_url)   Limits (yamlform/test_limit)   Check only 1 submission is allowed for authenticated user.  Check only 3 submission are allowed for all users.  Check that admin can post new submission if their limit has no been reached.   Results Disabled (yamlform/test_results_disabled)   Check that results can be disabled. (Applies to users)   Private access (yamlform/private)   Check that private input is only accessible to submission administrators.", 
             "title": "Features"
         }, 
         {
-            "location": "/test/#inputs", 
-            "text": "All inputs (yamlform/test_inputs)  Date inputs (yamlform/test_inputs_dates)  Entity autocomplete (yamlform/test_inputs_entity_autocomplete)  Preview is broken and throwing serialization error.    Text format (yamlform/test_inputs_text_format)  Ignored properties (yamlform/test_inputs_ignored_properties)", 
-            "title": "Inputs"
-        }, 
-        {
-            "location": "/test/#closed-yamlformtest_form_closed", 
-            "text": "Check that form is closed for anonymous user  Check that form is available to admin user but displays are warning.", 
-            "title": "Closed (yamlform/test_form_closed)"
-        }, 
-        {
-            "location": "/test/#prepopulate-yamlformtest_form_prepopulate", 
-            "text": "Check that name is prepopulated using query string variable.", 
-            "title": "Prepopulate (yamlform/test_form_prepopulate)"
-        }, 
-        {
-            "location": "/test/#submit-text-yamlformtest_form_submit_text", 
-            "text": "Check that submit text is customized.", 
-            "title": "Submit text (yamlform/test_form_submit_text)"
-        }, 
-        {
-            "location": "/test/#preview-yamlformtest_preview", 
-            "text": "Check custom preview and next submission buttons.  Check custom preview message.  Check optional and required preview.", 
-            "title": "Preview (yamlform/test_preview)"
-        }, 
-        {
-            "location": "/test/#draft-yamlformtest_draft", 
-            "text": "Check saving and reloading draft  Check autosave occurs with validation errors.  Check autosave occurs when previewing.", 
-            "title": "Draft (yamlform/test_draft)"
-        }, 
-        {
-            "location": "/test/#confirmation", 
-            "text": "Inline (yamlform/test_confirmation_inline)  Message (yamlform/test_confirmation_message)  Page (yamlform/test_confirmation_page)  URL (yamlform/test_confirmation_url)", 
-            "title": "Confirmation"
-        }, 
-        {
-            "location": "/test/#limits-yamlformtest_limit", 
-            "text": "Check only 1 submission is allowed for authenticated user.  Check only 3 submission are allowed for all users.  Check that admin can post new submission if their limit has no been reached.", 
-            "title": "Limits (yamlform/test_limit)"
-        }, 
-        {
-            "location": "/test/#results-disabled-yamlformtest_results_disabled", 
-            "text": "Check that results can be disabled. (Applies to users)", 
-            "title": "Results Disabled (yamlform/test_results_disabled)"
-        }, 
-        {
-            "location": "/test/#private-access-yamlformprivate", 
-            "text": "Check that private input is only accessible to submission administrators.", 
-            "title": "Private access (yamlform/private)"
-        }, 
-        {
             "location": "/test/#access-rules", 
-            "text": "Create test roles and users. (See NOTES.txt)", 
+            "text": "Create test roles and users. (See NOTES.txt)   Account/Roles   developer: Administer YAML forms and YAML form submissions.  admin: Administer YAML form submissions.  manager: Used to test managing a YAML form's submissions.  user: Used to test accessing and managing one's own submission.   Check 'developer' role   Already done via the above tests.   Check 'admin' role   Login as admin/admin.  Check that all forms and submission are accessible (admin/structure/yamlform)  Confirm that managing form is disabled. This includes..  Add form (admin/structure/yamlform/add)  Edit form (admin/structure/yamlform/manage/contact)  Delete form (admin/structure/yamlform/manage/contact/delete)    Purging all submissions is also disabled. (admin/structure/yamlform/results/purge)  Only developer can purge all submissions.     Check 'manager' role   As an 'admin' or 'developer' grant the 'manager' role access and manager \n  any submissions to a form.\n  (admin/structure/yamlform/manage/contact/access)  Assigning the 'manager' role to some permissions and the 'manager' user\n  to other permissions, this will test both role and user based access rules.    Login as manager/manager.  Check CRUD operations on 'Contact' form (admin/structure/yamlform/manage/contact)  Check navigating between all submissions.   Check 'user' role   As an 'admin' or 'developer' grant the 'user' role access and manager own \n  submission to a form.\n  (admin/structure/yamlform/manage/contact/access)  Assigning the 'user' role to some permissions and the 'user' user\n  to other permissions, this will test both role and user based access rules.    Login as user/user.  Note: You might see \"You have already submitted this form. View your previous submissions.\"\n  because devel generated 'Contact' form submissions are randomly assigned to \n  existing users.  Create a 'Contact' form submission (yamlform/contact)  Check CRUD operations on 'Contact' form (yamlform/contact/submissions)  Check navigating between own submissions.", 
             "title": "Access Rules"
         }, 
         {
-            "location": "/test/#accountroles", 
-            "text": "developer: Administer YAML forms and YAML form submissions.  admin: Administer YAML form submissions.  manager: Used to test managing a YAML form's submissions.  user: Used to test accessing and managing one's own submission.", 
-            "title": "Account/Roles"
-        }, 
-        {
-            "location": "/test/#check-developer-role", 
-            "text": "Already done via the above tests.", 
-            "title": "Check 'developer' role"
-        }, 
-        {
-            "location": "/test/#check-admin-role", 
-            "text": "Login as admin/admin.  Check that all forms and submission are accessible (admin/structure/yamlform)  Confirm that managing form is disabled. This includes..  Add form (admin/structure/yamlform/add)  Edit form (admin/structure/yamlform/manage/contact)  Delete form (admin/structure/yamlform/manage/contact/delete)    Purging all submissions is also disabled. (admin/structure/yamlform/results/purge)  Only developer can purge all submissions.", 
-            "title": "Check 'admin' role"
-        }, 
-        {
-            "location": "/test/#check-manager-role", 
-            "text": "As an 'admin' or 'developer' grant the 'manager' role access and manager \n  any submissions to a form.\n  (admin/structure/yamlform/manage/contact/access)  Assigning the 'manager' role to some permissions and the 'manager' user\n  to other permissions, this will test both role and user based access rules.    Login as manager/manager.  Check CRUD operations on 'Contact' form (admin/structure/yamlform/manage/contact)  Check navigating between all submissions.", 
-            "title": "Check 'manager' role"
-        }, 
-        {
-            "location": "/test/#check-user-role", 
-            "text": "As an 'admin' or 'developer' grant the 'user' role access and manager own \n  submission to a form.\n  (admin/structure/yamlform/manage/contact/access)  Assigning the 'user' role to some permissions and the 'user' user\n  to other permissions, this will test both role and user based access rules.    Login as user/user.  Note: You might see \"You have already submitted this form. View your previous submissions.\"\n  because devel generated 'Contact' form submissions are randomly assigned to \n  existing users.  Create a 'Contact' form submission (yamlform/contact)  Check CRUD operations on 'Contact' form (yamlform/contact/submissions)  Check navigating between own submissions.", 
-            "title": "Check 'user' role"
-        }, 
-        {
             "location": "/test/#translation", 
-            "text": "", 
+            "text": "Notes   Use  Google Translate  to create test \n  translations  Multilingual Drupal 8  Drupal 8 multilingual tidbits 16: configuration translation development   Setup   Enable YAML form translation test module (yamlform_translation_test.module)   Check languages   Check that 'Spanish' is added to languages. (admin/config/regional/language)   Check YAML form settings translation   Check 'Spanish' translation (admin/structure/yamlform/settings/translate/es/edit)    Check 'Contact' form translation   Check 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)  Check 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)   Check that the translated inputs can no be altered    Once a YAML form is translated only the Inputs (YAML) values be changed.       Goto 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)   Alter an element/property  Remove an element/property  Add an element/property         Goto 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)   Alter an element/property  Remove an element/property  Add an element/property         Test 'Contact' form     Test 'Contact' form submission via Spanish\n  (es/yamlform/contact/test)", 
             "title": "Translation"
         }, 
         {
-            "location": "/test/#notes_1", 
-            "text": "Use  Google Translate  to create test \n  translations  Multilingual Drupal 8  Drupal 8 multilingual tidbits 16: configuration translation development", 
-            "title": "Notes"
+            "location": "/releases/", 
+            "text": "Steps for creating a new release of YAML form module\n\n\n\n\n\n\nConvert to short array syntax\n\n\nTidy YAML files\n\n\nInspect code (PHPStorm / Coder review)\n\n\nRun tests\n\n\nGenerate and edit release notes\n\n\nTag a release\n\n\nUpdate project page\n\n\nCreate new release\n\n\nDocumentation\n\n\n\n\n\n\nConvert to short array syntax\n\n\nwget https://raw.githubusercontent.com/thomasbachem/php-short-array-syntax-converter/master/convert.php\nfind . -name \"*.install\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.module\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.php\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.inc\" -exec php \"convert.php\" -w \"{}\" \\;\nrm convert.php\n\n\n\n\n\nTidy YAML files\n\n\ndrush yamlform-tidy yamlform; \ndrush yamlform-tidy yamlform_test;\ndrush yamlform-tidy yamlform_translation_test;\n\n\n\n\n\nInspect code (PHPStorm / Coder)\n\n\nReferences\n\n\n\n\nDrupal Development using PhpStorm\n\n\nInstalling Coder Sniffer\n\n\n\n\nOnline\n\n\n\n\nhttp://git.drupal.org/project/yamlform.git 8.x-1.x\n\n\npareview.sh: Repeat review\n\n\n\n\nCommandline\n\n\n# Check Drupal coding standards\nphpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform\n\n# Check Drupal best practices\nphpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform\n\n\n\n\n\nRun tests\n\n\nManual testing using \nTest Script\n \n\n\nSimpleTest\n\n\nGUI (admin/config/development/testing)\n\n\nCommand-line (from site root)\n\n\n# Run all test included the yamlform.module \nphp core/scripts/run-tests.sh --url http://localhost/d8_dev --module yamlform\n\n# Run a single test class in the yamlform.module\nphp core/scripts/run-tests.sh --verbose --url http://localhost/d8_dev --class \"Drupal\\yamlform\\test\\YamlFormAccessTest\"\n\n\n\nPHPUnit tests\n\n\nPHPUnit tests needs to be run individual if this module is place in a \nmodules sub-directory (ie module/contrib or modules/sandbox).\n\n\n\n\n/core/phpunit.xml.dist only finds top-level contrib modules\n\n\n\n\nIf the above patch is applied or this module is in modules/yamlform. \n\n\nThis command will execute all PHPUnit tests for the YamlForm module\n\n\ncd core\nphp ../vendor/phpunit/phpunit/phpunit --group YamlFormUnit\n\n\n\nThe below commands can be used to execute each individual PHPUnit test.\n\n\ncd core\nexport SIMPLETEST_DB=mysql://drupal_d8_dev:drupal.@dm1n@localhost/drupal_d8_dev;\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormTidyTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormOptionsHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormArrayHelperTest.php     \nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/src/Tests/YamlFormEntityInputsValidationUnitTest.php\n\n\n\n\n\nGenerate and edit release notes\n\n\nGit Release Notes for Drush (https://www.drupal.org/project/grn)\n\n\ndrush release-notes 8.x-1.0-N 8.x-1.x\n\n\n\n\n\nTag a release\n\n\ngit tag 8.x-1.0-N\ngit push --tags\ngit push origin tag 8.x-1.0-N\n\n\n\n\n\nUpdate project page\n\n\nSteps for converting \ndocs/index.md\n to valida and supported HTML for \nthe YAML form module's Drupal.org project page.\n\n\n\n\nConvert Markdown to HTML\n\n\nTidy HTML\n\n\nNo indent\n\n\nNo wrap   \n\n\n\n\n\n\nManually cleanup\n\n\nRemove \nhtml\n tags.\n\n\nRemove 'Contents of this file'.\n\n\nUpdate example code and wrap in \npre\n tag.\n\n\n\n\n\n\nUpdate project page\n\n\nPreview \n\n\nSave\n\n\n\n\n\n\n\n\n\n\nCreate new release\n\n\n\n\nCreate Release\n\n\nAdminister releases\n\n\n\n\n\n\nDocumentation\n\n\nSetup GitHub pages\n\n\ngit clone https://github.com/jrockowitz/yamlform.git gh-pages;\ncd gh-pages;\ngit checkout gh-pages;\n\n\n\nBuild docs into /site directory.\n\n\nmkdocs build --clean\n\n\n\nPreview docs\n\n\nopen http://localhost/d8_dev/modules/sandbox/yamlform/site;\n\n\n\nDeploy to GitHub pages.\n\n\ncd gh-pages;\ngit rm *;\ncp -R ../site/* .;\ngit add --all; \ngit commit -am\"Deploying changes to GitHub\"; \ngit push --set-upstream origin gh-pages;\n\n\n\nOpen docs\n\n\nopen http://thebigbluehouse.com/yamlform", 
+            "title": "Deploying Releases"
         }, 
         {
-            "location": "/test/#setup_1", 
-            "text": "Enable YAML form translation test module (yamlform_translation_test.module)", 
-            "title": "Setup"
+            "location": "/releases/#convert-to-short-array-syntax", 
+            "text": "wget https://raw.githubusercontent.com/thomasbachem/php-short-array-syntax-converter/master/convert.php\nfind . -name \"*.install\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.module\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.php\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.inc\" -exec php \"convert.php\" -w \"{}\" \\;\nrm convert.php", 
+            "title": "Convert to short array syntax"
         }, 
         {
-            "location": "/test/#check-languages", 
-            "text": "Check that 'Spanish' is added to languages. (admin/config/regional/language)", 
-            "title": "Check languages"
+            "location": "/releases/#tidy-yaml-files", 
+            "text": "drush yamlform-tidy yamlform; \ndrush yamlform-tidy yamlform_test;\ndrush yamlform-tidy yamlform_translation_test;", 
+            "title": "Tidy YAML files"
         }, 
         {
-            "location": "/test/#check-yaml-form-settings-translation", 
-            "text": "Check 'Spanish' translation (admin/structure/yamlform/settings/translate/es/edit)", 
-            "title": "Check YAML form settings translation"
+            "location": "/releases/#inspect-code-phpstorm-coder", 
+            "text": "References   Drupal Development using PhpStorm  Installing Coder Sniffer   Online   http://git.drupal.org/project/yamlform.git 8.x-1.x  pareview.sh: Repeat review   Commandline  # Check Drupal coding standards\nphpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform\n\n# Check Drupal best practices\nphpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform", 
+            "title": "Inspect code (PHPStorm / Coder)"
         }, 
         {
-            "location": "/test/#check-contact-form-translation", 
-            "text": "Check 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)  Check 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)", 
-            "title": "Check 'Contact' form translation"
+            "location": "/releases/#run-tests", 
+            "text": "Manual testing using  Test Script    SimpleTest  GUI (admin/config/development/testing)  Command-line (from site root)  # Run all test included the yamlform.module \nphp core/scripts/run-tests.sh --url http://localhost/d8_dev --module yamlform\n\n# Run a single test class in the yamlform.module\nphp core/scripts/run-tests.sh --verbose --url http://localhost/d8_dev --class \"Drupal\\yamlform\\test\\YamlFormAccessTest\"  PHPUnit tests  PHPUnit tests needs to be run individual if this module is place in a \nmodules sub-directory (ie module/contrib or modules/sandbox).   /core/phpunit.xml.dist only finds top-level contrib modules   If the above patch is applied or this module is in modules/yamlform.   This command will execute all PHPUnit tests for the YamlForm module  cd core\nphp ../vendor/phpunit/phpunit/phpunit --group YamlFormUnit  The below commands can be used to execute each individual PHPUnit test.  cd core\nexport SIMPLETEST_DB=mysql://drupal_d8_dev:drupal.@dm1n@localhost/drupal_d8_dev;\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormTidyTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormOptionsHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormArrayHelperTest.php     \nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/src/Tests/YamlFormEntityInputsValidationUnitTest.php", 
+            "title": "Run tests"
         }, 
         {
-            "location": "/test/#check-that-the-translated-inputs-can-no-be-altered", 
-            "text": "Once a YAML form is translated only the Inputs (YAML) values be changed.       Goto 'Contact' translations \n  (admin/structure/yamlform/manage/contact/translate/)   Alter an element/property  Remove an element/property  Add an element/property         Goto 'Contact' Spanish translations \n  (admin/structure/yamlform/manage/contact/translate/es/edit)   Alter an element/property  Remove an element/property  Add an element/property", 
-            "title": "Check that the translated inputs can no be altered"
+            "location": "/releases/#generate-and-edit-release-notes", 
+            "text": "Git Release Notes for Drush (https://www.drupal.org/project/grn)  drush release-notes 8.x-1.0-N 8.x-1.x", 
+            "title": "Generate and edit release notes"
         }, 
         {
-            "location": "/test/#test-contact-form", 
-            "text": "Test 'Contact' form submission via Spanish\n  (es/yamlform/contact/test)", 
-            "title": "Test 'Contact' form"
+            "location": "/releases/#tag-a-release", 
+            "text": "git tag 8.x-1.0-N\ngit push --tags\ngit push origin tag 8.x-1.0-N", 
+            "title": "Tag a release"
+        }, 
+        {
+            "location": "/releases/#update-project-page", 
+            "text": "Steps for converting  docs/index.md  to valida and supported HTML for \nthe YAML form module's Drupal.org project page.   Convert Markdown to HTML  Tidy HTML  No indent  No wrap       Manually cleanup  Remove  html  tags.  Remove 'Contents of this file'.  Update example code and wrap in  pre  tag.    Update project page  Preview   Save", 
+            "title": "Update project page"
+        }, 
+        {
+            "location": "/releases/#create-new-release", 
+            "text": "Create Release  Administer releases", 
+            "title": "Create new release"
+        }, 
+        {
+            "location": "/releases/#documentation", 
+            "text": "Setup GitHub pages  git clone https://github.com/jrockowitz/yamlform.git gh-pages;\ncd gh-pages;\ngit checkout gh-pages;  Build docs into /site directory.  mkdocs build --clean  Preview docs  open http://localhost/d8_dev/modules/sandbox/yamlform/site;  Deploy to GitHub pages.  cd gh-pages;\ngit rm *;\ncp -R ../site/* .;\ngit add --all; \ngit commit -am\"Deploying changes to GitHub\"; \ngit push --set-upstream origin gh-pages;  Open docs  open http://thebigbluehouse.com/yamlform", 
+            "title": "Documentation"
         }
     ]
 }

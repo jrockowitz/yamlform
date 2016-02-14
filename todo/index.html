@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Roadmap - YAML form docs</title>
+  <title>Todo - YAML form docs</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Roadmap";
+    var mkdocs_page_name = "Todo";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -57,35 +57,28 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../todo/">Todo</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Todo</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#todo">Todo</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#tests">Tests</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#questions">Questions</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Roadmap</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#releases">Releases</a></li>
-                
-                    <li><a class="toctree-l4" href="#alpha-1">Alpha 1</a></li>
-                
-                    <li><a class="toctree-l4" href="#phase-2-after-stable-release">Phase 2 (after stable release)</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#what-webform-entityform-features-are-missing">What Webform &amp; EntityForm features are missing?</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#features-to-be-handled-via-yamlformhandler-plugin">Features to be handled via YamlFormHandler plugin</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../roadmap/">Roadmap</a>
         
     </li>
 <li>
@@ -155,7 +148,7 @@
     
       
     
-    <li>Roadmap</li>
+    <li>Todo</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -165,60 +158,54 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="releases">Releases</h1>
-<h2 id="alpha-1">Alpha 1</h2>
+                <h1 id="todo">Todo</h1>
 <ul>
-<li>Feature parity with Webform and EForm modules.</li>
+<li>Review caching strategy, including tags and contexts.</li>
 </ul>
-<h2 id="phase-2-after-stable-release">Phase 2 (after stable release)</h2>
+<h1 id="tests">Tests</h1>
 <ul>
-<li>HTML email handler</li>
-<li>Advanced Views integration</li>
-<li>Wizard</li>
-<li>Custom elements (via yamlform_elements or contrib modules)</li>
-<li>email_confirm</li>
-<li>credit_card</li>
-</ul>
-<h1 id="what-webform-entityform-features-are-missing">What Webform &amp; EntityForm features are missing?</h1>
+<li>Additional test coverage</li>
+<li>Improve test performance</li>
+<li>Implement more PHPUnit and KernelTestBase tests</li>
+<li>Input specific tests including Entity autocomplete, managed file, dates.</li>
+<li>
+<p>Add test method to element plugin</p>
 <ul>
-<li>Form settings<ul>
-<li>Paging</li>
-<li>Limit submission by IP and/or cookie.</li>
-<li>Confidential submissions. Anonymous submissions with no IP address.</li>
-<li>Resetting sid per form.</li>
+<li>Managed file</li>
+<li>Entity autocomplete</li>
 </ul>
 </li>
-<li>Results<ul>
-<li>Analysis of submitted data</li>
-<li>Submission sorting</li>
-</ul>
-</li>
-<li>Download<ul>
-<li>Excel support</li>
-<li>Last download</li>
-<li>Default download settings.</li>
-</ul>
-</li>
-<li>Email<ul>
-<li>HTML Mail</li>
-</ul>
-</li>
-<li>Settings<ul>
-<li>Set default date format</li>
-<li>Provide Anonymous Links</li>
-<li>Save session id with Submission</li>
-</ul>
-</li>
-</ul>
-<h1 id="features">Features</h1>
-<h1 id="features-to-be-handled-via-yamlformhandler-plugin">Features to be handled via YamlFormHandler plugin</h1>
+<li>
+<p>Missing Tests</p>
 <ul>
-<li>Email</li>
-<li>Advanced Throttling</li>
-<li>SMS</li>
-<li>Payment</li>
-<li>MailChimp</li>
-<li>REST API</li>
+<li>\Drupal\yamlform\Controller\YamlFormOptionsController::autocomplete</li>
+<li>src/Plugin/Field<ul>
+<li>\Drupal\yamlform\Plugin\Field\FieldFormatter\YamlFormEntityReferenceEntityFormatter</li>
+<li>\Drupal\yamlform\Plugin\Field\FieldType\YamlFormEntityReferenceItem</li>
+<li>\Drupal\yamlform\Plugin\Field\FieldWidget\EntityReferenceAutocompleteWidget</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="questions">Questions</h1>
+<ul>
+<li>
+<p>Should submitted values be casted to datatypes?<br />
+  For example, should number inputs be casted to integers.</p>
+</li>
+<li>
+<p>Should empty values be hidden by default?</p>
+</li>
+<li>
+<p>Should we support private file uploads?  </p>
+</li>
+<li>
+<p>How should handlers deal with their global settings?</p>
+</li>
+<li>
+<p>Is the YamlForm entity doing too much? </p>
+</li>
 </ul>
               
             </div>
@@ -227,10 +214,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../issues/" class="btn btn-neutral float-right" title="Known Issues"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../roadmap/" class="btn btn-neutral float-right" title="Roadmap"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../todo/" class="btn btn-neutral" title="Todo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -256,10 +243,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../todo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../issues/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../roadmap/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

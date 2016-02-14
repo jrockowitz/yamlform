@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Issues - YAML form docs</title>
+  <title>Known Issues - YAML form docs</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Issues";
+    var mkdocs_page_name = "Known Issues";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -51,41 +51,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
+        <a class="" href="..">Introduction</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../development/">Development</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Issues</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#issues">Issues</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#known-issues-affecting-the-yaml-form-module">Known Issues Affecting the YAML form module</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#forms-system-issues-for-drupal-core">Forms System Issues for Drupal core</a></li>
-                
-            
-            </ul>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../maintainers/">Maintainers</a>
+        <a class="" href="../todo/">Todo</a>
         
     </li>
 <li>
@@ -98,10 +71,50 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../test/">Test</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Known Issues</a>
+        
+            <ul>
+            
+            </ul>
         
     </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>For Developers and Maintainers</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../maintainers/">Maintainers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../test/">Test Script</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../releases/">Deploying Releases</a>
+        
+    </li>
+
+        
+    </ul>
 <li>
           
         </ul>
@@ -126,7 +139,7 @@
     
       
     
-    <li>Issues</li>
+    <li>Known Issues</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -136,38 +149,30 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="issues">Issues</h2>
-<h1 id="known-issues-affecting-the-yaml-form-module">Known Issues Affecting the YAML form module</h1>
-<ul>
-<li>
-<p><a href="https://www.drupal.org/node/1920902">Unable to tidy the bulk export of YamlForm and YamlFormOptions config files 
-  because Drupal's YAML utility is not a service.</a></p>
-</li>
-<li>
+                <p><a href="https://www.drupal.org/node/1920902">Unable to tidy the bulk export of YamlForm and YamlFormOptions config files 
+because Drupal's YAML utility is not a service.</a></p>
+<hr />
 <p><a href="https://www.drupal.org/node/2502195">Regression: Form throws LogicException when trying to render a form with 
-  object as an element's default value.</a>  </p>
+object as an element's default value.</a>  </p>
 <ul>
 <li>Impacts previewing entity autocomplete inputs.</li>
 </ul>
-</li>
-<li>
+<hr />
 <p><a href="https://www.drupal.org/node/2636066">Access control is not applied to config entity queries</a></p>
 <ul>
 <li>YAML forms that the current user can't access are not being hidden via the EntityQuery.</li>
 <li>See: Drupal\yamlform\YamlFormEntityListBuilder</li>
 </ul>
-</li>
-<li>
+<hr />
 <p>Config entity does NOT support <a href="https://www.drupal.org/node/2015613">Entity Validation API</a>.</p>
 <ul>
 <li>Validation constraints are only applicable to content entities and fields.</li>
 <li>In D8 all config entity validation is handled via 
-  \Drupal\Core\Form\FormInterface::validateForm</li>
+    \Drupal\Core\Form\FormInterface::validateForm</li>
 <li>Workaround: Create YamlFormEntityInputsValidator service.      </li>
 </ul>
-</li>
-</ul>
-<h1 id="forms-system-issues-for-drupal-core"><a href="https://www.drupal.org/project/issues/drupal?status=Open&amp;version=8.x&amp;component=forms+system">Forms System Issues for Drupal core</a></h1>
+<hr />
+<p><a href="https://www.drupal.org/project/issues/drupal?status=Open&amp;version=8.x&amp;component=forms+system">Forms System Issues for Drupal core</a></p>
 <ul>
 <li><a href="https://www.drupal.org/node/1593964">Allow FAPI usage of the datalist element</a></li>
 <li><a href="https://www.drupal.org/node/1886616">Multistep Form Wizard</a> </li>
@@ -183,7 +188,7 @@
         <a href="../maintainers/" class="btn btn-neutral float-right" title="Maintainers"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../development/" class="btn btn-neutral" title="Development"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../roadmap/" class="btn btn-neutral" title="Roadmap"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -209,7 +214,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../development/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../roadmap/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../maintainers/" style="color: #fcfcfc">Next &raquo;</a></span>
