@@ -1,0 +1,29 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Notes\n\n\nTodo\n\n\n\n\nReview caching strategy, including tags and contexts.\n\n\n\n\nTests\n\n\n\n\nAdditional test coverage\n\n\nImprove test performance\n\n\nImplement more PHPUnit and KernelTestBase tests\n\n\nInput specific tests including Entity autocomplete, managed file, dates.\n\n\n\n\nAdd test method to element plugin\n\n\n\n\nManaged file\n\n\nEntity autocomplete\n\n\n\n\n\n\n\n\nMissing Tests\n\n\n\n\n\\Drupal\\yamlform\\Controller\\YamlFormOptionsController::autocomplete\n\n\nsrc/Plugin/Field\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldFormatter\\YamlFormEntityReferenceEntityFormatter\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldType\\YamlFormEntityReferenceItem\n\n\n\\Drupal\\yamlform\\Plugin\\Field\\FieldWidget\\EntityReferenceAutocompleteWidget\n\n\n\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\n\n\nShould submitted values be casted to datatypes?\n\n  For example, should number inputs be casted to integers.\n\n\n\n\n\n\nShould empty values be hidden by default?\n\n\n\n\n\n\nShould we support private file uploads?  \n\n\n\n\n\n\nHow should handlers deal with their global settings?\n\n\n\n\n\n\nIs the YamlForm entity doing too much?", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#notes", 
+            "text": "", 
+            "title": "Notes"
+        }, 
+        {
+            "location": "/#todo", 
+            "text": "Review caching strategy, including tags and contexts.", 
+            "title": "Todo"
+        }, 
+        {
+            "location": "/#tests", 
+            "text": "Additional test coverage  Improve test performance  Implement more PHPUnit and KernelTestBase tests  Input specific tests including Entity autocomplete, managed file, dates.   Add test method to element plugin   Managed file  Entity autocomplete     Missing Tests   \\Drupal\\yamlform\\Controller\\YamlFormOptionsController::autocomplete  src/Plugin/Field  \\Drupal\\yamlform\\Plugin\\Field\\FieldFormatter\\YamlFormEntityReferenceEntityFormatter  \\Drupal\\yamlform\\Plugin\\Field\\FieldType\\YamlFormEntityReferenceItem  \\Drupal\\yamlform\\Plugin\\Field\\FieldWidget\\EntityReferenceAutocompleteWidget", 
+            "title": "Tests"
+        }, 
+        {
+            "location": "/#questions", 
+            "text": "Should submitted values be casted to datatypes? \n  For example, should number inputs be casted to integers.    Should empty values be hidden by default?    Should we support private file uploads?      How should handlers deal with their global settings?    Is the YamlForm entity doing too much?", 
+            "title": "Questions"
+        }
+    ]
+}
