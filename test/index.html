@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Test - YAML form docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Test";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> YAML form docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../development/">Development</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../issues/">Issues</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../maintainers/">Maintainers</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../roadmap/">Roadmap</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Test</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#test-script">Test Script</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#notes">Notes</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#setup">Setup</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#administration">Administration</a></li>
+                
+                    <li><a class="toctree-l4" href="#forms-adminstructureyamlform">Forms (admin/structure/yamlform)</a></li>
+                
+                    <li><a class="toctree-l4" href="#results">Results</a></li>
+                
+                    <li><a class="toctree-l4" href="#admin-settings-adminstructureyamlformsettings">Admin settings (admin/structure/yamlform/settings)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-options-adminstructureyamlformsettingsoptionsmanage">YAML form options (admin/structure/yamlform/settings/options/manage)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-elements-adminstructureyamlformsettingselements">YAML form elements (admin/structure/yamlform/settings/elements)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-handlers-adminstructureyamlformsettingshandlers">YAML form handlers (admin/structure/yamlform/settings/handlers)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#forms-adminstructureyamlform_1">Forms (admin/structure/yamlform)</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-new-yaml-form-adminstructureyamlformadd">Create new YAML form (admin/structure/yamlform/add)</a></li>
+                
+                    <li><a class="toctree-l4" href="#duplicate-existing-yaml-form-adminstructureyamlformmanagetemplate_registrationduplicate">Duplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)</a></li>
+                
+                    <li><a class="toctree-l4" href="#test-yaml-form-inputs-yamlformexample_inputstest">Test YAML form inputs (yamlform/example_inputs/test)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-yamlformcontact">YAML form (yamlform/contact)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-settings-adminstructureyamlformmanagecontactsettings">YAML form settings (admin/structure/yamlform/manage/contact/settings)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-access-adminstructureyamlformmanagecontactaccess">YAML form access (admin/structure/yamlform/manage/contact/access)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-handlers-adminstructureyamlformmanagecontacthandlers">YAML form handlers (admin/structure/yamlform/manage/contact/handlers)</a></li>
+                
+                    <li><a class="toctree-l4" href="#yaml-form-email-handlers-adminstructureyamlformmanagecontacthandlers">YAML form email handlers (admin/structure/yamlform/manage/contact/handlers)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#results_1">Results</a></li>
+                
+                    <li><a class="toctree-l4" href="#submissions-adminstructureyamlformmanagecontactresultssubmissions">Submissions (admin/structure/yamlform/manage/contact/results/submissions)</a></li>
+                
+                    <li><a class="toctree-l4" href="#table-adminstructureyamlformmanagecontactresultstable">Table (admin/structure/yamlform/manage/contact/results/table)</a></li>
+                
+                    <li><a class="toctree-l4" href="#export-adminstructureyamlformmanagecontactresultsexport">Export (admin/structure/yamlform/manage/contact/results/export)</a></li>
+                
+                    <li><a class="toctree-l4" href="#clear-adminstructureyamlformmanagecontactresultsclear">Clear (admin/structure/yamlform/manage/contact/results/clear)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#submission-adminstructureyamlformmanagecontactresultssubmissions">Submission (admin/structure/yamlform/manage/contact/results/submissions)</a></li>
+                
+                    <li><a class="toctree-l4" href="#view-tab">View tab</a></li>
+                
+                    <li><a class="toctree-l4" href="#edit-tab">Edit tab</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#inputs">Inputs</a></li>
+                
+                    <li><a class="toctree-l4" href="#closed-yamlformtest_form_closed">Closed (yamlform/test_form_closed)</a></li>
+                
+                    <li><a class="toctree-l4" href="#prepopulate-yamlformtest_form_prepopulate">Prepopulate (yamlform/test_form_prepopulate)</a></li>
+                
+                    <li><a class="toctree-l4" href="#submit-text-yamlformtest_form_submit_text">Submit text (yamlform/test_form_submit_text)</a></li>
+                
+                    <li><a class="toctree-l4" href="#preview-yamlformtest_preview">Preview (yamlform/test_preview)</a></li>
+                
+                    <li><a class="toctree-l4" href="#draft-yamlformtest_draft">Draft (yamlform/test_draft)</a></li>
+                
+                    <li><a class="toctree-l4" href="#confirmation">Confirmation</a></li>
+                
+                    <li><a class="toctree-l4" href="#limits-yamlformtest_limit">Limits (yamlform/test_limit)</a></li>
+                
+                    <li><a class="toctree-l4" href="#results-disabled-yamlformtest_results_disabled">Results Disabled (yamlform/test_results_disabled)</a></li>
+                
+                    <li><a class="toctree-l4" href="#private-access-yamlformprivate">Private access (yamlform/private)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#access-rules">Access Rules</a></li>
+                
+                    <li><a class="toctree-l4" href="#accountroles">Account/Roles</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-developer-role">Check 'developer' role</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-admin-role">Check 'admin' role</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-manager-role">Check 'manager' role</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-user-role">Check 'user' role</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#translation">Translation</a></li>
+                
+                    <li><a class="toctree-l4" href="#notes_1">Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#setup_1">Setup</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-languages">Check languages</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-yaml-form-settings-translation">Check YAML form settings translation</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-contact-form-translation">Check 'Contact' form translation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#check-that-the-translated-inputs-can-no-be-altered">Check that the translated inputs can no be altered</a></li>
+                
+                    <li><a class="toctree-l4" href="#test-contact-form">Test 'Contact' form</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">YAML form docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Test</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="test-script">Test Script</h2>
+<p>This is a step-by-step guide for manually testing and reviewing every feature,
+role/permission, and use case provided by the YAML form module.</p>
+<h1 id="notes">Notes</h1>
+<ul>
+<li>Contact form will be used for most examples.</li>
+<li>Incognito tab is the quickest way to test anonymous access to a form/feature.</li>
+</ul>
+<hr />
+<h1 id="installation">Installation</h1>
+<ul>
+<li>Update settings.php to allow the yamlform_test.module to be installed.<br />
+<code>$settings['extension_discovery_scan_tests'] = TRUE;</code></li>
+<li>Enable the YAML form and YAML form test module.</li>
+</ul>
+<hr />
+<h1 id="setup">Setup</h1>
+<p>See: development-tools.md for commands.</p>
+<ul>
+<li>Create test roles and users.</li>
+<li>Create test submissions.</li>
+</ul>
+<hr />
+<h1 id="administration">Administration</h1>
+<h2 id="forms-adminstructureyamlform">Forms (admin/structure/yamlform)</h2>
+<ul>
+<li>Review forms provided by the yamlform.module and yamlform_test.module</li>
+<li>Test filter<ul>
+<li>Filter a title, description, and/or inputs (which is not visible)</li>
+</ul>
+</li>
+<li>Test sorting</li>
+<li>Inputs validation<ul>
+<li>Required: Leave blank</li>
+<li>Valid YAML: Enter invalid YAML</li>
+<li>Is array: Enter simple string value</li>
+<li>Duplicate inputs name: Enter two inputs with the same names</li>
+<li>Ignore properties: Enter input with #tree, #submit, etc... properties.</li>
+</ul>
+</li>
+</ul>
+<h2 id="results">Results</h2>
+<h3 id="manage-adminstructureyamlformresultsmanage">Manage (admin/structure/yamlform/results/manage)</h3>
+<ul>
+<li>Review submissions</li>
+<li>Test filter<ul>
+<li>Filter by submission data (which is not visible)</li>
+</ul>
+</li>
+<li>Test sorting</li>
+</ul>
+<h3 id="purge-adminstructureyamlformresultspurge">Purge (admin/structure/yamlform/results/purge)</h3>
+<ul>
+<li>Test purging less than 1000 submissions without batch processing.</li>
+<li>Test purging more than 1000 submissions with batch processing.</li>
+</ul>
+<h2 id="admin-settings-adminstructureyamlformsettings">Admin settings (admin/structure/yamlform/settings)</h2>
+<ul>
+<li>Review default values</li>
+<li>Review labels and descriptions</li>
+<li>Test updating values</li>
+<li>Test optional token support</li>
+</ul>
+<h2 id="yaml-form-options-adminstructureyamlformsettingsoptionsmanage">YAML form options (admin/structure/yamlform/settings/options/manage)</h2>
+<ul>
+<li>Review default YAML form options</li>
+<li>Create, update, and delete YAML form options</li>
+</ul>
+<h2 id="yaml-form-elements-adminstructureyamlformsettingselements">YAML form elements (admin/structure/yamlform/settings/elements)</h2>
+<ul>
+<li>Review YAML form element titles and descriptions.</li>
+</ul>
+<h2 id="yaml-form-handlers-adminstructureyamlformsettingshandlers">YAML form handlers (admin/structure/yamlform/settings/handlers)</h2>
+<ul>
+<li>Review YAML form handler titles and descriptions.</li>
+</ul>
+<hr />
+<h1 id="forms-adminstructureyamlform_1">Forms (admin/structure/yamlform)</h1>
+<h2 id="create-new-yaml-form-adminstructureyamlformadd">Create new YAML form (admin/structure/yamlform/add)</h2>
+<ul>
+<li>Check default inputs</li>
+<li>Test duplicate link</li>
+<li>Message about previous submissions should be displayed</li>
+</ul>
+<h2 id="duplicate-existing-yaml-form-adminstructureyamlformmanagetemplate_registrationduplicate">Duplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)</h2>
+<ul>
+<li>Duplicate a 'Template: Registration' form.</li>
+<li>Confirm all inputs and settings are duplicated.</li>
+</ul>
+<h2 id="test-yaml-form-inputs-yamlformexample_inputstest">Test YAML form inputs (yamlform/example_inputs/test)</h2>
+<ul>
+<li>Test 'kitchen sink' list of supported inputs</li>
+<li>Verify each input collects and displays submitted data correctly</li>
+</ul>
+<h2 id="yaml-form-yamlformcontact">YAML form (yamlform/contact)</h2>
+<ul>
+<li>Check system path (yamlform/contact)</li>
+<li>Check submit alias (form/contact)</li>
+<li>Check confirmation alias (form/contact/confirmation)<ul>
+<li>This page is not used by the form which redirects to the homepage.</li>
+</ul>
+</li>
+</ul>
+<h2 id="yaml-form-settings-adminstructureyamlformmanagecontactsettings">YAML form settings (admin/structure/yamlform/manage/contact/settings)</h2>
+<ul>
+<li>Review form</li>
+<li>Review hide/show logic (ie #States API).</li>
+<li>Review default values</li>
+<li>Review help text</li>
+</ul>
+<h2 id="yaml-form-access-adminstructureyamlformmanagecontactaccess">YAML form access (admin/structure/yamlform/manage/contact/access)</h2>
+<h2 id="yaml-form-handlers-adminstructureyamlformmanagecontacthandlers">YAML form handlers (admin/structure/yamlform/manage/contact/handlers)</h2>
+<ul>
+<li>Test contact form handlers</li>
+<li>Create, update, and delete YAML form handler</li>
+<li>Check that cardinality is support<ul>
+<li>Email handler support multiple instances</li>
+<li>Null and Test handler only support a single instance</li>
+</ul>
+</li>
+<li>Test disabling a handler</li>
+</ul>
+<h2 id="yaml-form-email-handlers-adminstructureyamlformmanagecontacthandlers">YAML form email handlers (admin/structure/yamlform/manage/contact/handlers)</h2>
+<ul>
+<li>Test email handlers</li>
+<li>Test debug setting</li>
+</ul>
+<hr />
+<h1 id="results_1">Results</h1>
+<h2 id="submissions-adminstructureyamlformmanagecontactresultssubmissions">Submissions (admin/structure/yamlform/manage/contact/results/submissions)</h2>
+<ul>
+<li>Check submission columns</li>
+<li>Check sorting</li>
+<li>Test filter<ul>
+<li>Filter by submission data (which is not visible)</li>
+</ul>
+</li>
+</ul>
+<h2 id="table-adminstructureyamlformmanagecontactresultstable">Table (admin/structure/yamlform/manage/contact/results/table)</h2>
+<ul>
+<li>Check inputs columns (which are not sortable)</li>
+<li>Check 'Example: Inputs'<ul>
+<li>admin/structure/yamlform/manage/example_inputs/results/table</li>
+</ul>
+</li>
+</ul>
+<h2 id="export-adminstructureyamlformmanagecontactresultsexport">Export (admin/structure/yamlform/manage/contact/results/export)</h2>
+<ul>
+<li>Unchecking 'Download CSV' allows you to view the CVS as plain text.<ul>
+<li>'Download CSV' is only available when there is less than 1000 submissions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="clear-adminstructureyamlformmanagecontactresultsclear">Clear (admin/structure/yamlform/manage/contact/results/clear)</h2>
+<ul>
+<li>Test clearing submissions.</li>
+</ul>
+<h1 id="submission-adminstructureyamlformmanagecontactresultssubmissions">Submission (admin/structure/yamlform/manage/contact/results/submissions)</h1>
+<h2 id="view-tab">View tab</h2>
+<ul>
+<li>Test submission navigation</li>
+</ul>
+<h3 id="html">HTML</h3>
+<ul>
+<li>View submission as HTML</li>
+</ul>
+<h3 id="plain-text">Plain text</h3>
+<ul>
+<li>View submission as plain text</li>
+</ul>
+<h3 id="data-yaml">Data (YAML)</h3>
+<ul>
+<li>View submission as data (YAML)</li>
+</ul>
+<h2 id="edit-tab">Edit tab</h2>
+<ul>
+<li>Edit submission</li>
+<li>Simple confirmation message should always be displayed</li>
+</ul>
+<hr />
+<h1 id="features">Features</h1>
+<h2 id="inputs">Inputs</h2>
+<ul>
+<li>All inputs (yamlform/test_inputs)</li>
+<li>Date inputs (yamlform/test_inputs_dates)</li>
+<li>Entity autocomplete (yamlform/test_inputs_entity_autocomplete)<ul>
+<li>Preview is broken and throwing serialization error.</li>
+</ul>
+</li>
+<li>Text format (yamlform/test_inputs_text_format)</li>
+<li>Ignored properties (yamlform/test_inputs_ignored_properties)</li>
+</ul>
+<h2 id="closed-yamlformtest_form_closed">Closed (yamlform/test_form_closed)</h2>
+<ul>
+<li>Check that form is closed for anonymous user</li>
+<li>Check that form is available to admin user but displays are warning.</li>
+</ul>
+<h2 id="prepopulate-yamlformtest_form_prepopulate">Prepopulate (yamlform/test_form_prepopulate)</h2>
+<ul>
+<li>Check that name is prepopulated using query string variable.</li>
+</ul>
+<h2 id="submit-text-yamlformtest_form_submit_text">Submit text (yamlform/test_form_submit_text)</h2>
+<ul>
+<li>Check that submit text is customized.</li>
+</ul>
+<h2 id="preview-yamlformtest_preview">Preview (yamlform/test_preview)</h2>
+<ul>
+<li>Check custom preview and next submission buttons.</li>
+<li>Check custom preview message.</li>
+<li>Check optional and required preview.</li>
+</ul>
+<h2 id="draft-yamlformtest_draft">Draft (yamlform/test_draft)</h2>
+<ul>
+<li>Check saving and reloading draft</li>
+<li>Check autosave occurs with validation errors.</li>
+<li>Check autosave occurs when previewing.</li>
+</ul>
+<h2 id="confirmation">Confirmation</h2>
+<ul>
+<li>Inline (yamlform/test_confirmation_inline)</li>
+<li>Message (yamlform/test_confirmation_message)</li>
+<li>Page (yamlform/test_confirmation_page)</li>
+<li>URL (yamlform/test_confirmation_url)</li>
+</ul>
+<h2 id="limits-yamlformtest_limit">Limits (yamlform/test_limit)</h2>
+<ul>
+<li>Check only 1 submission is allowed for authenticated user.</li>
+<li>Check only 3 submission are allowed for all users.</li>
+<li>Check that admin can post new submission if their limit has no been reached.</li>
+</ul>
+<h2 id="results-disabled-yamlformtest_results_disabled">Results Disabled (yamlform/test_results_disabled)</h2>
+<ul>
+<li>Check that results can be disabled. (Applies to users)</li>
+</ul>
+<h2 id="private-access-yamlformprivate">Private access (yamlform/private)</h2>
+<ul>
+<li>Check that private input is only accessible to submission administrators.</li>
+</ul>
+<hr />
+<h1 id="access-rules">Access Rules</h1>
+<ul>
+<li>Create test roles and users. (See NOTES.txt)</li>
+</ul>
+<h2 id="accountroles">Account/Roles</h2>
+<ul>
+<li>developer: Administer YAML forms and YAML form submissions.</li>
+<li>admin: Administer YAML form submissions.</li>
+<li>manager: Used to test managing a YAML form's submissions.</li>
+<li>user: Used to test accessing and managing one's own submission.</li>
+</ul>
+<h2 id="check-developer-role">Check 'developer' role</h2>
+<ul>
+<li>Already done via the above tests.</li>
+</ul>
+<h2 id="check-admin-role">Check 'admin' role</h2>
+<ul>
+<li>Login as admin/admin.</li>
+<li>Check that all forms and submission are accessible (admin/structure/yamlform)</li>
+<li>Confirm that managing form is disabled. This includes..<ul>
+<li>Add form (admin/structure/yamlform/add)</li>
+<li>Edit form (admin/structure/yamlform/manage/contact)</li>
+<li>Delete form (admin/structure/yamlform/manage/contact/delete)</li>
+</ul>
+</li>
+<li>Purging all submissions is also disabled. (admin/structure/yamlform/results/purge)<ul>
+<li>Only developer can purge all submissions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="check-manager-role">Check 'manager' role</h2>
+<ul>
+<li>As an 'admin' or 'developer' grant the 'manager' role access and manager 
+  any submissions to a form.
+  (admin/structure/yamlform/manage/contact/access)<ul>
+<li>Assigning the 'manager' role to some permissions and the 'manager' user
+  to other permissions, this will test both role and user based access rules.</li>
+</ul>
+</li>
+<li>Login as manager/manager.</li>
+<li>Check CRUD operations on 'Contact' form (admin/structure/yamlform/manage/contact)</li>
+<li>Check navigating between all submissions.</li>
+</ul>
+<h2 id="check-user-role">Check 'user' role</h2>
+<ul>
+<li>As an 'admin' or 'developer' grant the 'user' role access and manager own 
+  submission to a form.
+  (admin/structure/yamlform/manage/contact/access)<ul>
+<li>Assigning the 'user' role to some permissions and the 'user' user
+  to other permissions, this will test both role and user based access rules.</li>
+</ul>
+</li>
+<li>Login as user/user.</li>
+<li>Note: You might see "You have already submitted this form. View your previous submissions."
+  because devel generated 'Contact' form submissions are randomly assigned to 
+  existing users.</li>
+<li>Create a 'Contact' form submission (yamlform/contact)</li>
+<li>Check CRUD operations on 'Contact' form (yamlform/contact/submissions)</li>
+<li>Check navigating between own submissions.</li>
+</ul>
+<hr />
+<h1 id="translation">Translation</h1>
+<h2 id="notes_1">Notes</h2>
+<ul>
+<li>Use <a href="https://translate.google.com/">Google Translate</a> to create test 
+  translations</li>
+<li><a href="http://hojtsy.hu/multilingual-drupal8">Multilingual Drupal 8</a></li>
+<li><a href="http://hojtsy.hu/blog/2014-may-26/drupal-8-multilingual-tidbits-16-configuration-translation-development">Drupal 8 multilingual tidbits 16: configuration translation development</a></li>
+</ul>
+<h2 id="setup_1">Setup</h2>
+<ul>
+<li>Enable YAML form translation test module (yamlform_translation_test.module)</li>
+</ul>
+<h2 id="check-languages">Check languages</h2>
+<ul>
+<li>Check that 'Spanish' is added to languages. (admin/config/regional/language)</li>
+</ul>
+<h2 id="check-yaml-form-settings-translation">Check YAML form settings translation</h2>
+<ul>
+<li>Check 'Spanish' translation (admin/structure/yamlform/settings/translate/es/edit) </li>
+</ul>
+<h2 id="check-contact-form-translation">Check 'Contact' form translation</h2>
+<ul>
+<li>Check 'Contact' translations 
+  (admin/structure/yamlform/manage/contact/translate/)</li>
+<li>Check 'Contact' Spanish translations 
+  (admin/structure/yamlform/manage/contact/translate/es/edit)</li>
+</ul>
+<h1 id="check-that-the-translated-inputs-can-no-be-altered">Check that the translated inputs can no be altered</h1>
+<p><em>Once a YAML form is translated only the Inputs (YAML) values be changed.</em>  </p>
+<ul>
+<li>
+<p>Goto 'Contact' translations 
+  (admin/structure/yamlform/manage/contact/translate/)</p>
+<ul>
+<li>Alter an element/property</li>
+<li>Remove an element/property</li>
+<li>Add an element/property    </li>
+</ul>
+</li>
+<li>
+<p>Goto 'Contact' Spanish translations 
+  (admin/structure/yamlform/manage/contact/translate/es/edit)</p>
+<ul>
+<li>Alter an element/property</li>
+<li>Remove an element/property</li>
+<li>Add an element/property    </li>
+</ul>
+</li>
+</ul>
+<h2 id="test-contact-form">Test 'Contact' form</h2>
+<ul>
+<li>Test 'Contact' form submission via Spanish
+  (es/yamlform/contact/test)</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../roadmap/" class="btn btn-neutral" title="Roadmap"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../roadmap/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

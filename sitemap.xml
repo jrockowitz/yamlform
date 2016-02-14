@@ -9,4 +9,44 @@
     </url>
     
 
+    
+    <url>
+     <loc>None/development/</loc>
+     <lastmod>2016-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/issues/</loc>
+     <lastmod>2016-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/maintainers/</loc>
+     <lastmod>2016-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/roadmap/</loc>
+     <lastmod>2016-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/test/</loc>
+     <lastmod>2016-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
