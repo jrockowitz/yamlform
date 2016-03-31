@@ -256,54 +256,39 @@
             "title": "Translation"
         }, 
         {
-            "location": "/releases/", 
-            "text": "Steps for creating a new release of YAML form module\n\n\n\n\n\n\nConvert to short array syntax\n\n\nTidy YAML files\n\n\nInspect code (PHPStorm / Coder review)\n\n\nRun tests\n\n\nGenerate and edit release notes\n\n\nTag a release\n\n\nUpdate project page\n\n\nCreate new release\n\n\nDocumentation\n\n\n\n\n\n\nConvert to short array syntax\n\n\nwget https://raw.githubusercontent.com/thomasbachem/php-short-array-syntax-converter/master/convert.php\nfind . -name \"*.install\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.module\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.php\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.inc\" -exec php \"convert.php\" -w \"{}\" \\;\nrm convert.php\n\n\n\n\n\nTidy YAML files\n\n\ndrush yamlform-tidy yamlform; \ndrush yamlform-tidy yamlform_test;\ndrush yamlform-tidy yamlform_translation_test;\n\n\n\n\n\nInspect code (PHPStorm / Coder)\n\n\nReferences\n\n\n\n\nDrupal Development using PhpStorm\n\n\nInstalling Coder Sniffer\n\n\n\n\nOnline\n\n\n\n\nhttp://git.drupal.org/project/yamlform.git 8.x-1.x\n\n\npareview.sh: Repeat review\n\n\n\n\nCommandline\n\n\n# Check Drupal coding standards\nphpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform\n\n# Check Drupal best practices\nphpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform\n\n\n\n\n\nRun tests\n\n\nManual testing using \nTest Script\n \n\n\nSimpleTest\n\n\nGUI (admin/config/development/testing)\n\n\nCommand-line (from site root)\n\n\n# Run all test included the yamlform.module \nphp core/scripts/run-tests.sh --url http://localhost/d8_dev --module yamlform\n\n# Run a single test class in the yamlform.module\nphp core/scripts/run-tests.sh --verbose --url http://localhost/d8_dev --class \"Drupal\\yamlform\\test\\YamlFormAccessTest\"\n\n\n\nPHPUnit tests\n\n\nPHPUnit tests needs to be run individual if this module is place in a \nmodules sub-directory (ie module/contrib or modules/sandbox).\n\n\n\n\n/core/phpunit.xml.dist only finds top-level contrib modules\n\n\n\n\nIf the above patch is applied or this module is in modules/yamlform. \n\n\nThis command will execute all PHPUnit tests for the YamlForm module\n\n\ncd core\nphp ../vendor/phpunit/phpunit/phpunit --group YamlFormUnit\n\n\n\nThe below commands can be used to execute each individual PHPUnit test.\n\n\ncd core\nexport SIMPLETEST_DB=mysql://drupal_d8_dev:drupal.@dm1n@localhost/drupal_d8_dev;\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormTidyTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormOptionsHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormArrayHelperTest.php     \nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/src/Tests/YamlFormEntityInputsValidationUnitTest.php\n\n\n\n\n\nGenerate and edit release notes\n\n\nGit Release Notes for Drush (https://www.drupal.org/project/grn)\n\n\ndrush release-notes 8.x-1.0-N 8.x-1.x\n\n\n\n\n\nTag a release\n\n\ngit tag 8.x-1.0-N\ngit push --tags\ngit push origin tag 8.x-1.0-N\n\n\n\n\n\nUpdate project page\n\n\nSteps for converting \ndocs/index.md\n to valida and supported HTML for \nthe YAML form module's Drupal.org project page.\n\n\n\n\nConvert Markdown to HTML\n\n\nTidy HTML\n\n\nNo indent\n\n\nNo wrap   \n\n\n\n\n\n\nManually cleanup\n\n\nRemove \nhtml\n tags.\n\n\nRemove 'Contents of this file'.\n\n\nUpdate example code and wrap in \npre\n tag.\n\n\n\n\n\n\nUpdate project page\n\n\nPreview \n\n\nSave\n\n\n\n\n\n\n\n\n\n\nCreate new release\n\n\n\n\nCreate Release\n\n\nAdminister releases\n\n\n\n\n\n\nDocumentation\n\n\nSetup GitHub pages\n\n\ngit clone https://github.com/jrockowitz/yamlform.git gh-pages;\ncd gh-pages;\ngit checkout gh-pages;\n\n\n\nBuild docs into /site directory.\n\n\nmkdocs build --clean\n\n\n\nPreview docs\n\n\nopen http://localhost/d8_dev/modules/sandbox/yamlform/site;\n\n\n\nDeploy to GitHub pages.\n\n\ncd gh-pages;\ngit rm *;\ncp -R ../site/* .;\ngit add --all; \ngit commit -am\"Deploying changes to GitHub\"; \ngit push --set-upstream origin gh-pages;\n\n\n\nOpen docs\n\n\nopen http://thebigbluehouse.com/yamlform", 
-            "title": "Deploying Releases"
-        }, 
-        {
-            "location": "/releases/#convert-to-short-array-syntax", 
-            "text": "wget https://raw.githubusercontent.com/thomasbachem/php-short-array-syntax-converter/master/convert.php\nfind . -name \"*.install\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.module\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.php\" -exec php \"convert.php\" -w \"{}\" \\;\nfind . -name \"*.inc\" -exec php \"convert.php\" -w \"{}\" \\;\nrm convert.php", 
-            "title": "Convert to short array syntax"
-        }, 
-        {
-            "location": "/releases/#tidy-yaml-files", 
-            "text": "drush yamlform-tidy yamlform; \ndrush yamlform-tidy yamlform_test;\ndrush yamlform-tidy yamlform_translation_test;", 
-            "title": "Tidy YAML files"
-        }, 
-        {
-            "location": "/releases/#inspect-code-phpstorm-coder", 
-            "text": "References   Drupal Development using PhpStorm  Installing Coder Sniffer   Online   http://git.drupal.org/project/yamlform.git 8.x-1.x  pareview.sh: Repeat review   Commandline  # Check Drupal coding standards\nphpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform\n\n# Check Drupal best practices\nphpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt,md modules/sandbox/yamlform", 
-            "title": "Inspect code (PHPStorm / Coder)"
-        }, 
-        {
-            "location": "/releases/#run-tests", 
-            "text": "Manual testing using  Test Script    SimpleTest  GUI (admin/config/development/testing)  Command-line (from site root)  # Run all test included the yamlform.module \nphp core/scripts/run-tests.sh --url http://localhost/d8_dev --module yamlform\n\n# Run a single test class in the yamlform.module\nphp core/scripts/run-tests.sh --verbose --url http://localhost/d8_dev --class \"Drupal\\yamlform\\test\\YamlFormAccessTest\"  PHPUnit tests  PHPUnit tests needs to be run individual if this module is place in a \nmodules sub-directory (ie module/contrib or modules/sandbox).   /core/phpunit.xml.dist only finds top-level contrib modules   If the above patch is applied or this module is in modules/yamlform.   This command will execute all PHPUnit tests for the YamlForm module  cd core\nphp ../vendor/phpunit/phpunit/phpunit --group YamlFormUnit  The below commands can be used to execute each individual PHPUnit test.  cd core\nexport SIMPLETEST_DB=mysql://drupal_d8_dev:drupal.@dm1n@localhost/drupal_d8_dev;\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormTidyTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormOptionsHelperTest.php\nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/tests/src/Unit/YamlFormArrayHelperTest.php     \nphp ../vendor/phpunit/phpunit/phpunit ../modules/sandbox/yamlform/src/Tests/YamlFormEntityInputsValidationUnitTest.php", 
-            "title": "Run tests"
-        }, 
-        {
-            "location": "/releases/#generate-and-edit-release-notes", 
-            "text": "Git Release Notes for Drush (https://www.drupal.org/project/grn)  drush release-notes 8.x-1.0-N 8.x-1.x", 
-            "title": "Generate and edit release notes"
-        }, 
-        {
-            "location": "/releases/#tag-a-release", 
-            "text": "git tag 8.x-1.0-N\ngit push --tags\ngit push origin tag 8.x-1.0-N", 
-            "title": "Tag a release"
-        }, 
-        {
-            "location": "/releases/#update-project-page", 
-            "text": "Steps for converting  docs/index.md  to valida and supported HTML for \nthe YAML form module's Drupal.org project page.   Convert Markdown to HTML  Tidy HTML  No indent  No wrap       Manually cleanup  Remove  html  tags.  Remove 'Contents of this file'.  Update example code and wrap in  pre  tag.    Update project page  Preview   Save", 
-            "title": "Update project page"
-        }, 
-        {
-            "location": "/releases/#create-new-release", 
-            "text": "Create Release  Administer releases", 
-            "title": "Create new release"
-        }, 
-        {
-            "location": "/releases/#documentation", 
-            "text": "Setup GitHub pages  git clone https://github.com/jrockowitz/yamlform.git gh-pages;\ncd gh-pages;\ngit checkout gh-pages;  Build docs into /site directory.  mkdocs build --clean  Preview docs  open http://localhost/d8_dev/modules/sandbox/yamlform/site;  Deploy to GitHub pages.  cd gh-pages;\ngit rm *;\ncp -R ../site/* .;\ngit add --all; \ngit commit -am\"Deploying changes to GitHub\"; \ngit push --set-upstream origin gh-pages;  Open docs  open http://thebigbluehouse.com/yamlform", 
+            "location": "/docs/", 
+            "text": "Steps for building and deploying documentation\n\n\n\n\nBuild docs\n\n\nPreview docs\n\n\nClone GitHub pages (One-time)\n\n\nDeploy to GitHub pages\n\n\nOpen docs\n\n\n\n\n1. Build docs\n\n\n# Build docs into /site directory\nmkdocs build --clean\n\n\n\n2. Preview docs\n\n\nopen http://localhost/d8_dev/modules/sandbox/yamlform/site;\n\n\n\n3. Clone GitHub pages (One-time)\n\n\ngit clone https://github.com/jrockowitz/yamlform.git gh-pages;\ncd gh-pages;\ngit checkout gh-pages;\n\n\n\n4. Deploy to GitHub pages\n\n\ncd gh-pages;\ngit rm *;\ncp -R ../site/* .;\ngit add --all; \ngit commit -am\"Deploying changes to GitHub\"; \ngit push --set-upstream origin gh-pages;\n\n\n\n5. Open docs\n\n\nopen http://thebigbluehouse.com/yamlform", 
             "title": "Documentation"
+        }, 
+        {
+            "location": "/docs/#steps-for-building-and-deploying-documentation", 
+            "text": "Build docs  Preview docs  Clone GitHub pages (One-time)  Deploy to GitHub pages  Open docs", 
+            "title": "Steps for building and deploying documentation"
+        }, 
+        {
+            "location": "/docs/#1-build-docs", 
+            "text": "# Build docs into /site directory\nmkdocs build --clean", 
+            "title": "1. Build docs"
+        }, 
+        {
+            "location": "/docs/#2-preview-docs", 
+            "text": "open http://localhost/d8_dev/modules/sandbox/yamlform/site;", 
+            "title": "2. Preview docs"
+        }, 
+        {
+            "location": "/docs/#3-clone-github-pages-one-time", 
+            "text": "git clone https://github.com/jrockowitz/yamlform.git gh-pages;\ncd gh-pages;\ngit checkout gh-pages;", 
+            "title": "3. Clone GitHub pages (One-time)"
+        }, 
+        {
+            "location": "/docs/#4-deploy-to-github-pages", 
+            "text": "cd gh-pages;\ngit rm *;\ncp -R ../site/* .;\ngit add --all; \ngit commit -am\"Deploying changes to GitHub\"; \ngit push --set-upstream origin gh-pages;", 
+            "title": "4. Deploy to GitHub pages"
+        }, 
+        {
+            "location": "/docs/#5-open-docs", 
+            "text": "open http://thebigbluehouse.com/yamlform", 
+            "title": "5. Open docs"
         }
     ]
 }
