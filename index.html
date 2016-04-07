@@ -82,10 +82,16 @@
                 <li class="toctree-l3"><a href="#installation">Installation</a></li>
                 
             
+                <li class="toctree-l3"><a href="#releases">Releases</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#extending">Extending</a></li>
                 
             
                 <li class="toctree-l3"><a href="#notes">Notes</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#troubleshooting">Troubleshooting</a></li>
                 
             
                 <li class="toctree-l3"><a href="#referencesrelated-projects">References/Related Projects</a></li>
@@ -198,25 +204,15 @@
 <li><a href="#features">Features</a></li>
 <li><a href="#security">Security</a></li>
 <li><a href="#installation">Installation</a> </li>
+<li><a href="#releases">Releases</a>  </li>
 <li><a href="#extending">Extending</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#notes">Notes</a></li>
 <li><a href="#references-related-projects">References/Related Projects</a></li>
 </ul>
 <h2 id="about-this-module">About this Module</h2>
-<p>The YAML form module enables the creation of forms and questionnaires.</p>
-<p>This module should be considered one of the following... </p>
-<ol>
-<li>
-<p><strong>A lightweight, fast, developer centric, FAPI based form builder and submission 
-   manager for Drupal 8.</strong> </p>
-</li>
-<li>
-<p>A temporary solution while other form builders are ported to Drupal 8. </p>
-</li>
-<li>
-<p>A proof of concept/prototype for a Drupal 8 form builder.</p>
-</li>
-</ol>
+<p>The YAML form module is a lightweight, fast, <strong>developer centri</strong>, 
+FAPI based form builder and submission  manager for Drupal 8.</p>
 <p>The primary use case for this module is...</p>
 <ul>
 <li>Admin duplicates and customizes an existing form/template.</li>
@@ -250,7 +246,8 @@
   <a href="https://www.google.com/sheets/about/">Google Sheets</a>
   or <a href="https://products.office.com/en-us/excel">Excel</a>.</li>
 <li>The alternatives: 
-  <a href="https://www.drupal.org/documentation/modules/contact">Contact</a>,
+  <a href="https://www.drupal.org/documentation/modules/contact">Contact</a> with 
+  <a href="https://www.drupal.org/documentation/modules/contact_storage">Contact Storage</a>,
   <a href="https://www.drupal.org/project/eform">Eform</a>,
   <a href="https://www.drupal.org/project/webform">Webform</a>,
   <a href="https://www.google.com/forms/about/">Google Forms</a>,
@@ -320,9 +317,9 @@ message:
 <li>Support for every
   <a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8">form element</a>
   included in Drupal 8 core. This includes file uploads and entity references.</li>
-<li>Conditional logic using FAPI States API</li>
+<li>Conditional logic using <a href="https://api.drupal.org/api/examples/form_example%21form_example_states.inc/function/form_example_states_form/7">FAPI States API</a></li>
 <li>Private inputs/elements</li>
-<li>Support for form functionality and elements provide by contrib modules 
+<li>Support for form functionality and elements provided by contrib modules 
   including
   <a href="https://www.drupal.org/project/honeypot">Honeypot</a>,
   <a href="https://www.drupal.org/project/mollom">Mollom</a>,
@@ -335,9 +332,9 @@ message:
 <ul>
 <li>View submissions as HTML, plain text, and YAML</li>
 <li>Export results as a CSV to Google Sheets or MS Excel</li>
-<li>Fine grain access control by roles and users</li>
+<li>Fine grain access control by roles and user</li>
 <li>Users can view previous submissions</li>
-<li>Limit total number of submissions or user specific submissions.</li>
+<li>Limit total number of submissions or user specific submissions</li>
 <li>Drush support for exporting CVS and purging submissions</li>
 </ul>
 <p><strong>Emails/Handlers</strong></p>
@@ -345,13 +342,15 @@ message:
 <li>Extensible form submission handler plugin  </li>
 <li>Handles email notifications and confirmations </li>
 <li>Preview and resend emails</li>
+<li>HTML email (does not require any additional modules)</li>
+<li>File attachments (requires <a href="https://www.drupal.org/project/mailsystem">Mail System</a>, only <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> has been tested) </li>
 </ul>
 <p><strong>Integration</strong></p>
 <ul>
 <li>Block integration</li>
 <li>Node integration</li>
 <li>Token support</li>
-<li>YAML editor via <a href="https://codemirror.net/">CodeMirror</a></li>
+<li>YAML and HTML source editor using <a href="https://codemirror.net/">CodeMirror</a></li>
 </ul>
 <p><strong>Internationalization</strong></p>
 <ul>
@@ -361,10 +360,6 @@ message:
 <p><strong>Development</strong></p>
 <ul>
 <li>Generate test submissions using devel generate and customizable test datasets</li>
-</ul>
-<p><strong>Still Under Development</strong></p>
-<ul>
-<li>Validation of inputs YAML and render array.</li>
 </ul>
 <h2 id="security">Security</h2>
 <p>This module allows developers to have full access to Drupal's Render API,
@@ -382,9 +377,9 @@ and secure role.</em></p>
 <ol>
 <li>Copy/upload the yamlform.module to the modules directory of your Drupal
    installation.</li>
-<li>(optional) Install CodeMirror 5.11+ in /libraries/codemirror directory.
+<li>(optional) Install CodeMirror 5.13.2+ in /libraries/codemirror directory.
    If CodeMirror is not installed, it will be loaded from
-   <a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.11.0/">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.11.0/</a>.</li>
+   <a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.2/">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.2/</a>.</li>
 <li>Enable the 'YAML form' module in 'Extend'. (/admin/modules)</li>
 <li>Setup permissions. (/admin/people/permissions#module-yamlform)</li>
 <li>Begin building a new YAML form or duplicate an existing one.
@@ -404,14 +399,30 @@ and secure role.</em></p>
 <li>Token are supported and actively used by the YAML form module. 
   It is recommended that the<br />
 <a href="https://www.drupal.org/project/token">Token module</a> is installed.</li>
+<li>For email file attachment support please install and configure the 
+  <a href="https://www.drupal.org/project/mailsystem">Mail System</a> and 
+  <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> modules.</li>
 </ul>
+<h2 id="releases">Releases</h2>
+<p>Even though, the YAML form module is still under active development with
+regular <a href="https://www.drupal.org/documentation/version-info/alpha-beta-rc">alpha releases</a>
+all YAML form configuration and submission data will be maintained and updated 
+between releases.  <strong>APIs can and will be changing</strong> while this module moves to 
+a beta release and finally a release candidate. The beta release of the 
+YAML form module (hopefully before or after DrupalCon New Orleans) 
+will be tied to a feature freeze.</p>
+<p>Simply put it, if you install and use the YAML form module AS-IS, out of the box, 
+you <em>should</em> be okay.  Once you start extending YAML forms with plugins, alter 
+hooks, and template overrides, you will need to read the release notes and 
+assume <em>things will be changing</em>.</p>
 <h2 id="extending">Extending</h2>
 <p>YAML form will use <a href="https://www.drupal.org/developing/api/8/plugins">Drupal 8's plugin API</a>
 to manage all customizations.  </p>
-<p>Each YamlFormHandler plugin should live in a dedicated module and handler
-namespace.  For example, if a developer wanted to setup MailChimp integration,
-they would create the YAML form MailChimp module (yamlform_mailchimp.module)
-which would contain the YamlFormMailChimpHandler.</p>
+<p>The YamlFormHandler plugin allows developers to extend a YAML form's inputs 
+and submission handling. Each YamlFormHandler plugin should live in a dedicated 
+module and handler namespace. For example, if a developer wanted to setup 
+MailChimp integration, they would create the YAML form MailChimp module 
+(yamlform_mailchimp.module) which would contain the YamlFormMailChimpHandler.</p>
 <p>This approach/pattern will allow any popular YamlFormHandler plugins
 (that include tests) to be easily contributed back to the main YAML form module.</p>
 <p>The goal is to allow YAML forms to be extended without creating any new hooks 
@@ -428,11 +439,29 @@ submission handling.    </p>
 <li>Once there has been a form submission, existing input names should never be
   deleted, they can be be hidden (via <code>'#access': false</code>).</li>
 </ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p><strong>How to debug issues with YAML form inputs/elements?</strong></p>
+<ul>
+<li>A YAML form's input data is just a <a href="https://www.drupal.org/node/37775">Form API(FAPI)</a>
+  <a href="https://www.drupal.org/developing/api/8/render/arrays">render array</a>. </li>
+<li>Some issues can be fixed by reading the API documentation associated 
+  with a given <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21FormElement.php/class/FormElement/8">form element</a>.</li>
+</ul>
+<p><strong>How to get help fixing issues with the YAML form module?</strong></p>
+<ul>
+<li>Review the YAML form module's <a href="https://www.drupal.org/project/issues/yamlform">issue queue</a> 
+  for similar issues.</li>
+<li>If you need to create a new issue, <strong>please</strong> create and export an example of 
+  the broken YAML form configuration. <br />
+<em>This will helps guarantee that your issue is reproducible.</em>  </li>
+<li>Please also read <a href="https://www.drupal.org/issue-queue/how-to">How to create a good issue</a></li>
+</ul>
 <h2 id="referencesrelated-projects">References/Related Projects</h2>
 <ul>
 <li><a href="http://www.yaml.org/start.html">YAML</a></li>
 <li><a href="https://www.drupal.org/node/2083353">Comparison of Form Building Modules</a></li>
 <li><a href="https://www.drupal.org/documentation/modules/contact">Contact</a> <ul>
+<li><a href="https://www.drupal.org/documentation/modules/contact_storage">Contact Storage</a></li>
 <li><a href="https://www.drupal.org/node/2582955">Contact module 8.1 and beyond roadmap</a></li>
 <li><a href="https://www.ostraining.com/blog/drupal/drupal-8-contact-forms/">Goodbye Webform? Contact Forms Are In the Drupal 8 Core</a></li>
 </ul>
@@ -495,5 +524,5 @@ submission handling.    </p>
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-03-31 17:39:01.769642
+Build Date UTC : 2016-04-07 20:25:50.486958
 -->

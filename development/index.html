@@ -97,6 +97,14 @@
             
                 <li class="toctree-l3"><a href="#commands">Commands</a></li>
                 
+                    <li><a class="toctree-l4" href="#update-composer-libraries">Update composer libraries</a></li>
+                
+                    <li><a class="toctree-l4" href="#apply-patch">Apply patch</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-patch">Create patch</a></li>
+                
+                    <li><a class="toctree-l4" href="#delete-feature-branch">Delete feature branch</a></li>
+                
                     <li><a class="toctree-l4" href="#reinstall-yaml-form-module">Reinstall YAML form module.</a></li>
                 
                     <li><a class="toctree-l4" href="#install-extra-modules">Install extra modules.</a></li>
@@ -174,6 +182,23 @@
             <div class="section">
               
                 <h1 id="commands">Commands</h1>
+<h2 id="update-composer-libraries"><a href="https://www.drupal.org/project/composer_manager">Update composer libraries</a></h2>
+<pre><code>composer drupal-update
+</code></pre>
+<h2 id="apply-patch"><a href="https://www.drupal.org/node/1399218">Apply patch</a></h2>
+<pre><code>curl https://www.drupal.org/files/[patch-name].patch | git apply -
+</code></pre>
+<h2 id="create-patch"><a href="https://www.drupal.org/node/707484">Create patch</a></h2>
+<pre><code># Diff for uncommitted changes.
+git diff &gt; [project_name]-[short-description]-[issue-number]-[comment-number]-[drupal-version].patch
+
+# Diff comparing feature branch to 8.x-1.x branch 
+git diff 8.x-1.x..feature_branch &gt; [project_name]-[short-description]-[issue-number]-[comment-number]-[drupal-version].patch
+</code></pre>
+<h2 id="delete-feature-branch">Delete feature branch</h2>
+<pre><code> git branch -d feature_branch 
+ git push origin :feature_branch
+</code></pre>
 <h2 id="reinstall-yaml-form-module">Reinstall YAML form module.</h2>
 <pre><code>drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; drush en -y yamlform; drush en -y yamlform_test;
 
