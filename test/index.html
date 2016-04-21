@@ -117,6 +117,9 @@
                 <li class="toctree-l3"><a href="#forms">Forms</a></li>
                 
             
+                <li class="toctree-l3"><a href="#third-party-settings">Third Party Settings</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#results">Results</a></li>
                 
             
@@ -203,7 +206,7 @@ role/permission, and use case provided by the YAML form module.</p>
 </ul>
 <hr />
 <h1 id="administration">Administration</h1>
-<p><strong>Forms (admin/structure/yamlform)</strong></p>
+<p><strong>Forms (/admin/structure/yamlform)</strong></p>
 <ul>
 <li>Review forms provided by the yamlform.module and yamlform_test.module</li>
 <li>Test filter<ul>
@@ -221,7 +224,7 @@ role/permission, and use case provided by the YAML form module.</p>
 </li>
 </ul>
 <p><strong>Results</strong> </p>
-<p>Manage (admin/structure/yamlform/results/manage)</p>
+<p>Manage (/admin/structure/yamlform/results/manage)</p>
 <ul>
 <li>Review submissions</li>
 <li>Test filter<ul>
@@ -230,69 +233,74 @@ role/permission, and use case provided by the YAML form module.</p>
 </li>
 <li>Test sorting</li>
 </ul>
-<p>Purge (admin/structure/yamlform/results/purge)</p>
+<p>Purge (/admin/structure/yamlform/results/purge)</p>
 <ul>
 <li>Test purging less than 1000 submissions without batch processing.</li>
 <li>Test purging more than 1000 submissions with batch processing.</li>
 </ul>
-<p>Admin settings (admin/structure/yamlform/settings)</p>
+<p>Admin settings (/admin/structure/yamlform/settings)</p>
 <ul>
 <li>Review default values</li>
 <li>Review labels and descriptions</li>
 <li>Test updating values</li>
 <li>Test optional token support</li>
 </ul>
-<p><strong>YAML form options (admin/structure/yamlform/settings/options/manage)</strong></p>
+<p><strong>YAML form options (/admin/structure/yamlform/settings/options/manage)</strong></p>
 <ul>
 <li>Review default YAML form options</li>
 <li>Create, update, and delete YAML form options</li>
 </ul>
-<p><strong>YAML form elements (admin/structure/yamlform/settings/elements)</strong></p>
+<p><strong>YAML form elements (/admin/structure/yamlform/settings/elements)</strong></p>
 <ul>
 <li>Review YAML form element titles and descriptions.</li>
 </ul>
-<p><strong>YAML form handlers (admin/structure/yamlform/settings/handlers)</strong></p>
+<p><strong>YAML form handlers (/admin/structure/yamlform/settings/handlers)</strong></p>
 <ul>
 <li>Review YAML form handler titles and descriptions.</li>
 </ul>
 <hr />
 <h1 id="forms">Forms</h1>
-<p><strong>(admin/structure/yamlform)</strong></p>
-<p><strong>Create new YAML form (admin/structure/yamlform/add)</strong></p>
+<p><strong>(/admin/structure/yamlform)</strong></p>
+<p><strong>Create new YAML form (/admin/structure/yamlform/add)</strong></p>
 <ul>
 <li>Check default inputs</li>
 <li>Test duplicate link</li>
 <li>Message about previous submissions should be displayed</li>
 </ul>
-<p><strong>Duplicate existing YAML form (admin/structure/yamlform/manage/template_registration/duplicate)</strong></p>
+<p><strong>Duplicate existing YAML form (/admin/structure/yamlform/manage/template_registration/duplicate)</strong></p>
 <ul>
 <li>Duplicate a 'Template: Registration' form.</li>
 <li>Confirm all inputs and settings are duplicated.</li>
 </ul>
-<p><strong>Test YAML form inputs (yamlform/example_inputs/test)</strong></p>
+<p><strong>Test YAML form inputs (/yamlform/example_inputs/test)</strong></p>
 <ul>
 <li>Test 'kitchen sink' list of supported inputs</li>
 <li>Verify each input collects and displays submitted data correctly</li>
 </ul>
-<p><strong>YAML form (yamlform/contact)</strong></p>
+<p><strong>Test YAML form inputs with custom inputs (/yamlform/example_inputs_formats/test)</strong></p>
 <ul>
-<li>Check system path (yamlform/contact)</li>
-<li>Check submit alias (form/contact)</li>
-<li>Check confirmation alias (form/contact/confirmation)<ul>
+<li>Test inputs have customized formats</li>
+<li>Verify HTML and text display for submitted data</li>
+</ul>
+<p><strong>YAML form (/yamlform/contact)</strong></p>
+<ul>
+<li>Check system path (/yamlform/contact)</li>
+<li>Check submit alias (/form/contact)</li>
+<li>Check confirmation alias (/form/contact/confirmation)<ul>
 <li>This page is not used by the form which redirects to the homepage.</li>
 </ul>
 </li>
 </ul>
-<p><strong>YAML form settings (admin/structure/yamlform/manage/contact/settings)</strong></p>
+<p><strong>YAML form settings (/admin/structure/yamlform/manage/contact/settings)</strong></p>
 <ul>
 <li>Review form</li>
 <li>Review hide/show logic (ie #States API).</li>
 <li>Review default values</li>
 <li>Review help text</li>
 </ul>
-<p><strong>YAML form access (admin/structure/yamlform/manage/contact/access)</strong></p>
+<p><strong>YAML form access (/admin/structure/yamlform/manage/contact/access)</strong></p>
 <p>See: Access Rules </p>
-<p><strong>YAML form handlers (admin/structure/yamlform/manage/contact/handlers)</strong></p>
+<p><strong>YAML form handlers (/admin/structure/yamlform/manage/contact/handlers)</strong></p>
 <ul>
 <li>Test contact form handlers</li>
 <li>Create, update, and delete YAML form handler</li>
@@ -303,14 +311,30 @@ role/permission, and use case provided by the YAML form module.</p>
 </li>
 <li>Test disabling a handler</li>
 </ul>
-<p><strong>YAML form email handlers (admin/structure/yamlform/manage/contact/handlers)</strong></p>
+<p><strong>YAML form email handlers (/admin/structure/yamlform/manage/contact/handlers)</strong></p>
 <ul>
 <li>Test email handlers</li>
 <li>Test debug setting</li>
 </ul>
 <hr />
+<h1 id="third-party-settings">Third Party Settings</h1>
+<p><strong>YAML form global third party settings</strong> (/admin/structure/yamlform/manage/contact/third-party)</p>
+<ul>
+<li>Check no modules installed message</li>
+<li>Enable yamlform_test_third_party_settings.module</li>
+<li>Add global message</li>
+<li>Check global message is display on Contact form (/yamlform/contact)</li>
+</ul>
+<p><strong>YAML form specific third party settings</strong> (/admin/structure/yamlform/manage/contact/third-party)</p>
+<ul>
+<li>Check no modules installed message</li>
+<li>Enable yamlform_test_third_party_settings.module</li>
+<li>Add message</li>
+<li>Check form specific message is display on Contact form (/yamlform/contact)</li>
+</ul>
+<hr />
 <h1 id="results">Results</h1>
-<p><strong>Submissions (admin/structure/yamlform/manage/contact/results/submissions)</strong></p>
+<p><strong>Submissions (/admin/structure/yamlform/manage/contact/results/submissions)</strong></p>
 <ul>
 <li>Check submission columns</li>
 <li>Check sorting</li>
@@ -319,26 +343,31 @@ role/permission, and use case provided by the YAML form module.</p>
 </ul>
 </li>
 </ul>
-<p><strong>Table (admin/structure/yamlform/manage/contact/results/table)</strong></p>
+<p><strong>Table (/admin/structure/yamlform/manage/contact/results/table)</strong></p>
 <ul>
 <li>Check inputs columns (which are not sortable)</li>
 <li>Check 'Example: Inputs'<ul>
-<li>admin/structure/yamlform/manage/example_inputs/results/table</li>
+<li>/admin/structure/yamlform/manage/example_inputs/results/table</li>
 </ul>
 </li>
 </ul>
-<p><strong>Export (admin/structure/yamlform/manage/contact/results/export)</strong></p>
+<p><strong>Download (/admin/structure/yamlform/manage/contact/results/download)</strong></p>
 <ul>
-<li>Unchecking 'Download CSV' allows you to view the CVS as plain text.<ul>
+<li>Unchecking 'Download CSV' allows you to view the CSV as plain text.<ul>
 <li>'Download CSV' is only available when there is less than 1000 submissions.</li>
 </ul>
 </li>
+<li>Check generating CSV using batch processing<ul>
+<li>Set batch limit to 1. (/admin/structure/yamlform/settings)</li>
+<li>Download CSV (/admin/structure/yamlform/manage/contact/results/download)</li>
 </ul>
-<p><strong>Clear (admin/structure/yamlform/manage/contact/results/clear)</strong></p>
+</li>
+</ul>
+<p><strong>Clear (/admin/structure/yamlform/manage/contact/results/clear)</strong></p>
 <ul>
 <li>Test clearing submissions.</li>
 </ul>
-<p><strong>Submission (admin/structure/yamlform/manage/contact/results/submissions)</strong></p>
+<p><strong>Submission (/admin/structure/yamlform/manage/contact/results/submissions)</strong></p>
 <p>View tab</p>
 <ul>
 <li>Test submission navigation</li>
@@ -364,35 +393,35 @@ role/permission, and use case provided by the YAML form module.</p>
 <h1 id="features">Features</h1>
 <p><strong>Inputs</strong></p>
 <ul>
-<li>All inputs (yamlform/test_inputs)</li>
-<li>Date inputs (yamlform/test_inputs_dates)</li>
-<li>Entity autocomplete (yamlform/test_inputs_entity_autocomplete)<ul>
+<li>All inputs (/yamlform/test_inputs)</li>
+<li>Date inputs (/yamlform/test_inputs_dates)</li>
+<li>Entity autocomplete (/yamlform/test_inputs_entity_autocomplete)<ul>
 <li>Preview is broken and throwing serialization error.</li>
 </ul>
 </li>
-<li>Text format (yamlform/test_inputs_text_format)</li>
-<li>Ignored properties (yamlform/test_inputs_ignored_properties)</li>
+<li>Text format (/yamlform/test_inputs_text_format)</li>
+<li>Ignored properties (/yamlform/test_inputs_ignored_properties)</li>
 </ul>
-<p><strong>Closed (yamlform/test_form_closed)</strong></p>
+<p><strong>Closed (/yamlform/test_form_closed)</strong></p>
 <ul>
 <li>Check that form is closed for anonymous user</li>
 <li>Check that form is available to admin user but displays are warning.</li>
 </ul>
-<p><strong>Prepopulate (yamlform/test_form_prepopulate)</strong></p>
+<p><strong>Prepopulate (/yamlform/test_form_prepopulate)</strong></p>
 <ul>
 <li>Check that name is prepopulated using query string variable.</li>
 </ul>
-<p><strong>Submit text (yamlform/test_form_submit_text)</strong></p>
+<p><strong>Submit text (/yamlform/test_form_submit_text)</strong></p>
 <ul>
 <li>Check that submit text is customized.</li>
 </ul>
-<p><strong>Preview (yamlform/test_preview)</strong></p>
+<p><strong>Preview (/yamlform/test_preview)</strong></p>
 <ul>
 <li>Check custom preview and next submission buttons.</li>
 <li>Check custom preview message.</li>
 <li>Check optional and required preview.</li>
 </ul>
-<p><strong>Draft (yamlform/test_draft)</strong></p>
+<p><strong>Draft (/yamlform/test_draft)</strong></p>
 <ul>
 <li>Check saving and reloading draft</li>
 <li>Check autosave occurs with validation errors.</li>
@@ -400,22 +429,22 @@ role/permission, and use case provided by the YAML form module.</p>
 </ul>
 <p><strong>Confirmation</strong></p>
 <ul>
-<li>Inline (yamlform/test_confirmation_inline)</li>
-<li>Message (yamlform/test_confirmation_message)</li>
-<li>Page (yamlform/test_confirmation_page)</li>
-<li>URL (yamlform/test_confirmation_url)</li>
+<li>Inline (/yamlform/test_confirmation_inline)</li>
+<li>Message (/yamlform/test_confirmation_message)</li>
+<li>Page (/yamlform/test_confirmation_page)</li>
+<li>URL (/yamlform/test_confirmation_url)</li>
 </ul>
-<p><strong>Limits (yamlform/test_limit)</strong></p>
+<p><strong>Limits (/yamlform/test_limit)</strong></p>
 <ul>
 <li>Check only 1 submission is allowed for authenticated user.</li>
 <li>Check only 3 submission are allowed for all users.</li>
 <li>Check that admin can post new submission if their limit has no been reached.</li>
 </ul>
-<p><strong>Results Disabled (yamlform/test_results_disabled)</strong></p>
+<p><strong>Results Disabled (/yamlform/test_results_disabled)</strong></p>
 <ul>
 <li>Check that results can be disabled. (Applies to users)</li>
 </ul>
-<p><strong>Private access (yamlform/private)</strong></p>
+<p><strong>Private access (/yamlform/private)</strong></p>
 <ul>
 <li>Check that private input is only accessible to submission administrators.</li>
 </ul>
@@ -438,14 +467,14 @@ role/permission, and use case provided by the YAML form module.</p>
 <p><strong>Check 'admin' role</strong></p>
 <ul>
 <li>Login as admin/admin.</li>
-<li>Check that all forms and submission are accessible (admin/structure/yamlform)</li>
+<li>Check that all forms and submission are accessible (/admin/structure/yamlform)</li>
 <li>Confirm that managing form is disabled. This includes..<ul>
-<li>Add form (admin/structure/yamlform/add)</li>
-<li>Edit form (admin/structure/yamlform/manage/contact)</li>
-<li>Delete form (admin/structure/yamlform/manage/contact/delete)</li>
+<li>Add form (/admin/structure/yamlform/add)</li>
+<li>Edit form (/admin/structure/yamlform/manage/contact)</li>
+<li>Delete form (/admin/structure/yamlform/manage/contact/delete)</li>
 </ul>
 </li>
-<li>Purging all submissions is also disabled. (admin/structure/yamlform/results/purge)<ul>
+<li>Purging all submissions is also disabled. (/admin/structure/yamlform/results/purge)<ul>
 <li>Only developer can purge all submissions.</li>
 </ul>
 </li>
@@ -454,20 +483,20 @@ role/permission, and use case provided by the YAML form module.</p>
 <ul>
 <li>As an 'admin' or 'developer' grant the 'manager' role access and manager 
   any submissions to a form.
-  (admin/structure/yamlform/manage/contact/access)<ul>
+  (/admin/structure/yamlform/manage/contact/access)<ul>
 <li>Assigning the 'manager' role to some permissions and the 'manager' user
   to other permissions, this will test both role and user based access rules.</li>
 </ul>
 </li>
 <li>Login as manager/manager.</li>
-<li>Check CRUD operations on 'Contact' form (admin/structure/yamlform/manage/contact)</li>
+<li>Check CRUD operations on 'Contact' form (/admin/structure/yamlform/manage/contact)</li>
 <li>Check navigating between all submissions.</li>
 </ul>
 <p><strong>Check 'user' role</strong></p>
 <ul>
 <li>As an 'admin' or 'developer' grant the 'user' role access and manager own 
   submission to a form.
-  (admin/structure/yamlform/manage/contact/access)<ul>
+  (/admin/structure/yamlform/manage/contact/access)<ul>
 <li>Assigning the 'user' role to some permissions and the 'user' user
   to other permissions, this will test both role and user based access rules.</li>
 </ul>
@@ -476,8 +505,8 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>Note: You might see "You have already submitted this form. View your previous submissions."
   because devel generated 'Contact' form submissions are randomly assigned to 
   existing users.</li>
-<li>Create a 'Contact' form submission (yamlform/contact)</li>
-<li>Check CRUD operations on 'Contact' form (yamlform/contact/submissions)</li>
+<li>Create a 'Contact' form submission (/yamlform/contact)</li>
+<li>Check CRUD operations on 'Contact' form (/yamlform/contact/submissions)</li>
 <li>Check navigating between own submissions.</li>
 </ul>
 <hr />
@@ -491,29 +520,29 @@ role/permission, and use case provided by the YAML form module.</p>
 </ul>
 <p><strong>Setup</strong></p>
 <ul>
-<li>Enable YAML form translation test module (yamlform_translation_test.module)</li>
+<li>Enable YAML form translation test module (/admin/extend)</li>
 </ul>
 <p><strong>Check languages</strong></p>
 <ul>
-<li>Check that 'Spanish' is added to languages. (admin/config/regional/language)</li>
+<li>Check that 'Spanish' is added to languages. (/admin/config/regional/language)</li>
 </ul>
 <p><strong>Check YAML form settings translation</strong></p>
 <ul>
-<li>Check 'Spanish' translation (admin/structure/yamlform/settings/translate/es/edit) </li>
+<li>Check 'Spanish' translation (/admin/structure/yamlform/settings/translate/es/edit) </li>
 </ul>
 <p><strong>Check 'Contact' form translation</strong></p>
 <ul>
 <li>Check 'Contact' translations 
-  (admin/structure/yamlform/manage/contact/translate/)</li>
+  (/admin/structure/yamlform/manage/contact/translate/)</li>
 <li>Check 'Contact' Spanish translations 
-  (admin/structure/yamlform/manage/contact/translate/es/edit)</li>
+  (/admin/structure/yamlform/manage/contact/translate/es/edit)</li>
 </ul>
 <p><strong>Check that the translated inputs can no be altered</strong> </p>
 <p><em>Once a YAML form is translated only the Inputs (YAML) values be changed.</em>  </p>
 <ul>
 <li>
 <p>Goto 'Contact' translations 
-  (admin/structure/yamlform/manage/contact/translate/)</p>
+  (/admin/structure/yamlform/manage/contact/translate/)</p>
 <ul>
 <li>Alter an element/property</li>
 <li>Remove an element/property</li>
@@ -522,7 +551,7 @@ role/permission, and use case provided by the YAML form module.</p>
 </li>
 <li>
 <p>Goto 'Contact' Spanish translations 
-  (admin/structure/yamlform/manage/contact/translate/es/edit)</p>
+  (/admin/structure/yamlform/manage/contact/translate/es/edit)</p>
 <ul>
 <li>Alter an element/property</li>
 <li>Remove an element/property</li>
@@ -533,7 +562,7 @@ role/permission, and use case provided by the YAML form module.</p>
 <p><strong>Test 'Contact' form</strong> </p>
 <ul>
 <li>Test 'Contact' form submission via Spanish
-  (es/yamlform/contact/test)</li>
+  (/es/yamlform/contact/test)</li>
 </ul>
               
             </div>

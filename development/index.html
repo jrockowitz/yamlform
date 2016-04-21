@@ -101,11 +101,19 @@
                 
                     <li><a class="toctree-l4" href="#apply-patch">Apply patch</a></li>
                 
-                    <li><a class="toctree-l4" href="#create-patch">Create patch</a></li>
+                    <li><a class="toctree-l4" href="#revert-patch">Revert patch</a></li>
                 
-                    <li><a class="toctree-l4" href="#delete-feature-branch">Delete feature branch</a></li>
+                    <li><a class="toctree-l4" href="#create-and-manage-patches">Create and manage patches</a></li>
+                
+                    <li><a class="toctree-l4" href="#ignoring-patches-and-gitignore">Ignoring patches (and .gitignore)</a></li>
+                
+                    <li><a class="toctree-l4" href="#delete-issue-branch">Delete issue branch</a></li>
+                
+                    <li><a class="toctree-l4" href="#cheatsheet">Cheatsheet</a></li>
                 
                     <li><a class="toctree-l4" href="#reinstall-yaml-form-module">Reinstall YAML form module.</a></li>
+                
+                    <li><a class="toctree-l4" href="#reinstall-yaml-form-test-module">Reinstall YAML form test module.</a></li>
                 
                     <li><a class="toctree-l4" href="#install-extra-modules">Install extra modules.</a></li>
                 
@@ -116,6 +124,8 @@
                     <li><a class="toctree-l4" href="#test-update-hooks">Test update hooks</a></li>
                 
                     <li><a class="toctree-l4" href="#access-developer-information">Access developer information</a></li>
+                
+                    <li><a class="toctree-l4" href="#update-composer-packages">Update composer packages</a></li>
                 
                     <li><a class="toctree-l4" href="#reinstall">Reinstall</a></li>
                 
@@ -188,24 +198,57 @@
 <h2 id="apply-patch"><a href="https://www.drupal.org/node/1399218">Apply patch</a></h2>
 <pre><code>curl https://www.drupal.org/files/[patch-name].patch | git apply -
 </code></pre>
-<h2 id="create-patch"><a href="https://www.drupal.org/node/707484">Create patch</a></h2>
-<pre><code># Diff for uncommitted changes.
-git diff &gt; [project_name]-[short-description]-[issue-number]-[comment-number]-[drupal-version].patch
-
-# Diff comparing feature branch to 8.x-1.x branch 
-git diff 8.x-1.x..feature_branch &gt; [project_name]-[short-description]-[issue-number]-[comment-number]-[drupal-version].patch
+<h2 id="revert-patch"><a href="https://www.drupal.org/patch/reverse">Revert patch</a></h2>
+<pre><code>curl https://www.drupal.org/files/[patch-name].patch | git apply -R -
 </code></pre>
-<h2 id="delete-feature-branch">Delete feature branch</h2>
-<pre><code> git branch -d feature_branch 
- git push origin :feature_branch
+<h2 id="create-and-manage-patches"><a href="https://www.drupal.org/node/707484">Create and manage patches</a></h2>
+<pre><code># Create and checkout issue branch
+git checkout -b [issue-number]-[issue-description]
+
+# Push issue branch to D.O. (optional)
+git push -u origin [issue-number]-[issue-description]
+
+# Create patch by comparing (current) issue branch with  8.x-1.x branch 
+git diff 8.x-1.x &gt; [project_name]-[issue-description]-[issue-number]-[comment-number]-[drupal-version].patch
+</code></pre>
+<h2 id="ignoring-patches-and-gitignore">Ignoring patches (and .gitignore)</h2>
+<pre><code>cat &gt;&gt; .gitignore &lt;&lt;'EOF'
+.gitignore
+*.patch
+EOF
+</code></pre>
+<h2 id="delete-issue-branch">Delete issue branch</h2>
+<pre><code> # Delete local issue branch.
+ git branch -d [issue-number]-[issue-description]
+
+ # Delete remote issue branch.
+ git push origin :[issue-number]-[issue-description]
+</code></pre>
+<h2 id="cheatsheet">Cheatsheet</h2>
+<pre><code># Create branch
+git checkout -b [issue-number]-[issue-description]
+git push -u origin [issue-number]-[issue-description]
+
+# Create patch
+git diff 8.x-1.x &gt; [project_name]-[issue-description]-[issue-number]-00.patch
+
+# Delete branch
+git branch -d [issue-number]-[issue-description]
+git push origin :[issue-number]-[issue-description]
 </code></pre>
 <h2 id="reinstall-yaml-form-module">Reinstall YAML form module.</h2>
-<pre><code>drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; drush en -y yamlform; drush en -y yamlform_test;
+<pre><code>drush yamlform-purge --all -y; drush pmu -y yamlform_test yamlform_test_third_party_settings; drush pmu -y  yamlform; drush en -y yamlform; drush en -y yamlform_test;
 
 drush php-eval 'module_load_include('install', 'yamlform'); yamlform_uninstall();'
 drush cron;
-drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y  yamlform; 
+drush yamlform-purge --all -y; drush pmu -y yamlform_test yamlform_test_third_party_settings; drush pmu -y  yamlform; 
 drush en -y yamlform; drush en -y yamlform_test;
+
+# Optional.
+drush en -y yamlform_test_third_party_settings;
+</code></pre>
+<h2 id="reinstall-yaml-form-test-module">Reinstall YAML form test module.</h2>
+<pre><code>drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush en -y yamlform_test;
 </code></pre>
 <h2 id="install-extra-modules">Install extra modules.</h2>
 <pre><code>drush en -y yamlform captcha honeypot select_or_other;
@@ -240,6 +283,9 @@ drush yamlform-generate example_inputs
 <h2 id="access-developer-information">Access developer information</h2>
 <pre><code>drush role-add-perm anonymous 'access devel information'
 drush role-add-perm authenticated 'access devel information'
+</code></pre>
+<h2 id="update-composer-packages">Update composer packages</h2>
+<pre><code>composer drupal-update
 </code></pre>
 <h2 id="reinstall">Reinstall</h2>
 <pre><code>drush -y site-install\

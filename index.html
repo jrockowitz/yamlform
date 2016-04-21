@@ -250,7 +250,9 @@ FAPI based form builder and submission  manager for Drupal 8.</p>
   <a href="https://www.drupal.org/documentation/modules/contact_storage">Contact Storage</a>,
   <a href="https://www.drupal.org/project/eform">Eform</a>,
   <a href="https://www.drupal.org/project/webform">Webform</a>,
+  <a href="https://form.io/">Form.io</a>,
   <a href="https://www.google.com/forms/about/">Google Forms</a>,
+  <a href="https://www.surveymonkey.com">SurveyMonky</a>
   <a href="https://www.drupal.org/project/webform">Webform.com</a>,
   <a href="http://www.wufoo.com/">Wufoo</a>,
   <a href="https://www.google.com/search?q=Form+builders">etc...</a></li>
@@ -318,7 +320,12 @@ message:
   <a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8">form element</a>
   included in Drupal 8 core. This includes file uploads and entity references.</li>
 <li>Conditional logic using <a href="https://api.drupal.org/api/examples/form_example%21form_example_states.inc/function/form_example_states_form/7">FAPI States API</a></li>
+<li>Input masks (using <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>)</li>
 <li>Private inputs/elements</li>
+<li>Define optional display format for individual inputs. <ul>
+<li>For example, checkboxes can display as comma delimited value or a bullet list.</li>
+</ul>
+</li>
 <li>Support for form functionality and elements provided by contrib modules 
   including
   <a href="https://www.drupal.org/project/honeypot">Honeypot</a>,
@@ -331,7 +338,7 @@ message:
 <p><strong>Submissions/Results</strong></p>
 <ul>
 <li>View submissions as HTML, plain text, and YAML</li>
-<li>Export results as a CSV to Google Sheets or MS Excel</li>
+<li>Download results as a CSV to Google Sheets or MS Excel</li>
 <li>Fine grain access control by roles and user</li>
 <li>Users can view previous submissions</li>
 <li>Limit total number of submissions or user specific submissions</li>
@@ -344,6 +351,11 @@ message:
 <li>Preview and resend emails</li>
 <li>HTML email (does not require any additional modules)</li>
 <li>File attachments (requires <a href="https://www.drupal.org/project/mailsystem">Mail System</a>, only <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> has been tested) </li>
+</ul>
+<p><strong>Third Party Settings</strong></p>
+<ul>
+<li>Allows contrib modules to define additional settings and behaviors that can be 
+  applied to all YAML forms or just one specific YAML form.</li>
 </ul>
 <p><strong>Integration</strong></p>
 <ul>
@@ -377,9 +389,11 @@ and secure role.</em></p>
 <ol>
 <li>Copy/upload the yamlform.module to the modules directory of your Drupal
    installation.</li>
-<li>(optional) Install CodeMirror 5.13.2+ in /libraries/codemirror directory.
-   If CodeMirror is not installed, it will be loaded from
-   <a href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.2/">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.2/</a>.</li>
+<li>(optional) Install <a href="http://codemirror.net/">CodeMirror</a> and 
+    <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>
+    using <a href="https://www.drupal.org/project/composer_manager">Composer Manager</a>.
+   If CodeMirror and/or jquery.inputmask is not installed, they will be loaded 
+   from <a href="https://cdnjs.com/">https://cdnjs.com/</a>.</li>
 <li>Enable the 'YAML form' module in 'Extend'. (/admin/modules)</li>
 <li>Setup permissions. (/admin/people/permissions#module-yamlform)</li>
 <li>Begin building a new YAML form or duplicate an existing one.
@@ -396,7 +410,7 @@ and secure role.</em></p>
 </ol>
 <p>Notes</p>
 <ul>
-<li>Token are supported and actively used by the YAML form module. 
+<li>Tokens are supported and actively used by the YAML form module. 
   It is recommended that the<br />
 <a href="https://www.drupal.org/project/token">Token module</a> is installed.</li>
 <li>For email file attachment support please install and configure the 
@@ -416,8 +430,10 @@ you <em>should</em> be okay.  Once you start extending YAML forms with plugins, 
 hooks, and template overrides, you will need to read the release notes and 
 assume <em>things will be changing</em>.</p>
 <h2 id="extending">Extending</h2>
-<p>YAML form will use <a href="https://www.drupal.org/developing/api/8/plugins">Drupal 8's plugin API</a>
-to manage all customizations.  </p>
+<p>YAML form provides a YamlFormHandler <a href="https://www.drupal.org/developing/api/8/plugins">plugin</a>
+as well as support for third party settings and alter hooks for contrib modules
+to extend and enhance a YAML form.</p>
+<p><strong>YamlFormHandler plugin</strong></p>
 <p>The YamlFormHandler plugin allows developers to extend a YAML form's inputs 
 and submission handling. Each YamlFormHandler plugin should live in a dedicated 
 module and handler namespace. For example, if a developer wanted to setup 
@@ -425,9 +441,11 @@ MailChimp integration, they would create the YAML form MailChimp module
 (yamlform_mailchimp.module) which would contain the YamlFormMailChimpHandler.</p>
 <p>This approach/pattern will allow any popular YamlFormHandler plugins
 (that include tests) to be easily contributed back to the main YAML form module.</p>
-<p>The goal is to allow YAML forms to be extended without creating any new hooks 
-and solely use the YamlFormHandler plugin for customizing form building and 
-submission handling.    </p>
+<p><strong>Third Party Settings</strong></p>
+<p>The YAML form module allows contrib modules to also set third party settings
+for all YAML forms and/or one specific YAML form.  </p>
+<p>See the yamlform_test_third_party_settings.module for an example of how a
+contrib can use third party settings to extend and enhance a YAML form.</p>
 <h2 id="notes">Notes</h2>
 <ul>
 <li>Input names will be used to store data.</li>
@@ -454,7 +472,9 @@ submission handling.    </p>
 <li>If you need to create a new issue, <strong>please</strong> create and export an example of 
   the broken YAML form configuration. <br />
 <em>This will helps guarantee that your issue is reproducible.</em>  </li>
-<li>Please also read <a href="https://www.drupal.org/issue-queue/how-to">How to create a good issue</a></li>
+<li>Please also read <a href="https://www.drupal.org/issue-queue/how-to">How to create a good issue</a>
+  and use the <a href="https://www.drupal.org/node/1155816">Issue Summary Template</a>
+  when creating new issues.</li>
 </ul>
 <h2 id="referencesrelated-projects">References/Related Projects</h2>
 <ul>
@@ -524,5 +544,5 @@ submission handling.    </p>
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-04-07 20:27:22.281963
+Build Date UTC : 2016-04-21 19:40:10.266850
 -->
