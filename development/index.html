@@ -109,11 +109,13 @@
                 
                     <li><a class="toctree-l4" href="#delete-issue-branch">Delete issue branch</a></li>
                 
-                    <li><a class="toctree-l4" href="#cheatsheet">Cheatsheet</a></li>
+                    <li><a class="toctree-l4" href="#gitflow-cheatsheet">GitFlow Cheatsheet</a></li>
                 
                     <li><a class="toctree-l4" href="#reinstall-yaml-form-module">Reinstall YAML form module.</a></li>
                 
                     <li><a class="toctree-l4" href="#reinstall-yaml-form-test-module">Reinstall YAML form test module.</a></li>
+                
+                    <li><a class="toctree-l4" href="#update-yaml-form-configuration-using-features-module">Update YAML form configuration using Features module</a></li>
                 
                     <li><a class="toctree-l4" href="#install-extra-modules">Install extra modules.</a></li>
                 
@@ -208,7 +210,7 @@ git checkout -b [issue-number]-[issue-description]
 # Push issue branch to D.O. (optional)
 git push -u origin [issue-number]-[issue-description]
 
-# Create patch by comparing (current) issue branch with  8.x-1.x branch 
+# Create patch by comparing (current) issue branch with 8.x-1.x branch 
 git diff 8.x-1.x &gt; [project_name]-[issue-description]-[issue-number]-[comment-number]-[drupal-version].patch
 </code></pre>
 <h2 id="ignoring-patches-and-gitignore">Ignoring patches (and .gitignore)</h2>
@@ -224,13 +226,18 @@ EOF
  # Delete remote issue branch.
  git push origin :[issue-number]-[issue-description]
 </code></pre>
-<h2 id="cheatsheet">Cheatsheet</h2>
+<h2 id="gitflow-cheatsheet"><a href="https://www.drupal.org/node/2406727">GitFlow</a> Cheatsheet</h2>
 <pre><code># Create branch
 git checkout -b [issue-number]-[issue-description]
 git push -u origin [issue-number]-[issue-description]
 
 # Create patch
 git diff 8.x-1.x &gt; [project_name]-[issue-description]-[issue-number]-00.patch
+
+# Merge branch
+git checkout 8.x-1.x
+git merge [issue-number]-[issue-description]
+git push
 
 # Delete branch
 git branch -d [issue-number]-[issue-description]
@@ -240,7 +247,7 @@ git push origin :[issue-number]-[issue-description]
 <pre><code>drush yamlform-purge --all -y; drush pmu -y yamlform_test yamlform_test_third_party_settings; drush pmu -y  yamlform; drush en -y yamlform; drush en -y yamlform_test;
 
 drush php-eval 'module_load_include('install', 'yamlform'); yamlform_uninstall();'
-drush cron;
+drush cron; drush cron;
 drush yamlform-purge --all -y; drush pmu -y yamlform_test yamlform_test_third_party_settings; drush pmu -y  yamlform; 
 drush en -y yamlform; drush en -y yamlform_test;
 
@@ -249,6 +256,19 @@ drush en -y yamlform_test_third_party_settings;
 </code></pre>
 <h2 id="reinstall-yaml-form-test-module">Reinstall YAML form test module.</h2>
 <pre><code>drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush en -y yamlform_test;
+</code></pre>
+<h2 id="update-yaml-form-configuration-using-features-module">Update YAML form configuration using Features module</h2>
+<pre><code># Show the difference between the active config and the default config.
+drush features-diff yamlform
+drush features-diff yamlform_test
+
+# Export and tidy all YAML form configuration from your site.      
+drush features-export -y yamlform
+drush features-export -y yamlform_test
+
+# Re-import all YAML form configuration into your site.      
+drush features-import -y yamlform
+drush features-import -y yamlform_test
 </code></pre>
 <h2 id="install-extra-modules">Install extra modules.</h2>
 <pre><code>drush en -y yamlform captcha honeypot select_or_other;

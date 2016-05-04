@@ -88,13 +88,16 @@
                 <li class="toctree-l3"><a href="#extending">Extending</a></li>
                 
             
+                <li class="toctree-l3"><a href="#related-projects">Related Projects</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#notes">Notes</a></li>
                 
             
                 <li class="toctree-l3"><a href="#troubleshooting">Troubleshooting</a></li>
                 
             
-                <li class="toctree-l3"><a href="#referencesrelated-projects">References/Related Projects</a></li>
+                <li class="toctree-l3"><a href="#similar-projects">Similar Projects</a></li>
                 
             
                 <li class="toctree-l3"><a href="#authormaintainer">Author/Maintainer</a></li>
@@ -206,9 +209,10 @@
 <li><a href="#installation">Installation</a> </li>
 <li><a href="#releases">Releases</a>  </li>
 <li><a href="#extending">Extending</a></li>
+<li><a href="#related-projectss">Related Projects</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#notes">Notes</a></li>
-<li><a href="#references-related-projects">References/Related Projects</a></li>
+<li><a href="#similar-projects">Similar Projects</a></li>
 </ul>
 <h2 id="about-this-module">About this Module</h2>
 <p>The YAML form module is a lightweight, fast, <strong>developer centric</strong>, 
@@ -311,6 +315,8 @@ message:
 <li>Starter templates for common forms</li>
 <li>Ability to duplicate existing forms and templates</li>
 <li>Prepopulate form with querystring parameters</li>
+<li>Support for confidential submissions, which have no recorded IP address
+  and must be submitted while logged out.</li>
 <li>Set custom URL aliases for the form and its confirmation page</li>
 <li>Preview and save draft support</li>
 </ul>
@@ -322,6 +328,7 @@ message:
 <li>Conditional logic using <a href="https://api.drupal.org/api/examples/form_example%21form_example_states.inc/function/form_example_states_form/7">FAPI States API</a></li>
 <li>Input masks (using <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>)</li>
 <li>Private inputs/elements</li>
+<li>Unique input values</li>
 <li>Define optional display format for individual inputs. <ul>
 <li>For example, checkboxes can display as comma delimited value or a bullet list.</li>
 </ul>
@@ -351,6 +358,12 @@ message:
 <li>Preview and resend emails</li>
 <li>HTML email (does not require any additional modules)</li>
 <li>File attachments (requires <a href="https://www.drupal.org/project/mailsystem">Mail System</a>, only <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> has been tested) </li>
+</ul>
+<p><strong>Multistep Form Wizard</strong></p>
+<ul>
+<li>Builds multi step forms</li>
+<li>Customize previous and next button labels</li>
+<li>Optional progress bar  </li>
 </ul>
 <p><strong>Third Party Settings</strong></p>
 <ul>
@@ -446,6 +459,13 @@ MailChimp integration, they would create the YAML form MailChimp module
 for all YAML forms and/or one specific YAML form.  </p>
 <p>See the yamlform_test_third_party_settings.module for an example of how a
 contrib can use third party settings to extend and enhance a YAML form.</p>
+<h2 id="related-projects">Related Projects</h2>
+<p>Below are additional projects that extend and provide additional YAML form 
+features and functionality.</p>
+<ul>
+<li><a href="https://www.drupal.org/project/yamlform_queue">YAML Form Queue</a><br />
+  Provides a queue handler for YAML Form to store form submissions in a queue.</li>
+</ul>
 <h2 id="notes">Notes</h2>
 <ul>
 <li>Input names will be used to store data.</li>
@@ -476,9 +496,8 @@ contrib can use third party settings to extend and enhance a YAML form.</p>
   and use the <a href="https://www.drupal.org/node/1155816">Issue Summary Template</a>
   when creating new issues.</li>
 </ul>
-<h2 id="referencesrelated-projects">References/Related Projects</h2>
+<h2 id="similar-projects">Similar Projects</h2>
 <ul>
-<li><a href="http://www.yaml.org/start.html">YAML</a></li>
 <li><a href="https://www.drupal.org/node/2083353">Comparison of Form Building Modules</a></li>
 <li><a href="https://www.drupal.org/documentation/modules/contact">Contact</a> <ul>
 <li><a href="https://www.drupal.org/documentation/modules/contact_storage">Contact Storage</a></li>
@@ -544,5 +563,5 @@ contrib can use third party settings to extend and enhance a YAML form.</p>
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-04-21 19:40:10.266850
+Build Date UTC : 2016-05-04 03:21:45.422777
 -->

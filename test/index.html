@@ -117,6 +117,9 @@
                 <li class="toctree-l3"><a href="#forms">Forms</a></li>
                 
             
+                <li class="toctree-l3"><a href="#wizard">Wizard</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#third-party-settings">Third Party Settings</a></li>
                 
             
@@ -317,6 +320,22 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>Test debug setting</li>
 </ul>
 <hr />
+<h1 id="wizard">Wizard</h1>
+<p><strong>YAML form wizard</strong> (/form/example-wizard)</p>
+<ul>
+<li>Check progress bar</li>
+<li>Check data automatically saved between pages</li>
+<li>Check reloading form returns to the current page</li>
+<li>Review preview</li>
+<li>Review confirmation</li>
+<li>Check default wizard previous and next button labels 
+  (/admin/structure/yamlform/settings)</li>
+<li>Check YAML form previous and next button labels 
+  (/admin/structure/yamlform/manage/example_wizard/settings)</li>
+<li>Check adding <code>#previous_button_label</code> and <code>#next_button_label</code> to 
+  <code>yamlform_page</code> (/admin/structure/yamlform/manage/example_wizard)</li>
+</ul>
+<hr />
 <h1 id="third-party-settings">Third Party Settings</h1>
 <p><strong>YAML form global third party settings</strong> (/admin/structure/yamlform/manage/contact/third-party)</p>
 <ul>
@@ -411,6 +430,11 @@ role/permission, and use case provided by the YAML form module.</p>
 <ul>
 <li>Check that name is prepopulated using query string variable.</li>
 </ul>
+<p><strong>Confidential submissions (/yamlform/test_form_confidential)</strong></p>
+<ul>
+<li>Check that form can only be accessed when logged out.</li>
+<li>Check that IP address is not saved with submission.</li>
+</ul>
 <p><strong>Submit text (/yamlform/test_form_submit_text)</strong></p>
 <ul>
 <li>Check that submit text is customized.</li>
@@ -444,9 +468,14 @@ role/permission, and use case provided by the YAML form module.</p>
 <ul>
 <li>Check that results can be disabled. (Applies to users)</li>
 </ul>
-<p><strong>Private access (/yamlform/private)</strong></p>
+<p><strong>Private input access (/yamlform/test_inputs_private)</strong></p>
 <ul>
-<li>Check that private input is only accessible to submission administrators.</li>
+<li>Check that input with #private property is only accessible to submission administrators.</li>
+</ul>
+<p><strong>Unique input property (/yamlform/test_inputs_unique)</strong></p>
+<ul>
+<li>Check that input with #unique property can't have same value submitted twice.</li>
+<li>Check that existing submission can be updated. </li>
 </ul>
 <hr />
 <h1 id="access-rules">Access Rules</h1>
