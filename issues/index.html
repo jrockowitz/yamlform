@@ -149,19 +149,32 @@
           <div role="main">
             <div class="section">
               
-                <p><a href="https://www.drupal.org/node/1920902">Unable to tidy the bulk export of YamlForm and YamlFormOptions config files 
+                <p><a href="https://www.drupal.org/node/1920902">Issue #1920902: Unable to tidy the bulk export of YamlForm and YamlFormOptions config files 
 because Drupal's YAML utility is not a service.</a></p>
 <hr />
-<p><a href="https://www.drupal.org/node/2502195">Regression: Form throws LogicException when trying to render a form with 
+<p><a href="https://www.drupal.org/node/2502195">Issue #2502195: Regression: Form throws LogicException when trying to render a form with 
 object as an element's default value.</a>  </p>
 <ul>
 <li>Impacts previewing entity autocomplete inputs.</li>
 </ul>
 <hr />
-<p><a href="https://www.drupal.org/node/2636066">Access control is not applied to config entity queries</a></p>
+<p><a href="https://www.drupal.org/node/2636066">Issue #2636066: Access control is not applied to config entity queries</a></p>
 <ul>
 <li>YAML forms that the current user can't access are not being hidden via the EntityQuery.</li>
 <li>See: Drupal\yamlform\YamlFormEntityListBuilder</li>
+</ul>
+<hr />
+<p><a href="https://www.drupal.org/node/2720923">Issue #2484693: Telephone Link fied formatter breaks Drupal with 5 digits or less in the number</a></p>
+<ul>
+<li>Workaround is to manually build a static HTML link.</li>
+<li>See: \Drupal\yamlform\Plugin\YamlFormElement\Telephone::formatHtml</li>
+</ul>
+<hr />
+<p><a href="https://www.drupal.org/node/2235581">Issue #2235581: Make Token Dialog support inserting in WYSIWYGs (TinyMCE, CKEditor, etc.)</a></p>
+<ul>
+<li>Blocks tokens from easily being inserted in CodeMirror widget.</li>
+<li>Workaround is to disable '#click_insert' functionality from the token
+     dialog.</li>
 </ul>
 <hr />
 <p>Config entity does NOT support <a href="https://www.drupal.org/node/2015613">Entity Validation API</a>.</p>
@@ -174,8 +187,8 @@ object as an element's default value.</a>  </p>
 <hr />
 <p><a href="https://www.drupal.org/project/issues/drupal?status=Open&amp;version=8.x&amp;component=forms+system">Forms System Issues for Drupal core</a></p>
 <ul>
-<li><a href="https://www.drupal.org/node/1593964">Allow FAPI usage of the datalist element</a></li>
-<li><a href="https://www.drupal.org/node/1183606">Implement Form API support for new HTML5 elements</a>   </li>
+<li><a href="https://www.drupal.org/node/1593964">Issue #1593964: Allow FAPI usage of the datalist element</a></li>
+<li><a href="https://www.drupal.org/node/1183606">Issue #1183606: Implement Form API support for new HTML5 elements</a>   </li>
 </ul>
               
             </div>

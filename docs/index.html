@@ -127,6 +127,9 @@
                 <li class="toctree-l3"><a href="#5-open-docs">5. Open docs</a></li>
                 
             
+                <li class="toctree-l3"><a href="#6-remove-docs">6. Remove docs</a></li>
+                
+            
             </ul>
         
     </li>
@@ -175,9 +178,10 @@
 <ol>
 <li>Build docs</li>
 <li>Preview docs</li>
-<li>Clone GitHub pages (One-time)</li>
+<li>Clone GitHub pages</li>
 <li>Deploy to GitHub pages</li>
 <li>Open docs</li>
+<li>Remove docs</li>
 </ol>
 <h2 id="1-build-mkdocs">1. Build <a href="http://www.mkdocs.org/">MkDocs</a></h2>
 <pre><code># Build docs into /site directory
@@ -201,6 +205,10 @@ git push --set-upstream origin gh-pages;
 </code></pre>
 <h2 id="5-open-docs">5. Open docs</h2>
 <pre><code>open http://thebigbluehouse.com/yamlform
+</code></pre>
+<h2 id="6-remove-docs">6. Remove docs</h2>
+<pre><code>rm -Rf site
+rm -Rf gh-pages
 </code></pre>
               
             </div>

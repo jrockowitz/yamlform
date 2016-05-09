@@ -262,7 +262,10 @@ drush en -y yamlform_test_third_party_settings;
 drush features-diff yamlform
 drush features-diff yamlform_test
 
-# Export and tidy all YAML form configuration from your site.      
+# IMPORTANT: 
+# YOU MUST FIX *.info.yml WHERE THE DEPENDENCIES DECLARE ITSELF..
+
+# Export and tidy all YAML form configuration from your site.          
 drush features-export -y yamlform
 drush features-export -y yamlform_test
 
