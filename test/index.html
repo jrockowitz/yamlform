@@ -412,14 +412,14 @@ role/permission, and use case provided by the YAML form module.</p>
 <h1 id="features">Features</h1>
 <p><strong>Inputs</strong></p>
 <ul>
-<li>All inputs (/yamlform/test_inputs)</li>
-<li>Date inputs (/yamlform/test_inputs_dates)</li>
-<li>Entity autocomplete (/yamlform/test_inputs_entity_autocomplete)<ul>
+<li>All inputs (/yamlform/test_element)</li>
+<li>Date inputs (/yamlform/test_element_dates)</li>
+<li>Entity autocomplete (/yamlform/test_element_entity_autocomplete)<ul>
 <li>Preview is broken and throwing serialization error.</li>
 </ul>
 </li>
-<li>Text format (/yamlform/test_inputs_text_format)</li>
-<li>Ignored properties (/yamlform/test_inputs_ignored_properties)</li>
+<li>Text format (/yamlform/test_element_text_format)</li>
+<li>Ignored properties (/yamlform/test_element_ignored_properties)</li>
 </ul>
 <p><strong>Closed (/yamlform/test_form_closed)</strong></p>
 <ul>
@@ -439,13 +439,13 @@ role/permission, and use case provided by the YAML form module.</p>
 <ul>
 <li>Check that submit text is customized.</li>
 </ul>
-<p><strong>Preview (/yamlform/test_preview)</strong></p>
+<p><strong>Preview (/yamlform/test_form_preview)</strong></p>
 <ul>
 <li>Check custom preview and next submission buttons.</li>
 <li>Check custom preview message.</li>
 <li>Check optional and required preview.</li>
 </ul>
-<p><strong>Draft (/yamlform/test_draft)</strong></p>
+<p><strong>Draft (/yamlform/test_form_draft)</strong></p>
 <ul>
 <li>Check saving and reloading draft</li>
 <li>Check autosave occurs with validation errors.</li>
@@ -458,21 +458,21 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>Page (/yamlform/test_confirmation_page)</li>
 <li>URL (/yamlform/test_confirmation_url)</li>
 </ul>
-<p><strong>Limits (/yamlform/test_limit)</strong></p>
+<p><strong>Limits (/yamlform/test_submission_limit)</strong></p>
 <ul>
 <li>Check only 1 submission is allowed for authenticated user.</li>
 <li>Check only 3 submission are allowed for all users.</li>
 <li>Check that admin can post new submission if their limit has no been reached.</li>
 </ul>
-<p><strong>Results Disabled (/yamlform/test_results_disabled)</strong></p>
+<p><strong>Results Disabled (/yamlform/test_submission_disabled)</strong></p>
 <ul>
 <li>Check that results can be disabled. (Applies to users)</li>
 </ul>
-<p><strong>Private input access (/yamlform/test_inputs_private)</strong></p>
+<p><strong>Private input access (/yamlform/test_element_private)</strong></p>
 <ul>
 <li>Check that input with #private property is only accessible to submission administrators.</li>
 </ul>
-<p><strong>Unique input property (/yamlform/test_inputs_unique)</strong></p>
+<p><strong>Unique input property (/yamlform/test_element_unique)</strong></p>
 <ul>
 <li>Check that input with #unique property can't have same value submitted twice.</li>
 <li>Check that existing submission can be updated. </li>
