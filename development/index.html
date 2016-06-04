@@ -107,6 +107,8 @@
                 
                     <li><a class="toctree-l4" href="#ignoring-patches-and-gitignore">Ignoring patches (and .gitignore)</a></li>
                 
+                    <li><a class="toctree-l4" href="#merge-branch">Merge branch</a></li>
+                
                     <li><a class="toctree-l4" href="#delete-issue-branch">Delete issue branch</a></li>
                 
                     <li><a class="toctree-l4" href="#gitflow-cheatsheet">GitFlow Cheatsheet</a></li>
@@ -219,6 +221,7 @@ git diff 8.x-1.x &gt; [project_name]-[issue-description]-[issue-number]-[comment
 *.patch
 EOF
 </code></pre>
+<h2 id="merge-branch">Merge branch</h2>
 <h2 id="delete-issue-branch">Delete issue branch</h2>
 <pre><code> # Delete local issue branch.
  git branch -d [issue-number]-[issue-description]
@@ -234,9 +237,15 @@ git push -u origin [issue-number]-[issue-description]
 # Create patch
 git diff 8.x-1.x &gt; [project_name]-[issue-description]-[issue-number]-00.patch
 
-# Merge branch
+# Merge branch with all commits
 git checkout 8.x-1.x
 git merge [issue-number]-[issue-description]
+git push
+
+# Merge branch as a single new commit
+git checkout 8.x-1.x
+git merge --squash [issue-number]-[issue-description]
+git commit -m 'Issue #[issue-number]: [issue-description]
 git push
 
 # Delete branch
