@@ -76,6 +76,16 @@
             "title": "Author/Maintainer"
         }, 
         {
+            "location": "/videos/", 
+            "text": "Developer Preview", 
+            "title": "Videos"
+        }, 
+        {
+            "location": "/videos/#developer-preview", 
+            "text": "", 
+            "title": "Developer Preview"
+        }, 
+        {
             "location": "/screenshots/", 
             "text": "Below are some screenshots of the YAML form module's administrative interface,\nform templates, and supported elements.\n\n\nManage Forms\n\n\n\n\nBasic Contact Form\n\n\n\n\nManage Contact Form\n\n\n\n\nEdit Contact Form Element\n\n\n\n\nEdit Contact Form Source\n\n\n\n\nConfigure Contact Form Emails\n\n\n\n\nManage Contact Form Access\n\n\n\n\nEdit Contact Form Settings\n\n\n\n\nView Contact Form Submissions\n\n\n\n\nDownload Contact Form Submissions\n\n\n\n\nExamples of Supported Elements\n\n\n\n\nExamples of Supported Contrib Modules\n\n\n\n\nWizard (Multi-step) Form\n\n\n\n\nManage Wizard (Multi-step) Form", 
             "title": "Screenshots"
