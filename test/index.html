@@ -3,9 +3,12 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Test Script - YAML form docs</title>
+  
+  
+  <title>Test Script - YAML Form Documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -21,6 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Test Script";
+    var mkdocs_page_input_path = "test.md";
+    var mkdocs_page_url = "/test/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -38,7 +43,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> YAML form docs</a>
+        <a href=".." class="icon icon-home"> YAML Form Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -52,6 +57,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../screenshots/">Screenshots</a>
         
     </li>
 <li>
@@ -135,14 +147,10 @@
                 <li class="toctree-l3"><a href="#translation">Translation</a></li>
                 
             
-            </ul>
-        
-    </li>
-
-        
+                <li class="toctree-l3"><a href="#user-interface">User Interface</a></li>
+                
             
-    <li class="toctree-l1 ">
-        <a class="" href="../docs/">Documentation</a>
+            </ul>
         
     </li>
 
@@ -160,7 +168,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">YAML form docs</a>
+        <a href="..">YAML Form Documentation</a>
       </nav>
 
       
@@ -213,16 +221,16 @@ role/permission, and use case provided by the YAML form module.</p>
 <ul>
 <li>Review forms provided by the yamlform.module and yamlform_test.module</li>
 <li>Test filter<ul>
-<li>Filter a title, description, and/or inputs (which is not visible)</li>
+<li>Filter a title, description, and/or elements (which is not visible)</li>
 </ul>
 </li>
 <li>Test sorting</li>
-<li>Inputs validation<ul>
+<li>Elements validation<ul>
 <li>Required: Leave blank</li>
 <li>Valid YAML: Enter invalid YAML</li>
 <li>Is array: Enter simple string value</li>
-<li>Duplicate inputs name: Enter two inputs with the same names</li>
-<li>Ignore properties: Enter input with #tree, #submit, etc... properties.</li>
+<li>Duplicate elements name: Enter two elements with the same names</li>
+<li>Ignore properties: Enter element with #tree, #submit, etc... properties.</li>
 </ul>
 </li>
 </ul>
@@ -266,23 +274,23 @@ role/permission, and use case provided by the YAML form module.</p>
 <p><strong>(/admin/structure/yamlform)</strong></p>
 <p><strong>Create new YAML form (/admin/structure/yamlform/add)</strong></p>
 <ul>
-<li>Check default inputs</li>
+<li>Check default elements</li>
 <li>Test duplicate link</li>
 <li>Message about previous submissions should be displayed</li>
 </ul>
 <p><strong>Duplicate existing YAML form (/admin/structure/yamlform/manage/template_registration/duplicate)</strong></p>
 <ul>
 <li>Duplicate a 'Template: Registration' form.</li>
-<li>Confirm all inputs and settings are duplicated.</li>
+<li>Confirm all elements and settings are duplicated.</li>
 </ul>
-<p><strong>Test YAML form inputs (/yamlform/example_inputs/test)</strong></p>
+<p><strong>Test YAML form elements (/yamlform/example_elements/test)</strong></p>
 <ul>
-<li>Test 'kitchen sink' list of supported inputs</li>
-<li>Verify each input collects and displays submitted data correctly</li>
+<li>Test 'kitchen sink' list of supported elements</li>
+<li>Verify each element collects and displays submitted data correctly</li>
 </ul>
-<p><strong>Test YAML form inputs with custom inputs (/yamlform/example_inputs_formats/test)</strong></p>
+<p><strong>Test YAML form elements with custom elements (/yamlform/example_elements_formats/test)</strong></p>
 <ul>
-<li>Test inputs have customized formats</li>
+<li>Test elements have customized formats</li>
 <li>Verify HTML and text display for submitted data</li>
 </ul>
 <p><strong>YAML form (/yamlform/contact)</strong></p>
@@ -364,9 +372,9 @@ role/permission, and use case provided by the YAML form module.</p>
 </ul>
 <p><strong>Table (/admin/structure/yamlform/manage/contact/results/table)</strong></p>
 <ul>
-<li>Check inputs columns (which are not sortable)</li>
-<li>Check 'Example: Inputs'<ul>
-<li>/admin/structure/yamlform/manage/example_inputs/results/table</li>
+<li>Check elements columns (which are not sortable)</li>
+<li>Check 'Example: Elements'<ul>
+<li>/admin/structure/yamlform/manage/example_elements/results/table</li>
 </ul>
 </li>
 </ul>
@@ -410,10 +418,10 @@ role/permission, and use case provided by the YAML form module.</p>
 </ul>
 <hr />
 <h1 id="features">Features</h1>
-<p><strong>Inputs</strong></p>
+<p><strong>Elements</strong></p>
 <ul>
-<li>All inputs (/yamlform/test_element)</li>
-<li>Date inputs (/yamlform/test_element_dates)</li>
+<li>All elements (/yamlform/test_element)</li>
+<li>Date elements (/yamlform/test_element_dates)</li>
 <li>Entity autocomplete (/yamlform/test_element_entity_autocomplete)<ul>
 <li>Preview is broken and throwing serialization error.</li>
 </ul>
@@ -468,13 +476,13 @@ role/permission, and use case provided by the YAML form module.</p>
 <ul>
 <li>Check that results can be disabled. (Applies to users)</li>
 </ul>
-<p><strong>Private input access (/yamlform/test_element_private)</strong></p>
+<p><strong>Private element access (/yamlform/test_element_private)</strong></p>
 <ul>
-<li>Check that input with #private property is only accessible to submission administrators.</li>
+<li>Check that element with #private property is only accessible to submission administrators.</li>
 </ul>
-<p><strong>Unique input property (/yamlform/test_element_unique)</strong></p>
+<p><strong>Unique element property (/yamlform/test_element_unique)</strong></p>
 <ul>
-<li>Check that input with #unique property can't have same value submitted twice.</li>
+<li>Check that element with #unique property can't have same value submitted twice.</li>
 <li>Check that existing submission can be updated. </li>
 </ul>
 <hr />
@@ -566,8 +574,8 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>Check 'Contact' Spanish translations 
   (/admin/structure/yamlform/manage/contact/translate/es/edit)</li>
 </ul>
-<p><strong>Check that the translated inputs can no be altered</strong> </p>
-<p><em>Once a YAML form is translated only the Inputs (YAML) values be changed.</em>  </p>
+<p><strong>Check that the translated elements can no be altered</strong> </p>
+<p><em>Once a YAML form is translated only the Elements (YAML) values be changed.</em>  </p>
 <ul>
 <li>
 <p>Goto 'Contact' translations 
@@ -593,14 +601,77 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>Test 'Contact' form submission via Spanish
   (/es/yamlform/contact/test)</li>
 </ul>
+<hr />
+<h1 id="user-interface">User Interface</h1>
+<p><strong>Setup</strong></p>
+<ul>
+<li>Enable YAML form UI module (/admin/extend)</li>
+</ul>
+<p><strong>Reorder Basic Form</strong></p>
+<ul>
+<li>Goto 'Contact' 
+  (/admin/structure/yamlform/manage/contact)</li>
+<li>Check UI displayed in 'Elements' tabs</li>
+<li>Check YAML is display in 'Source (YAML)' tab.</li>
+<li>Check drag-n-drop reordering.</li>
+<li>Check 'Show row weights'<ul>
+<li>Parent is readonly</li>
+</ul>
+</li>
+</ul>
+<p><strong>Reorder Advanced Form</strong></p>
+<ul>
+<li>Goto 'Example: Elements' 
+  (/admin/structure/yamlform/manage/example_elements)</li>
+<li>Check moving elements under containers.</li>
+</ul>
+<p><strong>Reorder Wizard Form</strong></p>
+<ul>
+<li>Goto 'Example: Wizard' 
+  (/admin/structure/yamlform/manage/example_wizard)</li>
+<li>Check that 'Wizard page' cannot be nested and stays as root element.</li>
+</ul>
+<p><strong>Create, Update, and Delete Element</strong></p>
+<ul>
+<li>Goto 'Contact' 
+  (/admin/structure/yamlform/manage/contact)</li>
+<li>Add element (/admin/structure/yamlform/manage/contact/element/add)</li>
+<li>Edit element</li>
+<li>Delete element</li>
+</ul>
+<p><strong>Duplicate Element</strong></p>
+<ul>
+<li>Goto 'Contact' 
+  (/admin/structure/yamlform/manage/contact)</li>
+<li>Duplicate 'Name' element (/admin/structure/yamlform/manage/contact/element/name/duplicate)</li>
+</ul>
+<p><strong>Create, Update, and Delete Container</strong></p>
+<ul>
+<li>Goto 'Contact' 
+  (/admin/structure/yamlform/manage/contact)</li>
+<li>Add container element (/admin/structure/yamlform/manage/contact/element/add)</li>
+<li>Add element to container</li>
+<li>Delete container</li>
+</ul>
+<p><strong>Test Elements</strong></p>
+<ul>
+<li>
+<p>Enable YAML form test module (/admin/extend)</p>
+</li>
+<li>
+<p>Goto 'Elements'
+  (/d8_dev/admin/structure/yamlform/settings/elements)</p>
+</li>
+<li>
+<p>Click 'Test' under 'Operations' for each element.</p>
+</li>
+</ul>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../docs/" class="btn btn-neutral float-right" title="Documentation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../development/" class="btn btn-neutral" title="Development"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -631,8 +702,6 @@ role/permission, and use case provided by the YAML form module.</p>
       
         <span><a href="../development/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../docs/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

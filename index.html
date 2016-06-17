@@ -3,9 +3,12 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>YAML form docs</title>
+  
+  
+  <title>YAML Form Documentation</title>
   
 
   <link rel="shortcut icon" href="./img/favicon.ico">
@@ -21,6 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
   </script>
   
   <script src="./js/jquery-2.1.1.min.js"></script>
@@ -38,7 +43,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> YAML form docs</a>
+        <a href="." class="icon icon-home"> YAML Form Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -65,12 +70,6 @@
                 
             
                 <li class="toctree-l3"><a href="#goals">Goals</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#concepts">Concepts</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#example">Example</a></li>
                 
             
                 <li class="toctree-l3"><a href="#features">Features</a></li>
@@ -104,6 +103,13 @@
                 
             
             </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="screenshots/">Screenshots</a>
         
     </li>
 <li>
@@ -155,13 +161,6 @@
     </li>
 
         
-            
-    <li class="toctree-l1 ">
-        <a class="" href="docs/">Documentation</a>
-        
-    </li>
-
-        
     </ul>
 <li>
           
@@ -175,7 +174,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">YAML form docs</a>
+        <a href=".">YAML Form Documentation</a>
       </nav>
 
       
@@ -215,8 +214,17 @@
 <li><a href="#similar-projects">Similar Projects</a></li>
 </ul>
 <h2 id="about-this-module">About this Module</h2>
-<p>The YAML form module is a lightweight, fast, <strong>developer centric</strong>, 
-FAPI based form builder and submission  manager for Drupal 8.</p>
+<p>The YAML form module is a FAPI based form builder and submission manager for 
+Drupal 8.</p>
+<blockquote>
+<p><b>IMPORTANT:</b>
+The YAML form module now includes a user interface (UI), which allows 
+site builders to easily build and maintain forms. 
+Developers are still able to 'view source' and edit a form's 
+<a href="https://www.drupal.org/node/2117411">FAPI</a> 
+<a href="https://www.drupal.org/developing/api/8/render/arrays">Render Array</a>
+using <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>.</p>
+</blockquote>
 <p>The primary use case for this module is...</p>
 <ul>
 <li>Admin duplicates and customizes an existing form/template.</li>
@@ -227,22 +235,6 @@ FAPI based form builder and submission  manager for Drupal 8.</p>
 <li>User receives an email confirmation.</li>
 <li>Admin views submissions online.</li>
 <li>Admin downloads all submissions as a CSV.</li>
-</ul>
-<p>Don't use this module if you...</p>
-<ul>
-<li>Want <a href="https://www.drupal.org/node/1912118">Views</a> integration.</li>
-<li>Prefer drag-n-drop form builders.</li>
-<li>Have 'untrusted' users building forms. </li>
-</ul>
-<p>Use this module if you...</p>
-<ul>
-<li>Understand <a href="https://www.drupal.org/developing/api/8/render/arrays">Render Arrays</a>,
-  <a href="https://www.drupal.org/node/2117411">FAPI</a>,
-  and <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>.</li>
-<li>Prefer
-  <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>
-  over <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>.</li>
-<li>Have 'trusted' developers building and customizing forms. </li>
 </ul>
 <p>Additional things to consider...</p>
 <ul>
@@ -273,37 +265,6 @@ FAPI based form builder and submission  manager for Drupal 8.</p>
 <li>A pluggable/extensible API for custom submission handling. </li>
 <li>A focused and limited feature set to ensure maintainability. </li>
 </ul>
-<h2 id="concepts">Concepts</h2>
-<ul>
-<li>What is the simplest and fastest way to create a form builder and submission
-  manager in Drupal 8?</li>
-<li>How much can Drupal 8's Form and Entity API be leveraged to
-  build a form builder and submission manager?</li>
-<li>Building and maintaining a form building UI consumes a lot of time 
-  and resources.</li>
-<li>YAML as a markup language is simple... so simple it could be presented as the 
-  UI for building and maintaining forms in Drupal.</li>
-<li>Replace complexity with extensibility</li>
-</ul>
-<h2 id="example">Example</h2>
-<p>Here is an example of a contact form's render array written in YAML.</p>
-<pre><code>name:
-  '#title': 'Your Name'
-  '#type': textfield
-  '#required': true
-email:
-  '#title': 'Your Email'
-  '#type': email
-  '#required': true
-subject:
-  '#title': 'Subject'
-  '#type': textfield
-  '#required': true
-message:
-  '#title': 'Message'
-  '#type': textarea
-  '#required': true
-</code></pre>
 <h2 id="features">Features</h2>
 <p><strong>Forms</strong> </p>
 <ul>
@@ -320,16 +281,16 @@ message:
 <li>Set custom URL aliases for the form and its confirmation page</li>
 <li>Preview and save draft support</li>
 </ul>
-<p><strong>Inputs</strong></p>
+<p><strong>Elements</strong></p>
 <ul>
 <li>Support for every
   <a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8">form element</a>
   included in Drupal 8 core. This includes file uploads and entity references.</li>
 <li>Conditional logic using <a href="https://api.drupal.org/api/examples/form_example%21form_example_states.inc/function/form_example_states_form/7">FAPI States API</a></li>
 <li>Input masks (using <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>)</li>
-<li>Private inputs/elements</li>
-<li>Unique input values</li>
-<li>Define optional display format for individual inputs. <ul>
+<li>Private elements</li>
+<li>Unique element values</li>
+<li>Define optional display format for individual elements. <ul>
 <li>For example, checkboxes can display as comma delimited value or a bullet list.</li>
 </ul>
 </li>
@@ -350,10 +311,8 @@ message:
   <a href="https://www.drupal.org/project/honeypot">Honeypot</a>,
   <a href="https://www.drupal.org/project/mollom">Mollom</a>,
   <a href="https://www.drupal.org/project/captcha">CAPTCHA</a>,
-  <a href="https://www.drupal.org/project/elements">Elements</a>,
-  <a href="https://www.drupal.org/project/select_or_other">Select (or other)</a>,
   <a href="https://www.drupal.org/project/validators">Validators</a>,
-  and more...</li>
+  and more to come...</li>
 </ul>
 <p><strong>Submissions/Results</strong></p>
 <ul>
@@ -415,12 +374,13 @@ and secure role.</em></p>
 <ol>
 <li>Copy/upload the yamlform.module to the modules directory of your Drupal
    installation.</li>
-<li>(optional) Install <a href="http://codemirror.net/">CodeMirror</a> and 
+<li>(optional) Manually install <a href="http://codemirror.net/">CodeMirror</a> and 
     <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>
-    using <a href="https://www.drupal.org/project/composer_manager">Composer Manager</a>.
+    into the /libraries directory.
    If CodeMirror and/or jquery.inputmask is not installed, they will be loaded 
    from <a href="https://cdnjs.com/">https://cdnjs.com/</a>.</li>
-<li>Enable the 'YAML form' module in 'Extend'. (/admin/modules)</li>
+<li>Enable the 'YAML form' or the 'YAML form UI' module or the in 'Extend'. 
+   (/admin/modules)</li>
 <li>Setup permissions. (/admin/people/permissions#module-yamlform)</li>
 <li>Begin building a new YAML form or duplicate an existing one.
    (/admin/structure/yamlform)</li>
@@ -445,22 +405,20 @@ and secure role.</em></p>
 </ul>
 <h2 id="releases">Releases</h2>
 <p>Even though, the YAML form module is still under active development with
-regular <a href="https://www.drupal.org/documentation/version-info/alpha-beta-rc">alpha releases</a>
+regular <a href="https://www.drupal.org/documentation/version-info/alpha-beta-rc">beta releases</a>
 all YAML form configuration and submission data will be maintained and updated 
-between releases.  <strong>APIs can and will be changing</strong> while this module moves to 
-a beta release and finally a release candidate. The beta release of the 
-YAML form module (hopefully before or after DrupalCon New Orleans) 
-will be tied to a feature freeze.</p>
-<p>Simply put it, if you install and use the YAML form module AS-IS, out of the box, 
-you <em>should</em> be okay.  Once you start extending YAML forms with plugins, alter 
-hooks, and template overrides, you will need to read the release notes and 
-assume <em>things will be changing</em>.</p>
+between releases.  <strong>APIs can and will be changing</strong> while this module moves 
+from beta release and finally a release candidate. </p>
+<p>Simply put it, if you install and use the YAML form module AS-IS, out of the 
+box, you <em>should</em> be okay.  Once you start extending YAML forms with plugins, 
+alter  hooks, and template overrides, you will need to read the release notes 
+and assume <em>things will be changing</em>.</p>
 <h2 id="extending">Extending</h2>
 <p>YAML form provides a YamlFormHandler <a href="https://www.drupal.org/developing/api/8/plugins">plugin</a>
 as well as support for third party settings and alter hooks for contrib modules
 to extend and enhance a YAML form.</p>
 <p><strong>YamlFormHandler plugin</strong></p>
-<p>The YamlFormHandler plugin allows developers to extend a YAML form's inputs 
+<p>The YamlFormHandler plugin allows developers to extend a YAML form's elements 
 and submission handling. Each YamlFormHandler plugin should live in a dedicated 
 module and handler namespace. For example, if a developer wanted to setup 
 MailChimp integration, they would create the YAML form MailChimp module 
@@ -481,22 +439,24 @@ features and functionality.</p>
 </ul>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>Input names will be used to store data.</li>
-<li>Duplicate input names are not allowed.</li>
+<li>Element names will be used to store data.</li>
+<li>Duplicate element names are not allowed.</li>
 <li>The <a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8#tree">#tree</a> 
   property, which is used to allow collections of form elements, is not allowed.</li>
-<li>Element callback properties are not supported within a YAML input.
+<li>Element callback properties are not supported within a YAML element.
   This includes <code>#element_validate</code>, <code>#after_build</code>, <code>#post_render</code>, <code>#pre_render</code>, <code>#process</code>, <code>#submit</code>, <code>#value_callback</code>, and <code>#validate</code>.</li>
-<li>Once there has been a form submission, existing input names should never be
+<li>Once there has been a form submission, existing element names should never be
   deleted, they can be be hidden (via <code>'#access': false</code>).</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p><strong>How to debug issues with YAML form inputs/elements?</strong></p>
+<p><strong>How to debug issues with YAML form elements/elements?</strong></p>
 <ul>
-<li>A YAML form's input data is just a <a href="https://www.drupal.org/node/37775">Form API(FAPI)</a>
+<li>A YAML form's element data is just a <a href="https://www.drupal.org/node/37775">Form API(FAPI)</a>
   <a href="https://www.drupal.org/developing/api/8/render/arrays">render array</a>. </li>
 <li>Some issues can be fixed by reading the API documentation associated 
-  with a given <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21FormElement.php/class/FormElement/8">form element</a>.</li>
+  with a given <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21FormElement.php/class/FormElement/8">form element</a>.
+  Links to a form element's API documentation is include in the Elements 
+  overview. (/admin/structure/yamlform/settings/elements)</li>
 </ul>
 <p><strong>How to get help fixing issues with the YAML form module?</strong></p>
 <ul>
@@ -539,7 +499,7 @@ features and functionality.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="todo/" class="btn btn-neutral float-right" title="Todo"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="screenshots/" class="btn btn-neutral float-right" title="Screenshots">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -567,7 +527,7 @@ features and functionality.</p>
       
       
       
-        <span style="margin-left: 15px"><a href="todo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="screenshots/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -576,6 +536,6 @@ features and functionality.</p>
 </html>
 
 <!--
-MkDocs version : 0.14.0
-Build Date UTC : 2016-06-06 20:10:00.513791
+MkDocs version : 0.15.3
+Build Date UTC : 2016-06-17 01:12:35.027906
 -->
