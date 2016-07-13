@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/videos/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>None/screenshots/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +28,7 @@
     
     <url>
      <loc>None/todo/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +36,7 @@
     
     <url>
      <loc>None/roadmap/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -44,7 +44,7 @@
     
     <url>
      <loc>None/issues/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -53,19 +53,19 @@
         
     <url>
      <loc>None/maintainers/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/development/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/test/</loc>
-     <lastmod>2016-06-17</lastmod>
+     <lastmod>2016-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -88,20 +88,46 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#releases">Releases</a></li>
+                <li class="toctree-l3"><a href="#phase-i-before-release-candidate">Phase I (before Release Candidate)</a></li>
                 
-                    <li><a class="toctree-l4" href="#phase-1">Phase 1</a></li>
+                    <li><a class="toctree-l4" href="#forms-elements">Forms &amp; Elements</a></li>
                 
-                    <li><a class="toctree-l4" href="#phase-2-after-stable-release">Phase 2 (after stable release)</a></li>
+                    <li><a class="toctree-l4" href="#design-ux">Design &amp; UX</a></li>
+                
+                    <li><a class="toctree-l4" href="#code-apis">Code &amp; APIs</a></li>
+                
+                    <li><a class="toctree-l4" href="#multilingual">Multilingual</a></li>
+                
+                    <li><a class="toctree-l4" href="#documentation-help">Documentation &amp; Help</a></li>
+                
+                    <li><a class="toctree-l4" href="#other">Other</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#phase-ii-after-stable-release">Phase II (after Stable Release)</a></li>
+                
+                    <li><a class="toctree-l4" href="#forms">Forms</a></li>
+                
+                    <li><a class="toctree-l4" href="#views">Views</a></li>
+                
+                    <li><a class="toctree-l4" href="#reporting">Reporting</a></li>
+                
+                    <li><a class="toctree-l4" href="#apis">APIs</a></li>
+                
+                    <li><a class="toctree-l4" href="#other_1">Other</a></li>
                 
             
                 <li class="toctree-l3"><a href="#what-webform-entityform-features-are-currently-missing">What Webform &amp; EntityForm features are currently missing?</a></li>
                 
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
+                    <li><a class="toctree-l4" href="#form-settings">Form settings</a></li>
+                
+                    <li><a class="toctree-l4" href="#results">Results</a></li>
+                
+                    <li><a class="toctree-l4" href="#download">Download</a></li>
+                
+                    <li><a class="toctree-l4" href="#settings">Settings</a></li>
                 
             
-                <li class="toctree-l3"><a href="#features-to-be-handled-via-yamlformhandler-plugin">Features to be handled via YamlFormHandler plugin</a></li>
+                <li class="toctree-l3"><a href="#notes">Notes</a></li>
                 
             
             </ul>
@@ -177,46 +203,176 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="releases">Releases</h1>
-<h2 id="phase-1">Phase 1</h2>
+                <p>Below is the current roadmap for the YAML form module.</p>
+<p>★ Indicates areas that I need help with. </p>
+<h2 id="phase-i-before-release-candidate">Phase I (before Release Candidate)</h2>
+<h3 id="forms-elements">Forms &amp; Elements</h3>
+<h4 id="finalize-elements">Finalize elements</h4>
 <ul>
-<li>Feature parity with Webform and EForm modules.</li>
+<li>#pattern support with regex validation </li>
+<li>Autocompletion element &amp; property support</li>
+<li>Entity query / Views entity reference support for #options <ul>
+<li>[#2346973] </li>
 </ul>
-<h2 id="phase-2-after-stable-release">Phase 2 (after stable release)</h2>
-<ul>
-<li>Custom reports</li>
-<li>Advanced Views integration</li>
+</li>
+<li>Select2 support. <ul>
+<li>[#2758671]</li>
 </ul>
-<h1 id="what-webform-entityform-features-are-currently-missing">What Webform &amp; EntityForm features are currently missing?</h1>
+</li>
+</ul>
+<h4 id="user-interface">User Interface</h4>
 <ul>
-<li>Form settings<ul>
+<li>Build #options UI. <ul>
+<li>[#2759527]</li>
+</ul>
+</li>
+<li>Build #states (conditional logic) UI. <ul>
+<li>[#2764503]</li>
+</ul>
+</li>
+</ul>
+<h3 id="design-ux">Design &amp; UX</h3>
+<h4 id="templating">Templating ★</h4>
+<ul>
+<li>Review and finalize templates <ul>
+<li>[#2757991]</li>
+</ul>
+</li>
+<li>Support for multi column responsive layouts. (ie 2 column form)</li>
+</ul>
+<h4 id="examples-templates">Examples &amp; Templates</h4>
+<ul>
+<li>Add better documentation to yamlform_examples.module</li>
+<li>Review out-of-the-box templates provide by the yamlform_templates.module.</li>
+</ul>
+<h3 id="code-apis">Code &amp; APIs</h3>
+<h4 id="code-review">Code Review</h4>
+<ul>
+<li>Testability</li>
+<li>Refactorability</li>
+<li>Plugin definitions ★</li>
+<li>Entity API implementation ★</li>
+<li>Form API implementation ★</li>
+</ul>
+<h4 id="security-review">Security Review ★</h4>
+<ul>
+<li>Callback injection</li>
+<li>JS/CSS injection</li>
+<li>Access controls</li>
+</ul>
+<h4 id="api-review">API Review</h4>
+<ul>
+<li>Review doc blocks</li>
+</ul>
+<h4 id="libraries">Libraries</h4>
+<ul>
+<li>Finalize external library support <ul>
+<li>[#2745325]</li>
+</ul>
+</li>
+<li>Add external libraries to composer.json ★</li>
+</ul>
+<h4 id="testing">Testing</h4>
+<ul>
+<li>Refactor PHPUnit tests</li>
+<li>Improve SimpleTest setUp performance.</li>
+<li>Configuration Management</li>
+<li>Default configuration</li>
+<li>Finalize default admin settings</li>
+</ul>
+<h3 id="multilingual">Multilingual</h3>
+<ul>
+<li>Finalize how YAML form's elements are translated. ★</li>
+<li>Make sure the YAML form module is completely translatable. ★</li>
+</ul>
+<h3 id="documentation-help">Documentation &amp; Help</h3>
+<h4 id="general">General</h4>
+<ul>
+<li>Decide if any documentation should live on Drupal.org</li>
+<li>What is YAML and why we are using it? <ul>
+<li>[#2759591]</li>
+</ul>
+</li>
+<li>Move features into a dedicated file.</li>
+<li>Create a related project page</li>
+<li>Simplify the project page.</li>
+<li>Update screenshots</li>
+</ul>
+<h4 id="module">Module</h4>
+<ul>
+<li>Review hook_help()</li>
+<li>Review hardcoded messages.</li>
+</ul>
+<h4 id="editorial">Editorial ★</h4>
+<ul>
+<li>Unified tone</li>
+<li>General typos, grammar, and wording. ★</li>
+</ul>
+<h3 id="other">Other</h3>
+<h4 id="screencasts">Screencasts</h4>
+<ul>
+<li>Form Builder - How to build forms?</li>
+<li>Form Developer - How to customize forms?</li>
+<li>Contributor - How to extend the YAML form API and plugins?</li>
+</ul>
+<h4 id="maintainersdeveloper">Maintainers/Developer</h4>
+<ul>
+<li>Document issue queue policies.</li>
+<li>Build full documented plugin examples.</li>
+</ul>
+<h2 id="phase-ii-after-stable-release">Phase II (after Stable Release)</h2>
+<h3 id="forms">Forms</h3>
+<ul>
+<li>AJAX support for forms ★ <ul>
+<li>[#2757491]</li>
+</ul>
+</li>
+</ul>
+<h3 id="views">Views</h3>
+<ul>
+<li>Views integration ★</li>
+</ul>
+<h3 id="reporting">Reporting</h3>
+<ul>
+<li>Customizable reports</li>
+<li>Sortable reports ★ <ul>
+<li>[#2722601]</li>
+</ul>
+</li>
+</ul>
+<h3 id="apis">APIs</h3>
+<ul>
+<li>REST API endpoint for CRUD operations.</li>
+<li>Headless Drupal Forms</li>
+</ul>
+<h3 id="other_1">Other</h3>
+<ul>
+<li>Code snippets repository</li>
+<li>Template repository</li>
+</ul>
+<h2 id="what-webform-entityform-features-are-currently-missing">What Webform &amp; EntityForm features are currently missing?</h2>
+<h3 id="form-settings">Form settings</h3>
+<ul>
 <li>Limit submission by IP and/or cookie.</li>
 <li>Resetting sid per form.</li>
 </ul>
-</li>
-<li>Results<ul>
+<h3 id="results">Results</h3>
+<ul>
 <li>Analysis of submitted data</li>
 <li>Submission sorting</li>
 </ul>
-</li>
-<li>Download<ul>
+<h3 id="download">Download</h3>
+<ul>
 <li>Excel support</li>
 <li>Last download</li>
 </ul>
-</li>
-<li>Settings<ul>
+<h3 id="settings">Settings</h3>
+<ul>
 <li>Provide Anonymous Links</li>
 </ul>
-</li>
-</ul>
-<h1 id="features">Features</h1>
-<h1 id="features-to-be-handled-via-yamlformhandler-plugin">Features to be handled via YamlFormHandler plugin</h1>
+<h2 id="notes">Notes</h2>
 <ul>
-<li>Payment</li>
-<li>SMS</li>
-<li>Advanced Throttling</li>
-<li>MailChimp Integration</li>
-<li>REST API</li>
+<li>Analytics and reporting will never be included in the main YAML form module. This should be handled by a dedicated module or third party service.</li>
 </ul>
               
             </div>

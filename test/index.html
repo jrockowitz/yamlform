@@ -148,13 +148,19 @@
                 <li class="toctree-l3"><a href="#features">Features</a></li>
                 
             
-                <li class="toctree-l3"><a href="#access-rules">Access Rules</a></li>
+                <li class="toctree-l3"><a href="#permissions">Permissions</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#yaml-form-access-rules">YAML form Access Rules</a></li>
                 
             
                 <li class="toctree-l3"><a href="#translation">Translation</a></li>
                 
             
                 <li class="toctree-l3"><a href="#user-interface">User Interface</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#yaml-form-node">YAML form node</a></li>
                 
             
             </ul>
@@ -493,9 +499,65 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>Check that existing submission can be updated. </li>
 </ul>
 <hr />
-<h1 id="access-rules">Access Rules</h1>
+<h1 id="permissions">Permissions</h1>
 <ul>
-<li>Create test roles and users. (See NOTES.txt)</li>
+<li>Create test roles and users. (See development.md)</li>
+</ul>
+<p><strong>Account/Roles</strong></p>
+<ul>
+<li>developer: Administer YAML forms and YAML form submissions.</li>
+<li>admin: Administer YAML form submissions.</li>
+<li>manager: Used to test managing a YAML form's submissions.</li>
+<li>user: Used to test accessing and managing one's own submission.</li>
+<li>any: Manage any YAML form and YAML form node submissions.</li>
+<li>own: Manage own YAML form and YAML form node submissions.</li>
+</ul>
+<p><strong>Create own YAML form</strong></p>
+<ul>
+<li>Login as own/own.</li>
+<li>Check that 'YAML form overview' is accessible. (/admin/structure/yamlform)</li>
+<li>Check add YAML form (/admin/structure/yamlform/add)</li>
+<li>Call new YAML form 'own'</li>
+<li>Check adding element (/admin/structure/yamlform/manage/own)</li>
+<li>Check duplicating 'own' YAML form.</li>
+<li>Call new YAML form 'duplicate'</li>
+<li>Check deleting 'duplicate' YAML form (/admin/structure/yamlform/manage/duplicate/delete)</li>
+<li>Check that 'Templates' are available and can be previewed. (/admin/structure/yamlform/templates)</li>
+</ul>
+<p><strong>Manage own YAML form</strong></p>
+<ul>
+<li>Create test YAML form submission on 'own' form (/yamlform/own/test)</li>
+<li>Check that submission is accessible and editable.</li>
+</ul>
+<p><strong>Managing any YAML form</strong></p>
+<ul>
+<li>Login as any/any.</li>
+<li>Check that all YAML forms and results are available. (/admin/structure/yamlform)</li>
+<li>Check that YAML form global settings are hidden.</li>
+<li>Check add YAML form (/admin/structure/yamlform/add)</li>
+<li>Call new YAML form 'any'</li>
+</ul>
+<p><strong>Changing YAML form author</strong></p>
+<ul>
+<li>Login as developer/developer.</li>
+<li>Change YAML form author from 'any' to 'own' at the very bottom of YAML form's 
+  settings. (/admin/structure/yamlform/any/settings)</li>
+<li>Login as own/own.</li>
+<li>Check that 'any' YAML form is accessible. (/admin/structure/yamlform/any)</li>
+</ul>
+<p><strong>Duplicating YAML form</strong></p>
+<ul>
+<li>Login as own/own.</li>
+<li>Check that 'own' user can't duplicate a YAML form that they can't update. 
+  (/admin/structure/yamlform/manage/contact/duplicate)<ul>
+<li>Returns 'Access denied'.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="yaml-form-access-rules">YAML form Access Rules</h1>
+<ul>
+<li>Create test roles and users. (See development.md)</li>
 </ul>
 <p><strong>Account/Roles</strong></p>
 <ul>
@@ -672,6 +734,65 @@ role/permission, and use case provided by the YAML form module.</p>
 <li>
 <p>Click 'Test' under 'Operations' for each element.</p>
 </li>
+</ul>
+<hr />
+<h1 id="yaml-form-node">YAML form node</h1>
+<p><strong>Setup</strong></p>
+<ul>
+<li>Enable YAML form node module (/admin/extend)</li>
+<li>Create test 'any' and 'own' roles and users. (See development.md)</li>
+</ul>
+<p><strong>Account/Roles</strong></p>
+<ul>
+<li>any: Manage any YAML form and YAML form node submissions.</li>
+<li>own: Manage own YAML form and YAML form node submissions.</li>
+</ul>
+<p><strong>Create YAML form node</strong></p>
+<ul>
+<li>Goto 'Create YAML form' 
+  (node/add/yamlform)</li>
+<li>Enter custom title</li>
+<li>Select 'Contact' form</li>
+<li>Save and publish</li>
+<li>Check 'Contact' form is displayed when node is viewed.</li>
+<li>Check 'Test' tab.</li>
+<li>Check 'Results' tab.</li>
+</ul>
+<p><strong>Submission (/node/{node}/yamlform/results/submissions)</strong></p>
+<ul>
+<li>Check only YAML form node submissions are displayed.</li>
+<li>Check only YAML form node submissions can be navigated to.</li>
+<li>Check that breadcrumbs link to the YAML form node.</li>
+<li>Check that only submissions associated with the current node can be accessed.<ul>
+<li>Must manually enter a different sid in the URL.
+  (/node/{node}/yamlform/results/manage/{yamlform_submission})</li>
+</ul>
+</li>
+</ul>
+<p><strong>Access any YAML form node submissions</strong></p>
+<ul>
+<li>Login as any:any.</li>
+<li>Check 'Test' tab.</li>
+<li>Check 'Results' tab.</li>
+</ul>
+<p><strong>Access own YAML form node submissions</strong></p>
+<ul>
+<li>Change YAML form node author to 'own'.</li>
+<li>Login as own:own.</li>
+<li>Check 'Test' tab.</li>
+<li>Check 'Results' tab.</li>
+</ul>
+<p><strong>Draft and Saved</strong></p>
+<ul>
+<li>Enable drafts for 'Contact' form.
+  (/admin/structure/yamlform/manage/contact/settings)</li>
+<li>Save draft for 'Contact' form.
+  (/yamlform/contact)</li>
+<li>Save draft for YAML form node referencing 'Contact' form.
+  (/node/{node})</li>
+<li>Check that the correct draft is loaded for both YAML form instances.</li>
+<li>Check that previously saved submission is correctly linked to for both YAML
+  form instances.</li>
 </ul>
               
             </div>
