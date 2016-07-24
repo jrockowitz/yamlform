@@ -4,47 +4,23 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-07-13</lastmod>
+     <lastmod>2016-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/videos/</loc>
-     <lastmod>2016-07-13</lastmod>
+     <loc>None/features/</loc>
+     <lastmod>2016-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/screenshots/</loc>
-     <lastmod>2016-07-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/todo/</loc>
-     <lastmod>2016-07-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/roadmap/</loc>
-     <lastmod>2016-07-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/issues/</loc>
-     <lastmod>2016-07-13</lastmod>
+     <loc>None/download/</loc>
+     <lastmod>2016-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -52,20 +28,72 @@
     
         
     <url>
-     <loc>None/maintainers/</loc>
-     <lastmod>2016-07-13</lastmod>
+     <loc>None/support/installation/</loc>
+     <lastmod>2016-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/development/</loc>
-     <lastmod>2016-07-13</lastmod>
+     <loc>None/support/faq/</loc>
+     <lastmod>2016-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/test/</loc>
-     <lastmod>2016-07-13</lastmod>
+     <loc>None/support/videos/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/support/glossary/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/support/issues/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/support/drupal/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/developers/extending/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developers/roadmap/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developers/development/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developers/maintainers/</loc>
+     <lastmod>2016-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developers/resources/</loc>
+     <lastmod>2016-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

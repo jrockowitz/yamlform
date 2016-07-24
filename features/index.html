@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jacob Rockowitz">
+        
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+
+	<title>Features - YAML Form</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">YAML Form</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Home</a>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">Features</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../support/installation/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../support/faq/">Frequently Asked Questions (FAQ)</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../support/videos/">Videos & Screencasts</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../support/glossary/">Glossary</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../support/issues/">Known Issues</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../support/drupal/">On Drupal.org</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Developers <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../developers/extending/">Customizing & Extending</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../developers/roadmap/">8.x-1.x Release Roadmap</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../developers/development/">Development Cheatsheet</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../developers/maintainers/">Maintainers Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../developers/resources/">Additional Resources</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="..">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../download/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#features">Features</a></li>
+        
+            <li><a href="#form-builder">Form Builder</a></li>
+        
+            <li><a href="#form-settings">Form Settings</a></li>
+        
+            <li><a href="#form-elements">Form Elements</a></li>
+        
+            <li><a href="#custom-properties">Custom Properties</a></li>
+        
+            <li><a href="#viewing-source">Viewing Source</a></li>
+        
+            <li><a href="#statesconditional-logic">States/Conditional Logic</a></li>
+        
+            <li><a href="#multistep-forms">Multistep Forms</a></li>
+        
+            <li><a href="#emailhandlers">Email/Handlers</a></li>
+        
+            <li><a href="#results-management">Results Management</a></li>
+        
+            <li><a href="#access-controls">Access Controls</a></li>
+        
+            <li><a href="#reusable-templates">Reusable Templates</a></li>
+        
+            <li><a href="#reusable-options">Reusable Options</a></li>
+        
+            <li><a href="#internationalization">Internationalization</a></li>
+        
+            <li><a href="#drupal-integration">Drupal Integration</a></li>
+        
+            <li><a href="#drush-integration">Drush Integration</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="features">Features</h2>
+<h3 id="form-builder">Form Builder</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/form-builder.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/form-builder.png" alt="Form Builder" />
+</a>
+</div>
+
+<p>The YAML Form module provides an intuitive form builder based upon Drupal 8&rsquo;s 
+best practices for user interface and user experience. The form builder allows non-technical users to easily build and maintain forms.</p>
+<p>Form builder features include:</p>
+<ul>
+<li>Drag-n-drop form element management</li>
+<li>Generation of test submissions</li>
+<li>Duplication of existing forms, templates, and elements</li>
+</ul>
+<h3 id="form-settings">Form Settings</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/form-settings.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/form-settings.png" alt="Form Settings" />
+</a>
+</div>
+
+<p>Form submission handling, messaging, and confirmations are completely 
+customizable using global settings and/or form-specific settings.</p>
+<p>Form settings that can be customized include:</p>
+<ul>
+<li>Messages and button labels</li>
+<li>Confirmation page, messages, and redirects</li>
+<li>Confidential submissions</li>
+<li>Prepopulating a form&rsquo;s elements using query string parameters</li>
+<li>Limiting number of submission per user, per form, and/or per node</li>
+</ul>
+<h3 id="form-elements">Form Elements</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/form-elements.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/form-elements.png" alt="Form Elements" />
+</a>
+</div>
+
+<p>The YAML Form module is built directly on top of Drupal 8&rsquo;s Form API. Every
+<a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8">form element</a> 
+available in Drupal 8 is supported by the YAML Form module.</p>
+<p>Form elements include:</p>
+<ul>
+<li><strong>HTML:</strong> Textfield, Textareas, Checkboxes, Radios, Select menu, 
+  Password, and more&hellip;</li>
+<li><strong>HTML5:</strong> Email, Url, Number, Telephone), Date, Number, Range, 
+  and more&hellip;</li>
+<li><strong>Drupal specific</strong> File uploads, Entity References, Table select, Date list, 
+  and more&hellip;</li>
+<li><strong>Custom:</strong> <a href="https://en.wikipedia.org/wiki/Likert_scale">Likert scale</a>, 
+  Credit card number, Select/Checkboxes/Radios with other, and more&hellip;</li>
+<li><strong>Composite elements:</strong> Address, Contact, and Credit Card </li>
+</ul>
+<h3 id="custom-properties">Custom Properties</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/custom-properties.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/custom-properties.png" alt="Custom Properties" />
+</a>
+</div>
+
+<p>All of Drupal 8&rsquo;s default form element properties and behaviors are supported. 
+There are also several custom form element properties and settings
+available to enhance a form element&rsquo;s behavior.</p>
+<p>Standard and custom properties allow for:</p>
+<ul>
+<li><strong>Conditional logic</strong> using <a href="https://api.drupal.org/api/examples/form_example%21form_example_states.inc/function/form_example_states_form/7">FAPI States API</a></li>
+<li><strong>Input masks</strong> (using <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>)</li>
+<li><strong><a href="https://select2.github.io/">Select2</a></strong> replacement of select boxes </li>
+<li><strong>Private</strong> elements, visible only to administrators</li>
+<li><strong>Unique</strong> values per element</li>
+</ul>
+<h3 id="viewing-source">Viewing Source</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/viewing-source.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/viewing-source.png" alt="Viewing Source" />
+</a>
+</div>
+
+<p>At the heart of a YAML Form module&rsquo;s form elements is a Drupal render array,
+which can be edited and managed by developers. The Drupal render array gives developers
+complete control over a form&rsquo;s elements, layout, and look-and-feel by
+allowing developers to make bulk updates to a form&rsquo;s label, descriptions, and 
+behaviors.</p>
+<h3 id="statesconditional-logic">States/Conditional Logic</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/states-conditional-logic.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/states-conditional-logic.png" alt="States/Conditional Logic" />
+</a>
+</div>
+
+<p>Drupal&rsquo;s State API can be used by developers to provide conditional logic to 
+hide and show form elements.</p>
+<p>Drupal&rsquo;s State API supports:</p>
+<ul>
+<li>Show/Hide</li>
+<li>Open/Close</li>
+<li>Enable/Disable</li>
+</ul>
+<h3 id="multistep-forms">Multistep Forms</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/multistep-forms.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/multistep-forms.png" alt="Multistep Forms" />
+</a>
+</div>
+
+<p>Forms can be broken up into multiple pages using a progress bar. Authenticated
+users can save drafts and/or have their changes automatically saved as they 
+progress through a long form.</p>
+<p>Multistep form features include:</p>
+<ul>
+<li>Customizable progress bar</li>
+<li>Customizable previous and next button labels</li>
+<li>Saving drafts between steps</li>
+</ul>
+<h3 id="emailhandlers">Email/Handlers</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/email-handlers.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/email-handlers.png" alt="Email/Handlers" />
+</a>
+</div>
+
+<p>Upon form submission, customizable email notifications and confirmations can
+be sent to users and administrators. </p>
+<p>An extendable plugin that allows developers to push submitted data 
+to external or internal systems and/or applications is provided. </p>
+<p>Email support features include:</p>
+<ul>
+<li>Previewing and resending emails</li>
+<li>Sending HTML emails</li>
+<li>File attachments (requires the <a href="https://www.drupal.org/project/mailsystem">Mail System</a> and <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> module.) </li>
+<li>HTML and plain-text email-friendly Twig templates</li>
+<li>Customizable display formats for individual form elements</li>
+</ul>
+<h3 id="results-management">Results Management</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/results-management.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/results-management.png" alt="Results Management" />
+</a>
+</div>
+
+<p>Form submissions can optionally be stored in the database, reviewed, and
+downloaded.  </p>
+<p>Submissions can also be flagged with administrative notes.</p>
+<p>Results management features include:</p>
+<ul>
+<li>Flagging</li>
+<li>Administrative notes </li>
+<li>Viewing submissions as HTML, plain text, and YAML</li>
+<li>Customizable reports</li>
+<li>Downloading results as a CSV to Google Sheets or MS Excel</li>
+<li>Saving of download preferences per form</li>
+</ul>
+<h3 id="access-controls">Access Controls</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/access-controls.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/access-controls.png" alt="Access Controls" />
+</a>
+</div>
+
+<p>The YAML Form module provide full access controls for managing who can create
+forms, post submissions, and access a form&rsquo;s results.<br />
+Access controls can be applied to roles and/or specific users.</p>
+<p>Access controls allow users to:</p>
+<ul>
+<li>Create new forms</li>
+<li>Update forms</li>
+<li>Delete forms</li>
+<li>View submissions</li>
+<li>Update submissions</li>
+<li>Delete submissions</li>
+</ul>
+<h3 id="reusable-templates">Reusable Templates</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/reusable-templates.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/reusable-templates.png" alt="Reusable Templates" />
+</a>
+</div>
+
+<p>The YAML Form module provides a few starter templates and examples that form 
+administrators can update or use to create new reusable templates for their 
+organization.</p>
+<p>Starter templates include:</p>
+<ul>
+<li>Contact form</li>
+<li>Registration form</li>
+<li>Job Application form </li>
+<li>Subscribe form</li>
+</ul>
+<h3 id="reusable-options">Reusable Options</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/reusable-options.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/reusable-options.png" alt="Reusable Options" />
+</a>
+</div>
+
+<p>Administrators can define reusable global options for select menus, checkboxes, 
+and radio buttons. The YAML Form module includes default options for states,
+countries, <a href="https://en.wikipedia.org/wiki/Likert_scale">likert</a> answers, and more.   </p>
+<p>Reusable options include:</p>
+<ul>
+<li>Country codes &amp; names </li>
+<li>State/province codes &amp; names  </li>
+<li>State codes   &amp; names     </li>
+<li>Likert agreement, comparison, importance, satisfaction, ten scale, and would you</li>
+</ul>
+<h3 id="internationalization">Internationalization</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/internationalization.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/internationalization.png" alt="Internationalization" />
+</a>
+</div>
+
+<p>Forms and configuration can be translated into multiple languages using Drupal&rsquo;s
+configuration translation system.    </p>
+<h3 id="drupal-integration">Drupal Integration</h3>
+<div class="thumbnail">
+<a href="http://thebigbluehouse.com/images/yamlform/features/drupal-integration.png">
+<img src="http://thebigbluehouse.com/images-thumbnails/yamlform/features/drupal-integration.png" alt="Drupal Integration" />
+</a>
+</div>
+
+<p>Forms can be attached to nodes or displayed as blocks.  Forms can also have dedicated SEO-friendly URLs. Form elements are simply render arrays that can
+easily be altered using custom hooks and/or plugins.</p>
+<h3 id="drush-integration">Drush Integration</h3>
+<p>Drush commands are provided to create, export, and purge submissions.</p>
+<!-- Creates the bootstrap modal where the image will appear -->
+
+<div class="modal fade" id="modal-lightbox" tabindex="-1" role="dialog" aria-labelledby="modal-lightbox-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="modal-lightbox-label"></h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>©2016 <a href="http://thebigbluehouse.com">The Big Blue House</a> (<a href="http://drupal.org/user/371407">Jacob Rockowitz</a>)</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../extra.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

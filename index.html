@@ -1,471 +1,248 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>YAML Form Documentation</title>
-  
-
-  <link rel="shortcut icon" href="./img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "None";
-    var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = "/";
-  </script>
-  
-  <script src="./js/jquery-2.1.1.min.js"></script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script>
-  <script src="./js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> YAML Form Documentation</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href=".">Introduction</a>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The YAML form module is a FAPI based form builder and submission manager for Drupal 8.">
+        <meta name="author" content="Jacob Rockowitz">
         
-            <ul>
+        <link rel="shortcut icon" href="favicon.ico">
+        
+
+	<title>YAML Form</title>
+
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="./css/base.css" rel="stylesheet">
+        <link href="./extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">YAML Form</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
             
-                <li class="toctree-l3"><a href="#table-of-contents">Table of Contents</a></li>
-                
             
-                <li class="toctree-l3"><a href="#about-this-module">About this Module</a></li>
-                
+                <li class="active">
+                    <a href=".">Home</a>
+                </li>
             
-                <li class="toctree-l3"><a href="#demo">Demo</a></li>
-                
             
-                <li class="toctree-l3"><a href="#goals">Goals</a></li>
-                
             
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
+                <li >
+                    <a href="features/">Features</a>
+                </li>
             
-                <li class="toctree-l3"><a href="#installation">Installation</a></li>
-                
             
-                <li class="toctree-l3"><a href="#releases">Releases</a></li>
-                
             
-                <li class="toctree-l3"><a href="#extending">Extending</a></li>
-                
+                <li >
+                    <a href="download/">Download</a>
+                </li>
             
-                <li class="toctree-l3"><a href="#related-projects">Related Projects</a></li>
-                
             
-                <li class="toctree-l3"><a href="#notes">Notes</a></li>
-                
             
-                <li class="toctree-l3"><a href="#troubleshooting">Troubleshooting</a></li>
-                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="support/installation/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="support/faq/">Frequently Asked Questions (FAQ)</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="support/videos/">Videos & Screencasts</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="support/glossary/">Glossary</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="support/issues/">Known Issues</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="support/drupal/">On Drupal.org</a>
+</li>
+
+                    
+                    </ul>
+                </li>
             
-                <li class="toctree-l3"><a href="#similar-projects">Similar Projects</a></li>
-                
             
-                <li class="toctree-l3"><a href="#authormaintainer">Author/Maintainer</a></li>
-                
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Developers <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="developers/extending/">Customizing & Extending</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="developers/roadmap/">8.x-1.x Release Roadmap</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="developers/development/">Development Cheatsheet</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="developers/maintainers/">Maintainers Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="developers/resources/">Additional Resources</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
             
             </ul>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="videos/">Videos</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="screenshots/">Screenshots</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="todo/">Todo</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="roadmap/">Roadmap</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="issues/">Known Issues</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>For Developers and Maintainers</span></li>
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="maintainers/">Maintainers</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="development/">Development</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="test/">Test Script</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">YAML Form Documentation</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Introduction</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a rel="next" >
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="features/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
 </div>
-          <div role="main">
-            <div class="section">
-              
-                <h2 id="table-of-contents">Table of Contents</h2>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#yaml-form">YAML Form</a></li>
+        
+            <li><a href="#about-this-module">About this Module</a></li>
+        
+            <li><a href="#demo">Demo</a></li>
+        
+            <li><a href="#goals">Goals</a></li>
+        
+            <li><a href="#documentation">Documentation</a></li>
+        
+            <li><a href="#releases">Releases</a></li>
+        
+            <li><a href="#similar-projects">Similar Projects</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="yaml-form">YAML Form</h2>
+<h3 id="about-this-module">About this Module</h3>
+<p>The YAML Form module is a form builder and submission manager for Drupal 8.</p>
+<p>The primary use case for this module is to:</p>
 <ul>
-<li><a href="#about-this-module">About this module</a></li>
-<li><a href="#demo">Demo</a></li>
-<li><a href="#goals">Goals</a></li>
-<li><a href="#concepts">Concepts</a></li>
-<li><a href="#example">Example</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#installation">Installation</a> </li>
-<li><a href="#releases">Releases</a>  </li>
-<li><a href="#extending">Extending</a></li>
-<li><a href="#related-projectss">Related Projects</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-<li><a href="#notes">Notes</a></li>
-<li><a href="#similar-projects">Similar Projects</a></li>
+<li><strong>Build</strong> a new form or duplicate an existing template</li>
+<li><strong>Publish</strong> the form as a page, node, or block</li>
+<li><strong>Collect</strong> submissions</li>
+<li><strong>Send</strong> confirmations and notifications</li>
+<li><strong>Review</strong> submissions online</li>
+<li><strong>Download</strong> submissions as a CSV</li>
 </ul>
-<h2 id="about-this-module">About this Module</h2>
-<p>The YAML form module is a FAPI based form builder and submission manager for 
-Drupal 8.</p>
-<blockquote>
-<p><b>IMPORTANT:</b>
-The YAML form module now includes a user interface (UI), which allows 
-site builders to easily build and maintain forms. 
-Developers are still able to 'view source' and edit a form's 
-<a href="https://www.drupal.org/node/2117411">FAPI</a> 
-<a href="https://www.drupal.org/developing/api/8/render/arrays">Render Array</a>
-using <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>.</p>
-</blockquote>
-<p>The primary use case for this module is...</p>
-<ul>
-<li>Admin duplicates and customizes an existing form/template.</li>
-<li>Admin tests and publishes the new form.</li>
-<li>User fills in and submits the form.</li>
-<li>Submission is stored in the database.</li>
-<li>Admin receives an email notification. </li>
-<li>User receives an email confirmation.</li>
-<li>Admin views submissions online.</li>
-<li>Admin downloads all submissions as a CSV.</li>
-</ul>
-<p>Additional things to consider...</p>
-<ul>
-<li>Results can be exported as a CSV for use in 
-  <a href="https://www.google.com/sheets/about/">Google Sheets</a>
-  or <a href="https://products.office.com/en-us/excel">Excel</a>.</li>
-<li>The alternatives: 
-  <a href="https://www.drupal.org/documentation/modules/contact">Contact</a> with 
-  <a href="https://www.drupal.org/documentation/modules/contact_storage">Contact Storage</a>,
-  <a href="https://www.drupal.org/project/eform">Eform</a>,
-  <a href="https://www.drupal.org/project/webform">Webform</a>,
-  <a href="https://form.io/">Form.io</a>,
-  <a href="https://www.google.com/forms/about/">Google Forms</a>,
-  <a href="https://www.surveymonkey.com">SurveyMonky</a>,
-  <a href="https://www.drupal.org/project/webform">Webform.com</a>,
-  <a href="http://www.wufoo.com/">Wufoo</a>,
-  <a href="https://www.google.com/search?q=Form+builders">etc...</a></li>
-<li>How can you help extend and improve this module?</li>
-</ul>
-<h2 id="demo">Demo</h2>
-<p><a href="http://youtu.be/rMxU-d8vanc"><img alt="Drupal: YamlForm 8.x-1.x Demo - Site Builder Preview " src="https://www.drupal.org/files/yamlform-youtube.png" /></a></p>
+<h3 id="demo">Demo</h3>
+<p><a href="http://youtu.be/rMxU-d8vanc"><img alt="Drupal: YamlForm 8.x-1.x Demo - Site Builder Preview" src="https://www.drupal.org/files/yamlform-youtube.png" /></a></p>
 <blockquote>
 <p>Evaluate this project online using <a href="https://simplytest.me/project/yamlform">simplytest.me</a>.</p>
-<p><a href="http://youtu.be/rMxU-d8vanc">Watch a demo</a> of the YAML form module.</p>
+<p><a href="http://youtu.be/rMxU-d8vanc">Watch a demo</a> of the YAML Form module.</p>
 </blockquote>
-<h2 id="goals">Goals</h2>
+<h3 id="goals">Goals</h3>
 <ul>
-<li>A stable, maintainable, and tested API for building forms and submission handling. </li>
-<li>A pluggable/extensible API for custom submission handling. </li>
-<li>A focused and limited feature set to ensure maintainability. </li>
+<li>A comprehensive form and survey building solution for Drupal 8. </li>
+<li>A stable, maintainable, and tested API for building forms and handling submission.</li>
+<li>A pluggable/extensible API for custom form elements and submission handling. </li>
 </ul>
-<h2 id="features">Features</h2>
-<p><strong>Forms</strong> </p>
-<ul>
-<li>Create forms using Drupal's Form API (FAPI)</li>
-<li>Custom confirmation page, message, and redirection</li>
-<li>Reusable and customizable list of common select menu, radios, and checkbox 
-  options. This includes countries, states, etc...</li>
-<li>Reuse options for autocompletion</li>
-<li>Starter templates for common forms</li>
-<li>Ability to duplicate existing forms and templates</li>
-<li>Prepopulate form with querystring parameters</li>
-<li>Support for confidential submissions, which have no recorded IP address
-  and must be submitted while logged out.</li>
-<li>Set custom URL aliases for the form and its confirmation page</li>
-<li>Preview and save draft support</li>
-</ul>
-<p><strong>Elements</strong></p>
-<ul>
-<li>Support for every
-  <a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8">form element</a>
-  included in Drupal 8 core. This includes file uploads and entity references.</li>
-<li>Conditional logic using <a href="https://api.drupal.org/api/examples/form_example%21form_example_states.inc/function/form_example_states_form/7">FAPI States API</a></li>
-<li>Input masks (using <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>)</li>
-<li>Private elements</li>
-<li>Unique element values</li>
-<li>Define optional display format for individual elements. <ul>
-<li>For example, checkboxes can display as comma delimited value or a bullet list.</li>
-</ul>
-</li>
-<li>Provide custom form elements, including...<ul>
-<li>HTML source CodeMirror editor</li>
-<li>YAML source CodeMirror editor</li>
-<li>Text source CodeMirror editor</li>
-<li>Credit card number</li>
-<li>Email confirmation</li>
-<li>Select other</li>
-<li>Radios other</li>
-<li>Checkboxes other</li>
-<li>Composite used for contacts and addresses</li>
-<li><a href="https://en.wikipedia.org/wiki/Likert_scale">Likert scale</a></li>
-</ul>
-</li>
-<li>Support for form functionality and elements provided by contrib modules 
-  including
-  <a href="https://www.drupal.org/project/honeypot">Honeypot</a>,
-  <a href="https://www.drupal.org/project/mollom">Mollom</a>,
-  <a href="https://www.drupal.org/project/captcha">CAPTCHA</a>,
-  <a href="https://www.drupal.org/project/validators">Validators</a>,
-  and more to come...</li>
-</ul>
-<p><strong>Submissions/Results</strong></p>
-<ul>
-<li>View submissions as HTML, plain text, and YAML</li>
-<li>Download results as a CSV to Google Sheets or MS Excel</li>
-<li>Fine grain access control by roles and user</li>
-<li>Users can view previous submissions</li>
-<li>Limit total number of submissions or user specific submissions</li>
-<li>Drush support for exporting CSV and purging submissions</li>
-</ul>
-<p><strong>Emails/Handlers</strong></p>
-<ul>
-<li>Extensible form submission handler plugin  </li>
-<li>Handles email notifications and confirmations </li>
-<li>Preview and resend emails</li>
-<li>HTML email (does not require any additional modules)</li>
-<li>File attachments (requires <a href="https://www.drupal.org/project/mailsystem">Mail System</a>, only <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> has been tested) </li>
-</ul>
-<p><strong>Multistep Form Wizard</strong></p>
-<ul>
-<li>Builds multi step forms</li>
-<li>Customize previous and next button labels</li>
-<li>Optional progress bar  </li>
-</ul>
-<p><strong>Third Party Settings</strong></p>
-<ul>
-<li>Allows contrib modules to define additional settings and behaviors that can be 
-  applied to all YAML forms or just one specific YAML form.</li>
-</ul>
-<p><strong>Integration</strong></p>
-<ul>
-<li>Block integration</li>
-<li>Node integration</li>
-<li>Token support</li>
-<li>YAML and HTML source editor using <a href="https://codemirror.net/">CodeMirror</a></li>
-</ul>
-<p><strong>Internationalization</strong></p>
-<ul>
-<li>Translation integration</li>
-<li>Tracks submission language</li>
-</ul>
-<p><strong>Development</strong></p>
-<ul>
-<li>Generate test submissions using devel generate and customizable test datasets</li>
-</ul>
-<h2 id="installation">Installation</h2>
-<ol>
-<li>Copy/upload the yamlform.module to the modules directory of your Drupal
-   installation.</li>
-<li>(optional) Manually install <a href="http://codemirror.net/">CodeMirror</a> and 
-    <a href="https://github.com/RobinHerbots/jquery.inputmask">jquery.inputmask</a>
-    into the /libraries directory.
-   If CodeMirror and/or jquery.inputmask is not installed, they will be loaded 
-   from <a href="https://cdnjs.com/">https://cdnjs.com/</a>.</li>
-<li>Enable the 'YAML form' or the 'YAML form UI' module or the in 'Extend'. 
-   (/admin/modules)</li>
-<li>Setup permissions. (/admin/people/permissions#module-yamlform)</li>
-<li>Begin building a new YAML form or duplicate an existing one.
-   (/admin/structure/yamlform)</li>
-<li>Publish your new YAML form as a...<ul>
-<li><strong>Page:</strong> By linking to the published YAML form.
-  (/yamlform/contact)  </li>
-<li><strong>Node:</strong> By creating a new node that references the YAML form.
-  (/node/add/yamlform)</li>
-<li><strong>Block:</strong> By placing a YAML form block on your site.
-  (/admin/structure/block)</li>
-</ul>
-</li>
-</ol>
-<p>Notes</p>
-<ul>
-<li>Tokens are supported and actively used by the YAML form module. 
-  It is recommended that the<br />
-<a href="https://www.drupal.org/project/token">Token module</a> is installed.</li>
-<li>For email file attachment support please install and configure the 
-  <a href="https://www.drupal.org/project/mailsystem">Mail System</a> and 
-  <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> modules.</li>
-</ul>
-<h2 id="releases">Releases</h2>
-<p>Even though, the YAML form module is still under active development with
-regular <a href="https://www.drupal.org/documentation/version-info/alpha-beta-rc">beta releases</a>
-all YAML form configuration and submission data will be maintained and updated 
+<h3 id="documentation">Documentation</h3>
+<p>The YAML Form module&rsquo;s documentation is still under development. The YAML form 
+module has a dedicated website that provides 
+a <a href="http://thebigbluehouse.com/yamlform/features/">features summary</a>, 
+<a href="http://thebigbluehouse.com/yamlform/support/installation/">installation instructions</a>,
+<a href="http://thebigbluehouse.com/yamlform/support/faq/">FAQs</a>,
+and <a href="http://thebigbluehouse.com/yamlform/">more&hellip;</a>.</p>
+<h3 id="releases">Releases</h3>
+<p>Even though the YAML Form module is still under active development with
+regular <a href="https://www.drupal.org/documentation/version-info/alpha-beta-rc">beta releases</a>,
+all existing configuration and submission data will be maintained and updated 
 between releases.  <strong>APIs can and will be changing</strong> while this module moves 
-from beta release and finally a release candidate. </p>
-<p>Simply put it, if you install and use the YAML form module AS-IS, out of the 
-box, you <em>should</em> be okay.  Once you start extending YAML forms with plugins, 
-alter  hooks, and template overrides, you will need to read the release notes 
-and assume <em>things will be changing</em>.</p>
-<h2 id="extending">Extending</h2>
-<p>YAML form provides a YamlFormHandler <a href="https://www.drupal.org/developing/api/8/plugins">plugin</a>
-as well as support for third party settings and alter hooks for contrib modules
-to extend and enhance a YAML form.</p>
-<p><strong>YamlFormHandler plugin</strong></p>
-<p>The YamlFormHandler plugin allows developers to extend a YAML form's elements 
-and submission handling. Each YamlFormHandler plugin should live in a dedicated 
-module and handler namespace. For example, if a developer wanted to setup 
-MailChimp integration, they would create the YAML form MailChimp module 
-(yamlform_mailchimp.module) which would contain the YamlFormMailChimpHandler.</p>
-<p>This approach/pattern will allow any popular YamlFormHandler plugins
-(that include tests) to be easily contributed back to the main YAML form module.</p>
-<p><strong>Third Party Settings</strong></p>
-<p>The YAML form module allows contrib modules to also set third party settings
-for all YAML forms and/or one specific YAML form.  </p>
-<p>See the yamlform_test_third_party_settings.module for an example of how a
-contrib can use third party settings to extend and enhance a YAML form.</p>
-<h2 id="related-projects">Related Projects</h2>
-<p>Below are additional projects that extend and provide additional YAML form 
-features and functionality.</p>
+from beta releases to a final release candidate. </p>
+<p>Simply put, if you install and use the YAML Form module out of the box AS-IS, you <em>should</em> be okay.  Once you start extending forms with plugins, 
+altering  hooks, and overriding templates, you will need to read each release&rsquo;s 
+notes and assume that <em>things will be changing</em>.</p>
+<h3 id="similar-projects">Similar Projects</h3>
 <ul>
-<li><a href="https://www.drupal.org/project/yamlform_queue">YAML Form Queue</a><br />
-  Provides a queue handler for YAML Form to store form submissions in a queue.</li>
-</ul>
-<h2 id="notes">Notes</h2>
-<ul>
-<li>Element names will be used to store data.</li>
-<li>Duplicate element names are not allowed.</li>
-<li>The <a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/8#tree">#tree</a> 
-  property, which is used to allow collections of form elements, is not allowed.</li>
-<li>Element callback properties are not supported within a YAML element.
-  This includes <code>#element_validate</code>, <code>#after_build</code>, <code>#post_render</code>, <code>#pre_render</code>, <code>#process</code>, <code>#submit</code>, <code>#value_callback</code>, and <code>#validate</code>.</li>
-<li>Once there has been a form submission, existing element names should never be
-  deleted, they can be be hidden (via <code>'#access': false</code>).</li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<p><strong>How to debug issues with YAML form elements/elements?</strong></p>
-<ul>
-<li>A YAML form's element data is just a <a href="https://www.drupal.org/node/37775">Form API(FAPI)</a>
-  <a href="https://www.drupal.org/developing/api/8/render/arrays">render array</a>. </li>
-<li>Some issues can be fixed by reading the API documentation associated 
-  with a given <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21FormElement.php/class/FormElement/8">form element</a>.
-  Links to a form element's API documentation is include in the Elements 
-  overview. (/admin/structure/yamlform/settings/elements)</li>
-</ul>
-<p><strong>How to get help fixing issues with the YAML form module?</strong></p>
-<ul>
-<li>Review the YAML form module's <a href="https://www.drupal.org/project/issues/yamlform">issue queue</a> 
-  for similar issues.</li>
-<li>If you need to create a new issue, <strong>please</strong> create and export an example of 
-  the broken YAML form configuration. <br />
-<em>This will helps guarantee that your issue is reproducible.</em>  </li>
-<li>Please also read <a href="https://www.drupal.org/issue-queue/how-to">How to create a good issue</a>
-  and use the <a href="https://www.drupal.org/node/1155816">Issue Summary Template</a>
-  when creating new issues.</li>
-</ul>
-<h2 id="similar-projects">Similar Projects</h2>
-<ul>
-<li><a href="http://www.pcmag.com/article2/0,2817,2494737,00.asp">The Best Online Survey Tools of 2016</a></li>
 <li><a href="https://www.drupal.org/node/2083353">Comparison of Form Building Modules</a></li>
 <li><a href="https://www.drupal.org/documentation/modules/contact">Contact</a> <ul>
 <li><a href="https://www.drupal.org/project/contact_storage">Contact Storage</a></li>
@@ -481,55 +258,48 @@ features and functionality.</p>
 <li><a href="https://www.drupal.org/node/2075941">Port Webform to Drupal 8</a></li>
 </ul>
 </li>
-</ul>
-<h2 id="authormaintainer">Author/Maintainer</h2>
-<ul>
-<li><a href="http://drupal.org/user/371407">Jacob Rockowitz</a></li>
-</ul>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="videos/" class="btn btn-neutral float-right" title="Videos">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
+</ul></div>
         </div>
-      </div>
 
-    </section>
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>©2016 <a href="http://thebigbluehouse.com">The Big Blue House</a> (<a href="http://drupal.org/user/371407">Jacob Rockowitz</a>)</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
 
-  </div>
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script>
+        <script src="./extra.js"></script>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-      
-        <span style="margin-left: 15px"><a href="videos/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
-
-<!--
-MkDocs version : 0.15.3
-Build Date UTC : 2016-07-13 18:59:31.878088
--->

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jacob Rockowitz">
+        
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+	<title>Installation - YAML Form</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">YAML Form</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li class="active">
+    <a href="./">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../faq/">Frequently Asked Questions (FAQ)</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../videos/">Videos & Screencasts</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../glossary/">Glossary</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../issues/">Known Issues</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../drupal/">On Drupal.org</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Developers <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../developers/extending/">Customizing & Extending</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/roadmap/">8.x-1.x Release Roadmap</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/development/">Development Cheatsheet</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/maintainers/">Maintainers Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/resources/">Additional Resources</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../../download/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../faq/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#installation">Installation</a></li>
+        
+            <li><a href="#installing-the-yaml-form-module">Installing the YAML Form Module</a></li>
+        
+            <li><a href="#sub-modules">Sub Modules</a></li>
+        
+            <li><a href="#additional-contrib-modules">Additional Contrib Modules</a></li>
+        
+            <li><a href="#third-party-libraries">Third Party Libraries</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="installation">Installation</h2>
+<h3 id="installing-the-yaml-form-module">Installing the YAML Form Module</h3>
+<ol>
+<li>
+<p>Copy/upload the yamlform.module to the modules directory of your Drupal
+   installation.</p>
+</li>
+<li>
+<p>Enable the &lsquo;YAML Form&rsquo; module and desired <a href="#sub-modules">sub-modules</a> in &lsquo;Extend&rsquo;. 
+   (/admin/modules)</p>
+</li>
+<li>
+<p>Setup user permissions. (/admin/people/permissions#module-yamlform)</p>
+</li>
+<li>
+<p>Build a new form (/admin/structure/yamlform)
+   or duplicate an existing template (/admin/structure/yamlform/templates).</p>
+</li>
+<li>
+<p>Publish your form as a:</p>
+<ul>
+<li>
+<p><strong>Page:</strong> By linking to the published form.
+  (/yamlform/contact)  </p>
+</li>
+<li>
+<p><strong>Node:</strong> By creating a new node that references the form.
+  (/node/add/yamlform)</p>
+</li>
+<li>
+<p><strong>Block:</strong> By placing a YAML Form block on your site.
+  (/admin/structure/block)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>(optional) Install <a href="#third-party-libraries">third party libraries</a>.</p>
+</li>
+<li>
+<p>(optional) Install <a href="#additional-contrib-modules">additional contrib modules</a>.</p>
+</li>
+</ol>
+<h3 id="sub-modules">Sub Modules</h3>
+<p><strong>YAML Form UI</strong></p>
+<p>The YAML Form UI module provides a simple user interface for building and 
+maintaining forms.</p>
+<blockquote>
+<p>Unless your website is maintained by experienced Drupal developers, 
+every website should enable the YAML Form UI module. </p>
+</blockquote>
+<p><strong>YAML Form Templates</strong></p>
+<p>The YAML Form Templates module provides starter templates that can be used 
+to create new forms. </p>
+<blockquote>
+<p>Besides using the provided default starter templates, you can also create 
+custom templates for your organization.</p>
+</blockquote>
+<p><strong>YAML Form Node</strong></p>
+<p>The YAML Form Node module provides a &lsquo;YAML form&rsquo; content type, which allows<br />
+forms to be integrated into a website as nodes.</p>
+<blockquote>
+<p>The YAML Form Node module creates a YAML form (entity reference) field
+that allows any form to be attached to any content type.  </p>
+</blockquote>
+<p><strong>YAML Form Examples</strong></p>
+<p>The YAML Form Examples module provides examples of all available form elements 
+and functionality, which can used for demonstrating and testing advanced 
+functionality or used as cut-n-paste code snippets for creating new forms.</p>
+<blockquote>
+<p>The YAML Form Examples module allows site builders and developers to 
+preview and experiment with working examples of all supported form elements 
+and features.</p>
+</blockquote>
+<h3 id="additional-contrib-modules">Additional Contrib Modules</h3>
+<p>When installed, the modules below will enhance your website&rsquo;s form building and 
+submission handling functionality and experience.</p>
+<p><strong><a href="https://www.drupal.org/project/token">YAML Form Queue</a></strong></p>
+<p>The <a href="https://www.drupal.org/project/token">YAML Form Queue</a> module provides a 
+queue handler for YAML Form, to store form submissions in a queue.</p>
+<p><strong><a href="https://www.drupal.org/project/token">Token</a></strong></p>
+<p>The <a href="https://www.drupal.org/project/token">Token</a> module provides additional 
+tokens not supported by core (most notably fields), as well as a UI for browsing 
+tokens.</p>
+<blockquote>
+<p>Tokens are supported and actively used by the YAML Form module. Installing the
+Token module will provide form builders with the ability to browse form and 
+submission specific tokens. </p>
+</blockquote>
+<p><strong><a href="https://www.drupal.org/project/mailsystem">Mail System</a> and <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a></strong></p>
+<p>The <a href="https://www.drupal.org/project/mailsystem">Mail System</a> module provides an 
+Administrative UI and Developers API for managing the mail backend/plugin.</p>
+<p>The <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> extends the 
+basic e-mail sending functionality provided by Drupal by delegating all e-mail
+handling to the Swift Mailer library.</p>
+<blockquote>
+<p>The YAML Form module provide support for HTML email, however to send file 
+attachments, please install and configure the 
+<a href="https://www.drupal.org/project/mailsystem">Mail System</a> and 
+<a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> modules.</p>
+</blockquote>
+<p><strong><a href="https://www.drupal.org/project/honeypot">Honeypot</a></strong></p>
+<p>The <a href="https://www.drupal.org/project/honeypot">Honeypot</a> module uses both the 
+honeypot and timestamp methods of deterring spam bots from completing forms on 
+your Drupal site.</p>
+<blockquote>
+<p>The Honeypot module provides the best unobtrusive protection against SPAM form submissions.</p>
+</blockquote>
+<p><strong><a href="https://www.drupal.org/project/captcha">CAPTCHA</a> and <a href="https://www.drupal.org/project/recaptcha">reCAPTCHA</a></strong></p>
+<p>The <a href="https://www.drupal.org/project/captcha">CAPTCHA</a> module provides the 
+CAPTCHA API for adding challenges to arbitrary forms.</p>
+<p>The <a href="https://www.drupal.org/project/recaptcha">reCAPTCHA</a> module uses the
+<a href="https://www.google.com/recaptcha/intro/index.html">Google reCAPTCHA</a> web 
+service to improve the CAPTCHA system, and to protect email addresses.</p>
+<blockquote>
+<p>CAPTCHA provides additional, slightly obtrusive protection against SPAM 
+submissions.</p>
+</blockquote>
+<p><strong><a href="https://www.drupal.org/project/validators">Validators</a></strong></p>
+<p>The <a href="https://www.drupal.org/project/validators">Validators</a> module allows you 
+to use the Symfony Validator component within a YAML form.</p>
+<blockquote>
+<p>The Validators module is one of the YAML Form module&rsquo;s supported 
+validation mechanisms.</p>
+</blockquote>
+<h3 id="third-party-libraries">Third Party Libraries</h3>
+<p>The YAML Form module utilizes the third-party Open Source libraries below to 
+enhance form elements and to provide additional functionality.  It is recommended 
+that these  libraries be installed in your Drupal installations /libraries 
+directory.  If these libraries are not installed, they are automatically loaded 
+from a CDN.</p>
+<blockquote>
+<p>PLEASE NOTE: These libraries must be manually installed. Support for using
+<a href="https://www.drupal.org/node/2404989">Composer</a> and/or the 
+<a href="https://www.drupal.org/project/libraries">Libraries API</a> is still 
+under development.  </p>
+</blockquote>
+<p><strong><a href="http://codemirror.net/">Code Mirror</a></strong> - <a href="http://codemirror.net/">Demo</a></p>
+<p>A versatile text editor implemented in JavaScript for the browser.</p>
+<blockquote>
+<p>Code Mirror is used to provide a text editor for YAML and HTML configuration
+settings and messages.</p>
+</blockquote>
+<p><strong><a href="http://robinherbots.github.io/jquery.inputmask/">Input Mask</a></strong> - <a href="http://robinherbots.github.io/jquery.inputmask/">Demo</a></p>
+<p>Input masks ensures a predefined format is entered. This can be useful for 
+dates, numerics, phone numbers, etc&hellip;</p>
+<blockquote>
+<p>Input masks are used to ensure predefined and custom format for text fields.</p>
+</blockquote>
+<p><strong><a href="https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin">Word and Character Counter</a></strong> - <a href="http://qwertypants.github.io/jQuery-Word-and-Character-Counter-Plugin/">Demo</a></p>
+<p>The jQuery Word and character counter plug-in allows you to count characters
+or words.</p>
+<blockquote>
+<p>Word or character counting, with server-side validation, is available for text 
+fields and text areas.</p>
+</blockquote>
+<p><strong><a href="https://select2.github.io/">Select2</a></strong> - <a href="https://select2.github.io/examples.html">Demo</a></p>
+<p>Select2 gives you a customizable select box with support for searching and 
+tagging.</p>
+<blockquote>
+<p>Select2 is used to improve the user experience for select menus.</p>
+</blockquote></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>©2016 <a href="http://thebigbluehouse.com">The Big Blue House</a> (<a href="http://drupal.org/user/371407">Jacob Rockowitz</a>)</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../extra.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
