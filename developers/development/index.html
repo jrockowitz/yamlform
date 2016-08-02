@@ -286,8 +286,8 @@ git push origin :[issue-number]-[issue-description]
 <p><strong>Reinstall YAML Form module.</strong></p>
 <pre><code class="bash">drush php-eval 'module_load_include('install', 'yamlform'); yamlform_uninstall();'; drush cron;
 drush php-eval 'module_load_include('install', 'yamlform_node'); yamlform_node_uninstall();'; drush cron; 
-drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y yamlform_examples; drush pmu -y yamlform_templates; drush pmu -y yamlform_ui; drush pmu -y yamlform_node; drush pmu -y yamlform; 
-drush en -y yamlform yamlform_ui yamlform_examples yamlform_templates yamlform_node;
+drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush pmu -y yamlform_devel; drush pmu -y yamlform_examples; drush pmu -y yamlform_templates; drush pmu -y yamlform_ui; drush pmu -y yamlform_node; drush pmu -y yamlform; 
+drush en -y yamlform yamlform_ui yamlform_devel yamlform_examples yamlform_templates yamlform_node;
 
 # Optional.
 drush en -y yamlform_test;
@@ -300,17 +300,27 @@ drush pmu -y yamlform_test_third_party_settings yamlform_translation_test;
 <pre><code class="bash">drush yamlform-purge --all -y; drush pmu -y yamlform_test; drush en -y yamlform_test;
 </code></pre>
 
-<p><strong>Manage YAML Form module configuration using theFeatures module</strong></p>
-<pre><code># Show the difference between the active config and the default config.
+<p><strong>Manage YAML Form module configuration using the <a href="https://www.drupal.org/project/features">Features</a> module</strong></p>
+<pre><code># Make sure all YAML form modules that are going to be exported are enabled
+drush en -y yamlform yamlform_examples yamlform_templates yamlform_test yamlform_node;
+
+# Show the difference between the active config and the default config.
 drush features-diff yamlform
 drush features-diff yamlform_test
 
-# Export and tidy all YAML form configuration from your site.          
+# Export YAML form configuration from your site.          
 drush features-export -y yamlform
 drush features-export -y yamlform_node
+drush features-export -y yamlform_test
 drush features-export -y yamlform_examples
 drush features-export -y yamlform_templates
-drush features-export -y yamlform_test
+
+# Tidy YAML form configuration from your site.          
+drush yamlform-tidy -y yamlform
+drush yamlform-tidy -y yamlform_node
+drush yamlform-tidy -y yamlform_test
+drush yamlform-tidy -y yamlform_examples
+drush yamlform-tidy -y yamlform_templates
 
 # Re-import all YAML form configuration into your site.      
 drush features-import -y yamlform
