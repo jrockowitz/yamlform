@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jacob Rockowitz">
+        
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+	<title>Screencasts/Tutorials - YAML Form</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">YAML Form</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../installation/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../faq/">Frequently Asked Questions (FAQ)</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../videos/">Videos & Presentations</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Screencasts/Tutorials</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../glossary/">Glossary</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../issues/">Known Issues</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../drupal/">On Drupal.org</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Developers <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../developers/extending/">Customizing & Extending</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/roadmap/">8.x-1.x Release Roadmap</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/development/">Development Cheatsheet</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/maintainers/">Maintainers Guide</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../developers/resources/">Additional Resources</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../videos/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../glossary/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#screencaststutorials">Screencasts/Tutorials</a></li>
+        
+            <li><a href="#the-yaml-form-module">The YAML Form module</a></li>
+        
+            <li><a href="#managing-forms">Managing forms</a></li>
+        
+            <li><a href="#using-templates">Using templates</a></li>
+        
+            <li><a href="#managing-results">Managing results</a></li>
+        
+            <li><a href="#defining-default-settings">Defining default settings</a></li>
+        
+            <li><a href="#defining-options">Defining options</a></li>
+        
+            <li><a href="#form-element-plugins">Form element plugins</a></li>
+        
+            <li><a href="#form-handler-plugins">Form handler plugins</a></li>
+        
+            <li><a href="#configuring-global-third-party-settings">Configuring global third party settings</a></li>
+        
+            <li><a href="#building-a-form">Building a form</a></li>
+        
+            <li><a href="#editing-yaml-source">Editing YAML source</a></li>
+        
+            <li><a href="#testing-a-form">Testing a form</a></li>
+        
+            <li><a href="#customizing-form-settings">Customizing form settings</a></li>
+        
+            <li><a href="#controlling-access-to-submissions">Controlling access to submissions</a></li>
+        
+            <li><a href="#enabling-form-handlers">Enabling form handlers</a></li>
+        
+            <li><a href="#configuring-third-party-settings">Configuring third party settings</a></li>
+        
+            <li><a href="#translating-a-form">Translating a form</a></li>
+        
+            <li><a href="#managing-results_1">Managing results</a></li>
+        
+            <li><a href="#building-a-custom-report">Building a custom report</a></li>
+        
+            <li><a href="#downloading-results">Downloading results</a></li>
+        
+            <li><a href="#exporting-configuration">Exporting configuration</a></li>
+        
+            <li><a href="#creating-yaml-form-nodes">Creating YAML form nodes</a></li>
+        
+            <li><a href="#creating-a-yaml-form-block">Creating a YAML form block</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="screencaststutorials">Screencasts/Tutorials</h2>
+<h3 id="the-yaml-form-module">The YAML Form module</h3>
+<p>The YAML form module is a FAPI based form builder and submission manager for Drupal 8.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/9jSOOEpzAy8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="managing-forms">Managing forms</h3>
+<p>The Forms page lists all available forms, which can be filtered by title, description, and/or elements.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/QyVytonGeH8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="using-templates">Using templates</h3>
+<p>The Templates page lists reusable templates that can be duplicated and customized to create new forms.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/tvMCqC-H0bI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="managing-results">Managing results</h3>
+<p>The Results page lists all incoming submissions for all forms.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/EME1HoYTmVA" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="defining-default-settings">Defining default settings</h3>
+<p>The Settings page allows administrators to manage global form and UI configuration settings, including updating default labels &amp; descriptions, settings default format, and defining test dataset.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/UWxlfu7PEQg" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="defining-options">Defining options</h3>
+<p>The Options page lists predefined options which are used to build select menus, radio buttons, checkboxes and likerts.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/vrL_TR8aQJo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="form-element-plugins">Form element plugins</h3>
+<p>The Elements page  lists all available YAML form element plugins. YAML form element plugins are used to enhance existing render/form elements. YAML form element plugins provide default properties, data normalization, custom validation, element configuration form, and customizable display formats.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/WSNGzJwnpeQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="form-handler-plugins">Form handler plugins</h3>
+<p>The Handler page  lists all available YAML form handler plugins. Handlers are used to route submitted data to external applications and send notifications &amp; confirmations.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/v5b4sOsUtn4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="configuring-global-third-party-settings">Configuring global third party settings</h3>
+<p>The Third party settings page allows contrib and custom modules to define global settings that are applied to all forms and submissions.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/kuguydtCWf0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="building-a-form">Building a form</h3>
+<p>The Form elements page allows users to add, update, duplicate, and delete form elements and wizard pages.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/OaQkqeJPu4M" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="editing-yaml-source">Editing YAML source</h3>
+<p>The (View) Source page allows developers to edit a form&rsquo;s render array using YAML markup. Developers can use the (View) Source page to quickly alter a form&rsquo;s labels, cut-n-paste multiple elements, reorder elements, and add customize properties and markup to elements.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/BQS5YdUWo5k" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="testing-a-form">Testing a form</h3>
+<p>The Form test page allows a form to be tested using a customizable test dataset. Multiple test submissions can be created using the devel_generate module.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/PWwV7InvYmU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="customizing-form-settings">Customizing form settings</h3>
+<p>The Form settings page allows a form&rsquo;s labels, messaging, and behaviors to be customized. Administrators can open/close a form, enable/disable drafts, allow previews, set submission limits, and disable the saving of results.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/g2RWTj7XrQo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="controlling-access-to-submissions">Controlling access to submissions</h3>
+<p>The Form access control page allows administrator to determine who can create, update, delete, and purge form submissions.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/xRlA1k5m09E" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="enabling-form-handlers">Enabling form handlers</h3>
+<p>The Form handlers page lists additional handlers (aka behaviors) that can process form submissions. Handlers are plugins that act on a form submission. For example, sending email confirmations and notifications is done using the Email handler which is provided by the YAML Form module.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/bZ8WDjmVFz4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="configuring-third-party-settings">Configuring third party settings</h3>
+<p>The Third party settings page allows contrib and custom modules to define form specific customization settings.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Kq3Sor1b-fI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="translating-a-form">Translating a form</h3>
+<p>The Translation page allows a form&rsquo;s configuration and elements to be translated into multiple languages.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7nQuIpQ1pnE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="managing-results_1">Managing results</h3>
+<p>The Results page displays an overview of a form&rsquo;s submissions. Submissions can be reviewed, updated, flagged, annotated, and downloaded.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/f1FYULMreA4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="building-a-custom-report">Building a custom report</h3>
+<p>The Table page provides a customizable table of a form&rsquo;s submissions. This page can be used to generate a customized report.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-Y_8eUlvo8k" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="downloading-results">Downloading results</h3>
+<p>The Download page allows a form&rsquo;s submissions to be exported in to a customizable CSV (Comma Separated Values) file.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/xHVXjhhVtHg" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="exporting-configuration">Exporting configuration</h3>
+<p>The Export (form) page allows developers to quickly export a single form&rsquo;s configuration file. If you run into any issues with a form, you can also attach the below configuration (without any personal information) to a new ticket in the YAML Form&rsquo;s issue queue.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ejzx4D0ldl0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="creating-yaml-form-nodes">Creating YAML form nodes</h3>
+<p>A YAML form node allows forms to be fully integrated into a website as nodes.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZvuMj4fBZDs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p>
+<h3 id="creating-a-yaml-form-block">Creating a YAML form block</h3>
+<p>A YAML form block allows a form to be placed anywhere on a website.</p>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CkRQMS6eJII" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
+<p><br/></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>©2016 <a href="http://thebigbluehouse.com">The Big Blue House</a> (<a href="http://drupal.org/user/371407">Jacob Rockowitz</a>)</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../extra.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

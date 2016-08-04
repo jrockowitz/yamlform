@@ -197,18 +197,13 @@
         }, 
         {
             "location": "/support/videos/", 
-            "text": "Videos \n Screencasts\n\n\nIntroduction\n\n\n\n  \n\n\n\n\n\n\n\nSite Builder Preview\n\n\n\n  \n\n\n\n\n\n\n\nDeveloper Preview\n\n\n\n  \n\n\n\n\n\n\n\nYAML, What is it good for?", 
-            "title": "Videos & Screencasts"
+            "text": "Videos \n Presentations\n\n\nSite Builder Preview\n\n\n\n  \n\n\n\n\n\n\n\nDeveloper Preview\n\n\n\n  \n\n\n\n\n\n\n\nYAML, What is it good for?", 
+            "title": "Videos & Presentations"
         }, 
         {
-            "location": "/support/videos/#videos-screencasts", 
+            "location": "/support/videos/#videos-presentations", 
             "text": "", 
-            "title": "Videos &amp; Screencasts"
-        }, 
-        {
-            "location": "/support/videos/#introduction", 
-            "text": "", 
-            "title": "Introduction"
+            "title": "Videos &amp; Presentations"
         }, 
         {
             "location": "/support/videos/#site-builder-preview", 
@@ -224,6 +219,131 @@
             "location": "/support/videos/#yaml-what-is-it-good-for", 
             "text": "", 
             "title": "YAML, What is it good for?"
+        }, 
+        {
+            "location": "/support/screencasts/", 
+            "text": "Screencasts/Tutorials\n\n\nThe YAML Form module\n\n\nThe YAML form module is a FAPI based form builder and submission manager for Drupal 8.\n\n\n\n  \n\n\n\n\n\n\n\nManaging forms\n\n\nThe Forms page lists all available forms, which can be filtered by title, description, and/or elements.\n\n\n\n  \n\n\n\n\n\n\n\nUsing templates\n\n\nThe Templates page lists reusable templates that can be duplicated and customized to create new forms.\n\n\n\n  \n\n\n\n\n\n\n\nManaging results\n\n\nThe Results page lists all incoming submissions for all forms.\n\n\n\n  \n\n\n\n\n\n\n\nDefining default settings\n\n\nThe Settings page allows administrators to manage global form and UI configuration settings, including updating default labels \n descriptions, settings default format, and defining test dataset.\n\n\n\n  \n\n\n\n\n\n\n\nDefining options\n\n\nThe Options page lists predefined options which are used to build select menus, radio buttons, checkboxes and likerts.\n\n\n\n  \n\n\n\n\n\n\n\nForm element plugins\n\n\nThe Elements page  lists all available YAML form element plugins. YAML form element plugins are used to enhance existing render/form elements. YAML form element plugins provide default properties, data normalization, custom validation, element configuration form, and customizable display formats.\n\n\n\n  \n\n\n\n\n\n\n\nForm handler plugins\n\n\nThe Handler page  lists all available YAML form handler plugins. Handlers are used to route submitted data to external applications and send notifications \n confirmations.\n\n\n\n  \n\n\n\n\n\n\n\nConfiguring global third party settings\n\n\nThe Third party settings page allows contrib and custom modules to define global settings that are applied to all forms and submissions.\n\n\n\n  \n\n\n\n\n\n\n\nBuilding a form\n\n\nThe Form elements page allows users to add, update, duplicate, and delete form elements and wizard pages.\n\n\n\n  \n\n\n\n\n\n\n\nEditing YAML source\n\n\nThe (View) Source page allows developers to edit a form\ns render array using YAML markup. Developers can use the (View) Source page to quickly alter a form\ns labels, cut-n-paste multiple elements, reorder elements, and add customize properties and markup to elements.\n\n\n\n  \n\n\n\n\n\n\n\nTesting a form\n\n\nThe Form test page allows a form to be tested using a customizable test dataset. Multiple test submissions can be created using the devel_generate module.\n\n\n\n  \n\n\n\n\n\n\n\nCustomizing form settings\n\n\nThe Form settings page allows a form\ns labels, messaging, and behaviors to be customized. Administrators can open/close a form, enable/disable drafts, allow previews, set submission limits, and disable the saving of results.\n\n\n\n  \n\n\n\n\n\n\n\nControlling access to submissions\n\n\nThe Form access control page allows administrator to determine who can create, update, delete, and purge form submissions.\n\n\n\n  \n\n\n\n\n\n\n\nEnabling form handlers\n\n\nThe Form handlers page lists additional handlers (aka behaviors) that can process form submissions. Handlers are plugins that act on a form submission. For example, sending email confirmations and notifications is done using the Email handler which is provided by the YAML Form module.\n\n\n\n  \n\n\n\n\n\n\n\nConfiguring third party settings\n\n\nThe Third party settings page allows contrib and custom modules to define form specific customization settings.\n\n\n\n  \n\n\n\n\n\n\n\nTranslating a form\n\n\nThe Translation page allows a form\ns configuration and elements to be translated into multiple languages.\n\n\n\n  \n\n\n\n\n\n\n\nManaging results\n\n\nThe Results page displays an overview of a form\ns submissions. Submissions can be reviewed, updated, flagged, annotated, and downloaded.\n\n\n\n  \n\n\n\n\n\n\n\nBuilding a custom report\n\n\nThe Table page provides a customizable table of a form\ns submissions. This page can be used to generate a customized report.\n\n\n\n  \n\n\n\n\n\n\n\nDownloading results\n\n\nThe Download page allows a form\ns submissions to be exported in to a customizable CSV (Comma Separated Values) file.\n\n\n\n  \n\n\n\n\n\n\n\nExporting configuration\n\n\nThe Export (form) page allows developers to quickly export a single form\ns configuration file. If you run into any issues with a form, you can also attach the below configuration (without any personal information) to a new ticket in the YAML Form\ns issue queue.\n\n\n\n  \n\n\n\n\n\n\n\nCreating YAML form nodes\n\n\nA YAML form node allows forms to be fully integrated into a website as nodes.\n\n\n\n  \n\n\n\n\n\n\n\nCreating a YAML form block\n\n\nA YAML form block allows a form to be placed anywhere on a website.", 
+            "title": "Screencasts/Tutorials"
+        }, 
+        {
+            "location": "/support/screencasts/#screencaststutorials", 
+            "text": "", 
+            "title": "Screencasts/Tutorials"
+        }, 
+        {
+            "location": "/support/screencasts/#the-yaml-form-module", 
+            "text": "The YAML form module is a FAPI based form builder and submission manager for Drupal 8.", 
+            "title": "The YAML Form module"
+        }, 
+        {
+            "location": "/support/screencasts/#managing-forms", 
+            "text": "The Forms page lists all available forms, which can be filtered by title, description, and/or elements.", 
+            "title": "Managing forms"
+        }, 
+        {
+            "location": "/support/screencasts/#using-templates", 
+            "text": "The Templates page lists reusable templates that can be duplicated and customized to create new forms.", 
+            "title": "Using templates"
+        }, 
+        {
+            "location": "/support/screencasts/#managing-results", 
+            "text": "The Results page lists all incoming submissions for all forms.", 
+            "title": "Managing results"
+        }, 
+        {
+            "location": "/support/screencasts/#defining-default-settings", 
+            "text": "The Settings page allows administrators to manage global form and UI configuration settings, including updating default labels   descriptions, settings default format, and defining test dataset.", 
+            "title": "Defining default settings"
+        }, 
+        {
+            "location": "/support/screencasts/#defining-options", 
+            "text": "The Options page lists predefined options which are used to build select menus, radio buttons, checkboxes and likerts.", 
+            "title": "Defining options"
+        }, 
+        {
+            "location": "/support/screencasts/#form-element-plugins", 
+            "text": "The Elements page  lists all available YAML form element plugins. YAML form element plugins are used to enhance existing render/form elements. YAML form element plugins provide default properties, data normalization, custom validation, element configuration form, and customizable display formats.", 
+            "title": "Form element plugins"
+        }, 
+        {
+            "location": "/support/screencasts/#form-handler-plugins", 
+            "text": "The Handler page  lists all available YAML form handler plugins. Handlers are used to route submitted data to external applications and send notifications   confirmations.", 
+            "title": "Form handler plugins"
+        }, 
+        {
+            "location": "/support/screencasts/#configuring-global-third-party-settings", 
+            "text": "The Third party settings page allows contrib and custom modules to define global settings that are applied to all forms and submissions.", 
+            "title": "Configuring global third party settings"
+        }, 
+        {
+            "location": "/support/screencasts/#building-a-form", 
+            "text": "The Form elements page allows users to add, update, duplicate, and delete form elements and wizard pages.", 
+            "title": "Building a form"
+        }, 
+        {
+            "location": "/support/screencasts/#editing-yaml-source", 
+            "text": "The (View) Source page allows developers to edit a form s render array using YAML markup. Developers can use the (View) Source page to quickly alter a form s labels, cut-n-paste multiple elements, reorder elements, and add customize properties and markup to elements.", 
+            "title": "Editing YAML source"
+        }, 
+        {
+            "location": "/support/screencasts/#testing-a-form", 
+            "text": "The Form test page allows a form to be tested using a customizable test dataset. Multiple test submissions can be created using the devel_generate module.", 
+            "title": "Testing a form"
+        }, 
+        {
+            "location": "/support/screencasts/#customizing-form-settings", 
+            "text": "The Form settings page allows a form s labels, messaging, and behaviors to be customized. Administrators can open/close a form, enable/disable drafts, allow previews, set submission limits, and disable the saving of results.", 
+            "title": "Customizing form settings"
+        }, 
+        {
+            "location": "/support/screencasts/#controlling-access-to-submissions", 
+            "text": "The Form access control page allows administrator to determine who can create, update, delete, and purge form submissions.", 
+            "title": "Controlling access to submissions"
+        }, 
+        {
+            "location": "/support/screencasts/#enabling-form-handlers", 
+            "text": "The Form handlers page lists additional handlers (aka behaviors) that can process form submissions. Handlers are plugins that act on a form submission. For example, sending email confirmations and notifications is done using the Email handler which is provided by the YAML Form module.", 
+            "title": "Enabling form handlers"
+        }, 
+        {
+            "location": "/support/screencasts/#configuring-third-party-settings", 
+            "text": "The Third party settings page allows contrib and custom modules to define form specific customization settings.", 
+            "title": "Configuring third party settings"
+        }, 
+        {
+            "location": "/support/screencasts/#translating-a-form", 
+            "text": "The Translation page allows a form s configuration and elements to be translated into multiple languages.", 
+            "title": "Translating a form"
+        }, 
+        {
+            "location": "/support/screencasts/#managing-results_1", 
+            "text": "The Results page displays an overview of a form s submissions. Submissions can be reviewed, updated, flagged, annotated, and downloaded.", 
+            "title": "Managing results"
+        }, 
+        {
+            "location": "/support/screencasts/#building-a-custom-report", 
+            "text": "The Table page provides a customizable table of a form s submissions. This page can be used to generate a customized report.", 
+            "title": "Building a custom report"
+        }, 
+        {
+            "location": "/support/screencasts/#downloading-results", 
+            "text": "The Download page allows a form s submissions to be exported in to a customizable CSV (Comma Separated Values) file.", 
+            "title": "Downloading results"
+        }, 
+        {
+            "location": "/support/screencasts/#exporting-configuration", 
+            "text": "The Export (form) page allows developers to quickly export a single form s configuration file. If you run into any issues with a form, you can also attach the below configuration (without any personal information) to a new ticket in the YAML Form s issue queue.", 
+            "title": "Exporting configuration"
+        }, 
+        {
+            "location": "/support/screencasts/#creating-yaml-form-nodes", 
+            "text": "A YAML form node allows forms to be fully integrated into a website as nodes.", 
+            "title": "Creating YAML form nodes"
+        }, 
+        {
+            "location": "/support/screencasts/#creating-a-yaml-form-block", 
+            "text": "A YAML form block allows a form to be placed anywhere on a website.", 
+            "title": "Creating a YAML form block"
         }, 
         {
             "location": "/support/glossary/", 
