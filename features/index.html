@@ -277,7 +277,8 @@ available in Drupal 8 is supported by the YAML Form module.</p>
 <li><strong>Drupal specific</strong> File uploads, Entity References, Table select, Date list, 
   and more&hellip;</li>
 <li><strong>Custom:</strong> <a href="https://en.wikipedia.org/wiki/Likert_scale">Likert scale</a>, 
-  Credit card number, Select/Checkboxes/Radios with other, and more&hellip;</li>
+  Star rating, Toggle, Credit card number, Select/Checkboxes/Radios with other, 
+  and more&hellip;</li>
 <li><strong>Composite elements:</strong> Address, Contact, and Credit Card </li>
 </ul>
 <h3 id="custom-properties">Custom Properties</h3>
@@ -424,13 +425,15 @@ organization.</p>
 
 <p>Administrators can define reusable global options for select menus, checkboxes, 
 and radio buttons. The YAML Form module includes default options for states,
-countries, <a href="https://en.wikipedia.org/wiki/Likert_scale">likert</a> answers, and more.   </p>
+countries, <a href="https://en.wikipedia.org/wiki/Likert_scale">likert</a> answers, 
+and more.   </p>
 <p>Reusable options include:</p>
 <ul>
 <li>Country codes &amp; names </li>
 <li>State/province codes &amp; names  </li>
 <li>State codes   &amp; names     </li>
-<li>Likert agreement, comparison, importance, satisfaction, ten scale, and would you</li>
+<li>Likert agreement, comparison, importance, satisfaction, ten scale, and
+  would you</li>
 </ul>
 <h3 id="internationalization">Internationalization</h3>
 <div class="thumbnail">
@@ -448,10 +451,18 @@ configuration translation system.    </p>
 </a>
 </div>
 
-<p>Forms can be attached to nodes or displayed as blocks.  Forms can also have dedicated SEO-friendly URLs. Form elements are simply render arrays that can
+<p>Forms can be attached to nodes or displayed as blocks.  Forms can also have 
+dedicated SEO-friendly URLs. Form elements are simply render arrays that can
 easily be altered using custom hooks and/or plugins.</p>
 <h3 id="drush-integration">Drush Integration</h3>
-<p>Drush commands are provided to create, export, and purge submissions.</p>
+<p>Drush commands are provided to:</p>
+<ul>
+<li>Generate multiple YAML form submissions.</li>
+<li>Export YAML form submissions.</li>
+<li>Purge YAML form submissions.</li>
+<li>Download and manage third party libraries.</li>
+<li>Tidy YAML configuration files. </li>
+</ul>
 <!-- Creates the bootstrap modal where the image will appear -->
 
 <div class="modal fade" id="modal-lightbox" tabindex="-1" role="dialog" aria-labelledby="modal-lightbox-label" aria-hidden="true">

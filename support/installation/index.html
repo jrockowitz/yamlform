@@ -330,15 +330,20 @@ validation mechanisms.</p>
 <h3 id="third-party-libraries">Third Party Libraries</h3>
 <p>The YAML Form module utilizes the third-party Open Source libraries below to 
 enhance form elements and to provide additional functionality.  It is recommended 
-that these  libraries be installed in your Drupal installations /libraries 
+that these libraries be installed in your Drupal installations /libraries 
 directory.  If these libraries are not installed, they are automatically loaded 
 from a CDN.</p>
 <blockquote>
-<p>PLEASE NOTE: These libraries must be manually installed. Support for using
-<a href="https://www.drupal.org/node/2404989">Composer</a> and/or the 
-<a href="https://www.drupal.org/project/libraries">Libraries API</a> is still 
-under development.  </p>
+<p>PLEASE NOTE: The<br />
+<a href="https://www.drupal.org/project/libraries">Libraries API</a> for Drupal 8 is 
+still under development.  </p>
 </blockquote>
+<p>Currently the best way to download all the needed third party libraries is to 
+either add <a href="http://cgit.drupalcode.org/yamlform/tree/yamlform.libraries.make.yml">yamlform.libraries.make.yml</a>
+to your drush make file or execute below drush command from the root of your 
+Drupal installation.  </p>
+<pre><code>drush yamlform-libraries-download
+</code></pre>
 <p><strong><a href="http://codemirror.net/">Code Mirror</a></strong> - <a href="http://codemirror.net/">Demo</a></p>
 <p>A versatile text editor implemented in JavaScript for the browser.</p>
 <blockquote>
@@ -351,18 +356,34 @@ dates, numerics, phone numbers, etc&hellip;</p>
 <blockquote>
 <p>Input masks are used to ensure predefined and custom format for text fields.</p>
 </blockquote>
-<p><strong><a href="https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin">Word and Character Counter</a></strong> - <a href="http://qwertypants.github.io/jQuery-Word-and-Character-Counter-Plugin/">Demo</a></p>
-<p>The jQuery Word and character counter plug-in allows you to count characters
-or words.</p>
+<p><strong><a href="https://github.com/gjunge/rateit.js">RateIt</a></strong> - <a href="http://gjunge.github.io/rateit.js/examples/">Demo</a></p>
+<p>Rating plugin for jQuery. Fast, Progressive enhancement, touch support, 
+customizable (just swap out the images, or change some CSS), Unobtrusive 
+JavaScript (using HTML5 data-* attributes), RTL support, supports as many stars 
+as you&rsquo;d like, and also any step size.</p>
 <blockquote>
-<p>Word or character counting, with server-side validation, is available for text 
-fields and text areas.</p>
+<p>RateIt is used to provide a customizable rating form element.</p>
 </blockquote>
 <p><strong><a href="https://select2.github.io/">Select2</a></strong> - <a href="https://select2.github.io/examples.html">Demo</a></p>
 <p>Select2 gives you a customizable select box with support for searching and 
 tagging.</p>
 <blockquote>
 <p>Select2 is used to improve the user experience for select menus.</p>
+</blockquote>
+<p><strong><a href="https://github.com/szimek/signature_pad">Signature Pad</a></strong> - <a href="http://szimek.github.io/signature_pad/">Demo</a></p>
+<p>Signature Pad is a JavaScript library for drawing smooth signatures. It&rsquo;s HTML5 
+canvas based and uses variable width Bézier curve interpolation 
+It works in all modern desktop and mobile browsers and doesn&rsquo;t depend on any 
+external libraries.</p>
+<blockquote>
+<p>Signature Pad is used to provide a signature element.</p>
+</blockquote>
+<p><strong><a href="https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin">Word and Character Counter</a></strong> - <a href="http://qwertypants.github.io/jQuery-Word-and-Character-Counter-Plugin/">Demo</a></p>
+<p>The jQuery Word and character counter plug-in allows you to count characters
+or words.</p>
+<blockquote>
+<p>Word or character counting, with server-side validation, is available for text 
+fields and text areas.</p>
 </blockquote></div>
         </div>
 
