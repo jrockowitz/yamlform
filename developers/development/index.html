@@ -194,6 +194,8 @@
         
             <li><a href="#branching">Branching</a></li>
         
+            <li><a href="#interdiff">Interdiff</a></li>
+        
             <li><a href="#gitflow">GitFlow</a></li>
         
             <li><a href="#drush">Drush</a></li>
@@ -259,6 +261,13 @@ git branch -d [issue-number]-[issue-description]
 
 # Delete remote issue branch.
 git push origin :[issue-number]-[issue-description]
+</code></pre>
+
+<h3 id="interdiff"><a href="https://www.drupal.org/documentation/git/interdiff">Interdiff</a></h3>
+<pre><code class="bash">interdiff \
+  [issue-number]-[old-comment-number].patch \
+  [issue-number]-[new-comment-number].patch \
+  &gt; interdiff-[issue-number]-[old-comment-number]-[new-comment-number].txt
 </code></pre>
 
 <h3 id="gitflow">GitFlow</h3>
@@ -414,6 +423,10 @@ drush -y pm-enable\
   kint\
   webprofiler\
   yamlform\
+  yamlform_devel\
+  yamlform_examples\
+  yamlform_node\
+  yamlform_templates\
   yamlform_test\
   yamlform_translation_test;
 </code></pre></div>
