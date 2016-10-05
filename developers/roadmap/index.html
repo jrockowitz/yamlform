@@ -190,17 +190,11 @@
     
         <li class="main active"><a href="#phase-i-before-release-candidate">Phase I (before Release Candidate)</a></li>
         
-            <li><a href="#forms-elements">Forms &amp; Elements</a></li>
-        
             <li><a href="#design-ux">Design &amp; UX</a></li>
-        
-            <li><a href="#code-apis">Code &amp; APIs</a></li>
         
             <li><a href="#multilingual">Multilingual</a></li>
         
             <li><a href="#documentation-help">Documentation &amp; Help</a></li>
-        
-            <li><a href="#other">Other</a></li>
         
     
         <li class="main "><a href="#phase-ii-after-stable-release">Phase II (after Stable Release)</a></li>
@@ -213,57 +207,12 @@
 <p>Below is the current roadmap for the YAML Form module.</p>
 <p>★ Indicates areas that I need help with. </p>
 <h2 id="phase-i-before-release-candidate">Phase I (before Release Candidate)</h2>
-<h3 id="forms-elements">Forms &amp; Elements</h3>
-<p><strong>Finalize elements</strong></p>
-<ul>
-<li><a href="https://www.drupal.org/node/2765797">#2765797</a> 
-  #pattern support with regex validation <strong>DONE</strong> </li>
-<li>Autocompletion element &amp; property support <strong>DONE</strong></li>
-<li><a href="https://www.drupal.org/node/2758671">#2758671</a> 
-  Select2 support. <strong>DONE</strong></li>
-<li><a href="https://www.drupal.org/node/2346973">#2346973</a> 
-  Entity query / Views entity reference support for #options </li>
-</ul>
-<p><strong>User Interface</strong></p>
-<ul>
-<li><a href="https://www.drupal.org/node/2759527">#2759527</a> 
-  Build #options UI. <strong>DONE</strong> </li>
-<li><a href="https://www.drupal.org/node/2764503">#2764503</a> 
-  Build #states (conditional logic) UI. </li>
-<li>Customizable reports <strong>DONE</strong></li>
-<li><a href="https://www.drupal.org/node/2722601">#2722601</a>
-  Sortable reports <strong>DONE</strong></li>
-<li><a href="https://www.drupal.org/node/2778907">#2778907</a>
-  Improve WYSIWYG support <strong>DONE</strong></li>
-</ul>
-<p><strong>Bugs/Tweaks</strong></p>
-<ul>
-<li><a href="https://www.drupal.org/node/2784831">#2784831</a>
-  Add date range validation to date element</li>
-</ul>
 <h3 id="design-ux">Design &amp; UX</h3>
 <p><strong>Templating ★</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2757991">#2757991</a>
-  Review and finalize templates  <strong>DONE</strong></li>
-<li><a href="https://www.drupal.org/node/2794487">#2794487</a> 
-  Add support for flexbox layouts <strong>DONE</strong></li>
 <li><a href="https://www.drupal.org/node/2787117">#2787117</a>
-  Add more started templates ★</li>
-</ul>
-<p><strong>Examples &amp; Templates</strong></p>
-<ul>
-<li>Add better documentation to yamlform_examples.module <strong>DONE</strong></li>
+  Add more starter templates ★</li>
 <li>Review out-of-the-box templates provide by the yamlform_templates.module. ★ </li>
-</ul>
-<h3 id="code-apis">Code &amp; APIs</h3>
-<p><strong>Configuration Management</strong></p>
-<ul>
-<li><a href="https://www.drupal.org/node/2785807">#2785807</a> 
-  Improve YAML Form configuration management <strong>DONE</strong><ul>
-<li>See: <a href="https://www.previousnext.com.au/blog/introducing-drush-cmi-tools">Introducing Drush CMI tools</a></li>
-</ul>
-</li>
 </ul>
 <p><strong>Code Review</strong></p>
 <ul>
@@ -273,20 +222,12 @@
 <li>Entity API implementation ★</li>
 <li>Form API implementation ★</li>
 </ul>
-<p><strong>Security Review ★</strong></p>
-<ul>
-<li><a href="https://www.drupal.org/node/2791185">#2791185</a>Callback injection <strong>DONE</strong></li>
-<li>JS/CSS injection</li>
-<li>Access controls</li>
-</ul>
 <p><strong>API Review</strong></p>
 <ul>
 <li>Review doc blocks</li>
 </ul>
 <p><strong>Libraries</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2745325">#2745325</a>
-  Finalize external library support <strong>DONE</strong></li>
 <li>Add external libraries to composer.json ★</li>
 </ul>
 <p><strong>Testing</strong></p>
@@ -299,23 +240,18 @@
 </ul>
 <h3 id="multilingual">Multilingual</h3>
 <ul>
-<li>Finalize how YAML form&rsquo;s elements are translated. ★</li>
+<li>Finalize how form&rsquo;s elements are translated. ★</li>
 <li>Make sure the YAML Form module is completely translatable. ★</li>
 </ul>
 <h3 id="documentation-help">Documentation &amp; Help</h3>
 <p><strong>General</strong></p>
 <ul>
-<li>Decide if any documentation should live on Drupal.org</li>
+<li>Decide if documentation should live on Drupal.org</li>
 <li><a href="https://www.drupal.org/node/2759591">#2759591</a>
   What is YAML and why we are using it? <strong>POSTPONED</strong></li>
-<li>Move features into a dedicated file. <strong>DONE</strong></li>
-<li>Create a related project page <strong>DONE</strong></li>
-<li>Simplify the project page. <strong>DONE</strong></li>
-<li>Update screenshots <strong>DONE</strong></li>
 </ul>
 <p><strong>Module</strong></p>
 <ul>
-<li>Review hook_help() <strong>DONE</strong></li>
 <li>Review hardcoded messages.</li>
 </ul>
 <p><strong>Editorial ★</strong></p>
@@ -323,24 +259,9 @@
 <li>Unified tone</li>
 <li>General typos, grammar, and wording. ★</li>
 </ul>
-<h3 id="other">Other</h3>
-<p><strong>Screencasts</strong></p>
-<ul>
-<li>Form Builder - How to build forms? <strong>DONE</strong></li>
-<li>Form Developer - How to customize forms? <strong>DONE</strong></li>
-<li>Contributor - How to extend the YAML form API and plugins?</li>
-<li>More to come&hellip;</li>
-</ul>
-<p><strong>Maintainers/Developer</strong></p>
-<ul>
-<li>Document issue queue policies. <strong>DONE</strong></li>
-<li>Build full documented plugin examples.</li>
-</ul>
 <h2 id="phase-ii-after-stable-release">Phase II (after Stable Release)</h2>
 <p><strong>Forms</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2781481">#2781481</a>
-  Custom validation error messages <strong>DONE</strong></li>
 <li><a href="https://www.drupal.org/node/2757491">#2757491</a> 
   AJAX support for forms ★ </li>
 </ul>
@@ -351,8 +272,6 @@
 </ul>
 <p><strong>Results</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2786431">#2786431</a>
-  Bulk export of attached files. <strong>DONE</strong></li>
 <li>Create trash bin for deleted results. <br />
 <em>Copy D8 core&rsquo;s solutions</em> </li>
 </ul>
