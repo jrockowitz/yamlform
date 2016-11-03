@@ -207,7 +207,7 @@
 <h3 id="installing-the-yaml-form-module">Installing the YAML Form Module</h3>
 <ol>
 <li>
-<p>Copy/upload the yamlform.module to the modules directory of your Drupal
+<p>Copy/upload the yamlform module to the modules directory of your Drupal
    installation.</p>
 </li>
 <li>
@@ -215,7 +215,7 @@
    (/admin/modules)</p>
 </li>
 <li>
-<p>Setup user permissions. (/admin/people/permissions#module-yamlform)</p>
+<p>Set up user permissions. (/admin/people/permissions#module-yamlform)</p>
 </li>
 <li>
 <p>Build a new form (/admin/structure/yamlform)
@@ -269,8 +269,9 @@ that allows any form to be attached to any content type.  </p>
 </blockquote>
 <p><strong>YAML Form Examples</strong></p>
 <p>The YAML Form Examples module provides examples of all available form elements 
-and functionality, which can used for demonstrating and testing advanced 
-functionality or used as cut-n-paste code snippets for creating new forms.</p>
+and functionality. The YAML Form Examples module can used for demonstrating
+and testing advanced functionality or used as cut-n-paste code snippets
+for creating new forms.</p>
 <blockquote>
 <p>The YAML Form Examples module allows site builders and developers to 
 preview and experiment with working examples of all supported form elements 
@@ -285,7 +286,7 @@ a migration source plugin and a migration template to migrate Drupal 6
 webforms to Drupal 8 YAML Forms.</p>
 <p><strong><a href="https://www.drupal.org/project/yamlform_queue">YAML Form Queue</a></strong></p>
 <p>The <a href="https://www.drupal.org/project/yamlform_queue">YAML Form Queue</a> module 
-provides a  queue handler for YAML Form, to store form submissions in a queue.</p>
+provides a queue handler for YAML Form, to store form submissions in a queue.</p>
 <p><strong><a href="https://www.drupal.org/project/token">Token</a></strong></p>
 <p>The <a href="https://www.drupal.org/project/token">Token</a> module provides additional 
 tokens not supported by core (most notably fields), as well as a UI for browsing 
@@ -302,7 +303,7 @@ Administrative UI and Developers API for managing the mail backend/plugin.</p>
 basic e-mail sending functionality provided by Drupal by delegating all e-mail
 handling to the Swift Mailer library.</p>
 <blockquote>
-<p>The YAML Form module provide support for HTML email, however to send file 
+<p>The YAML Form module provide support for HTML email. However to send file
 attachments, please install and configure the 
 <a href="https://www.drupal.org/project/mailsystem">Mail System</a> and 
 <a href="https://www.drupal.org/project/swiftmailer">Swift Mailer</a> modules.</p>
@@ -332,10 +333,10 @@ to use the Symfony Validator component within a form.</p>
 validation mechanisms.</p>
 </blockquote>
 <h3 id="third-party-libraries">Third Party Libraries</h3>
-<p>The YAML Form module utilizes the third-party Open Source libraries below to 
-enhance form elements and to provide additional functionality.  It is recommended 
+<p>The YAML Form module utilizes the third-party Open Source libraries listed below
+to enhance form elements and to provide additional functionality. It is recommended
 that these libraries be installed in your Drupal installations /libraries 
-directory.  If these libraries are not installed, they are automatically loaded 
+directory. If these libraries are not installed, they are automatically loaded
 from a CDN.</p>
 <blockquote>
 <p>PLEASE NOTE: The 
@@ -344,7 +345,7 @@ still under development.  </p>
 </blockquote>
 <p>Currently the best way to download all the needed third party libraries is to 
 either add <a href="http://cgit.drupalcode.org/yamlform/tree/yamlform.libraries.make.yml">yamlform.libraries.make.yml</a>
-to your drush make file or execute below drush command from the root of your 
+to your drush make file or execute the below drush command from the root of your
 Drupal installation.  </p>
 <pre><code>drush yamlform-libraries-download
 </code></pre>
@@ -363,13 +364,13 @@ settings and messages.</p>
 <p>Input masks ensures a predefined format is entered. This can be useful for 
 dates, numerics, phone numbers, etc&hellip;</p>
 <blockquote>
-<p>Input masks are used to ensure predefined and custom format for text fields.</p>
+<p>Input masks are used to ensure predefined and custom formats for text fields.</p>
 </blockquote>
 <p><strong><a href="https://github.com/gjunge/rateit.js">RateIt</a></strong> - <a href="http://gjunge.github.io/rateit.js/examples/">Demo</a></p>
-<p>Rating plugin for jQuery. Fast, Progressive enhancement, touch support, 
-customizable (just swap out the images, or change some CSS), Unobtrusive 
-JavaScript (using HTML5 data-* attributes), RTL support, supports as many stars 
-as you&rsquo;d like, and also any step size.</p>
+<p>Rating plugin for jQuery. Fast, progressive enhancement, touch support,
+customizable (just swap out the images, or change some CSS), unobtrusive
+JavaScript (using HTML5 data-* attributes), RTL support. The Rating plugin
+supports as many stars as you&rsquo;d like, and also any step size.</p>
 <blockquote>
 <p>RateIt is used to provide a customizable rating form element.</p>
 </blockquote>
@@ -380,25 +381,25 @@ tagging.</p>
 <p>Select2 is used to improve the user experience for select menus.</p>
 </blockquote>
 <p><strong><a href="https://github.com/szimek/signature_pad">Signature Pad</a></strong> - <a href="http://szimek.github.io/signature_pad/">Demo</a></p>
-<p>Signature Pad is a JavaScript library for drawing smooth signatures. It&rsquo;s HTML5 
-canvas based and uses variable width Bézier curve interpolation 
+<p>Signature Pad is a JavaScript library for drawing smooth signatures.
+It is HTML5 canvas based and uses variable width Bézier curve interpolation.
 It works in all modern desktop and mobile browsers and doesn&rsquo;t depend on any 
 external libraries.</p>
 <blockquote>
 <p>Signature Pad is used to provide a signature element.</p>
 </blockquote>
 <p><strong><a href="https://github.com/jonthornton/jquery-timepicker">Timepicker</a></strong> - <a href="http://jonthornton.github.io/jquery-timepicker/">Demo</a></p>
-<p>A lightweight, customizable javascript timepicker plugin for jQuery inspired by Google Calendar.</p>
+<p>A lightweight, customizable javascript timepicker plugin for jQuery, inspired by Google Calendar.</p>
 <blockquote>
 <p>Timepicker is used to provide a polyfill for HTML 5 time elements.</p>
 </blockquote>
 <p><strong><a href="https://github.com/simontabor/jquery-toggles">Toggles</a></strong> - <a href="https://simontabor.com/labs/toggles/">Demo</a></p>
-<p>Toggles is a lightweight jQuery plugin that creates easily-styleable toggle buttons.</p>
+<p>Toggles is a lightweight jQuery plugin that creates easy-to-style toggle buttons.</p>
 <blockquote>
 <p>Toggles is used to provide a toggle element.</p>
 </blockquote>
 <p><strong><a href="https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin">Word and Character Counter</a></strong> - <a href="http://qwertypants.github.io/jQuery-Word-and-Character-Counter-Plugin/">Demo</a></p>
-<p>The jQuery Word and character counter plug-in allows you to count characters
+<p>The jQuery word and character counter plug-in allows you to count characters
 or words.</p>
 <blockquote>
 <p>Word or character counting, with server-side validation, is available for text 

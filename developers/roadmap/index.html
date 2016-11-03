@@ -190,14 +190,21 @@
     
         <li class="main active"><a href="#phase-i-before-release-candidate">Phase I (before Release Candidate)</a></li>
         
-            <li><a href="#design-ux">Design &amp; UX</a></li>
+            <li><a href="#require-features">Require Features</a></li>
         
-            <li><a href="#multilingual">Multilingual</a></li>
+            <li><a href="#optional-features">Optional Features</a></li>
         
             <li><a href="#documentation-help">Documentation &amp; Help</a></li>
         
     
         <li class="main "><a href="#phase-ii-after-stable-release">Phase II (after Stable Release)</a></li>
+        
+            <li><a href="#translations">Translations</a></li>
+        
+            <li><a href="#optional-features_1">Optional Features</a></li>
+        
+    
+        <li class="main "><a href="#ongoing-tasks">Ongoing Tasks</a></li>
         
     
     </ul>
@@ -207,51 +214,77 @@
 <p>Below is the current roadmap for the YAML Form module.</p>
 <p>★ Indicates areas that I need help with. </p>
 <h2 id="phase-i-before-release-candidate">Phase I (before Release Candidate)</h2>
-<h3 id="design-ux">Design &amp; UX</h3>
+<h3 id="require-features">Require Features</h3>
+<p><strong>General</strong></p>
+<ul>
+<li>Finalize default configuration  </li>
+<li>Finalize supported elements</li>
+</ul>
+<p><strong>Multilingual</strong> </p>
+<ul>
+<li><a href="https://www.drupal.org/node/2805113">#2805113</a> 
+  Rework translation handling.</li>
+</ul>
+<p><strong>Submission Download</strong></p>
+<ul>
+<li><a href="https://www.drupal.org/node/2822560">#2822560</a> 
+  Excel exporter</li>
+</ul>
+<p><strong>Conditional Logic</strong></p>
+<ul>
+<li>Server side conditional logic </li>
+</ul>
+<p><strong>Views</strong></p>
+<ul>
+<li><a href="https://www.drupal.org/node/2769977">#2769977</a> 
+  Views integration ★</li>
+</ul>
 <p><strong>Templating ★</strong></p>
 <ul>
 <li><a href="https://www.drupal.org/node/2787117">#2787117</a>
   Add more starter templates ★</li>
 </ul>
-<p><strong>Download</strong></p>
+<p><strong>UI/UX</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2822560">#2822560</a> Excel exporter</li>
+<li><a href="https://www.drupal.org/node/2822613">#2822613</a><br />
+  Use CKEditor (instead of CodeMirror) for all settings that can contain HTML markup</li>
+<li>Review element edit form UI/UX.</li>
 </ul>
-<p><strong>Code Review</strong></p>
+<p><strong>Third party libraries</strong></p>
 <ul>
-<li>Testability</li>
-<li>Refactorability</li>
-<li>Plugin definitions ★</li>
-<li>Entity API implementation ★</li>
-<li>Form API implementation ★</li>
-</ul>
-<p><strong>API Review</strong></p>
-<ul>
-<li>Review doc blocks</li>
-</ul>
-<p><strong>Libraries</strong></p>
-<ul>
+<li>Improve CKEditor integration</li>
 <li>Add external libraries to composer.json ★</li>
 </ul>
-<p><strong>Testing</strong></p>
+<h3 id="optional-features">Optional Features</h3>
+<p><strong>Elements</strong></p>
 <ul>
-<li>Refactor PHPUnit tests</li>
-<li>Improve SimpleTest setUp performance.</li>
-<li>Configuration Management</li>
-<li>Default configuration</li>
-<li>Finalize default admin settings</li>
+<li>
+<p><a href="https://www.drupal.org/node/2783937">#2783937</a>
+  Add OptGroup support to options element</p>
+</li>
+<li>
+<p>Upload files from third-party services such as Dropbox, Box, OneDrive, Google 
+  Drive and Instagram.   <br />
+  See: <a href="https://www.drupal.org/project/file_chooser_field">File Chooser Field</a></p>
+</li>
 </ul>
-<h3 id="multilingual">Multilingual</h3>
+<p><strong>Email handler</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2805113">#2805113</a> Rework translation handling. ★</li>
-<li>Make sure the YAML Form module is completely translatable. ★</li>
+<li><a href="https://www.drupal.org/node/2817901">#2817901</a> 
+  Form select component email handler mapping</li>
+</ul>
+<p><strong>Handlers</strong></p>
+<ul>
+<li>Provide Google Sheets integration</li>
 </ul>
 <h3 id="documentation-help">Documentation &amp; Help</h3>
 <p><strong>General</strong></p>
 <ul>
-<li>Decide if documentation should live on Drupal.org</li>
-<li><a href="https://www.drupal.org/node/2759591">#2759591</a>
-  What is YAML and why we are using it? <strong>POSTPONED</strong></li>
+<li>Move all documentation to Drupal.org.</li>
+</ul>
+<p><strong>Screencasts</strong></p>
+<ul>
+<li>Decide if inline screencasts are useful and update screencasts</li>
 </ul>
 <p><strong>Module</strong></p>
 <ul>
@@ -263,10 +296,32 @@
 <li>General typos, grammar, and wording. ★</li>
 </ul>
 <h2 id="phase-ii-after-stable-release">Phase II (after Stable Release)</h2>
+<h3 id="translations">Translations</h3>
+<ul>
+<li><a href="https://www.drupal.org/node/2788741">#2788741</a>
+  French</li>
+</ul>
+<h3 id="optional-features_1">Optional Features</h3>
+<p><strong>UI/UX</strong></p>
+<ul>
+<li><a href="https://www.drupal.org/node/2771235">#2771235</a>
+  Implement drag-n-drop UI/UX ★ </li>
+</ul>
+<p><strong>Field API</strong></p>
+<ul>
+<li><a href="https://www.drupal.org/node/2792583">#2792583</a> 
+  Use Field API ★ </li>
+</ul>
 <p><strong>Forms</strong></p>
 <ul>
-<li><a href="https://www.drupal.org/node/2757491">#2757491</a> 
-  AJAX support for forms ★ </li>
+<li>
+<p><a href="https://www.drupal.org/node/2757491">#2757491</a> 
+  AJAX support for forms ★ </p>
+</li>
+<li>
+<p><a href="https://www.drupal.org/node/2824714">#2824714</a>
+  Composite and/or base forms</p>
+</li>
 </ul>
 <p><strong>Rules/Actions</strong></p>
 <ul>
@@ -278,20 +333,39 @@
 <li>Create trash bin for deleted results. <br />
 <em>Copy D8 core&rsquo;s solutions</em> </li>
 </ul>
-<p><strong>Views</strong></p>
-<ul>
-<li><a href="https://www.drupal.org/node/2769977">#2769977</a> 
-  Views integration ★</li>
-</ul>
 <p><strong>APIs</strong> </p>
 <ul>
 <li>REST API endpoint for CRUD operations.</li>
 <li>Headless Drupal Forms</li>
 </ul>
-<p><strong>Other</strong> </p>
+<h2 id="ongoing-tasks">Ongoing Tasks</h2>
+<p><strong>Accessibility</strong></p>
 <ul>
-<li>Code snippets repository</li>
-<li>Template repository</li>
+<li>Establish accessibility policy and review process.</li>
+</ul>
+<p><strong>Communication</strong></p>
+<ul>
+<li>Set up weekly, biweekly, or monthly online hangout.</li>
+</ul>
+<p><strong>Workflow</strong></p>
+<ul>
+<li>Define development workflow</li>
+<li>Define release policy and scheduale</li>
+<li>Document issue guidelines</li>
+</ul>
+<p><strong>Code Review</strong></p>
+<ul>
+<li>Cleanup bad smelling code.</li>
+<li>Testability</li>
+<li>Refactorability</li>
+<li>Plugin definitions ★</li>
+<li>Entity API implementation ★</li>
+<li>Form API implementation ★</li>
+</ul>
+<p><strong>Testing</strong></p>
+<ul>
+<li>Refactor PHPUnit tests</li>
+<li>Improve SimpleTest setUp performance.</li>
 </ul></div>
         </div>
 
