@@ -331,11 +331,11 @@ drush features-export -y yamlform_templates
 drush features-export -y yamlform_node
 
 # Tidy form configuration from your site.          
-drush yamlform-tidy -y yamlform
-drush yamlform-tidy -y yamlform_test
-drush yamlform-tidy -y yamlform_examples
-drush yamlform-tidy -y yamlform_templates
-drush yamlform-tidy -y yamlform_node
+drush yamlform-tidy -y --dependencies yamlform
+drush yamlform-tidy -y --dependencies yamlform_test
+drush yamlform-tidy -y --dependencies yamlform_examples
+drush yamlform-tidy -y --dependencies yamlform_templates
+drush yamlform-tidy -y --dependencies yamlform_node
 
 # Re-import all form configuration into your site.      
 drush features-import -y yamlform
@@ -351,7 +351,7 @@ drush features-import -y yamlform_node
 
 <p><strong>Create test roles and users.</strong></p>
 <pre><code class="bash">drush role-create developer
-drush role-add-perm developer 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview,administer yamlform,administer blocks,administer nodes'
+drush role-add-perm developer 'view the administration theme,access toolbar,access administration pages,access content overview,access yamlform overview,administer yamlform,edit yamlform assets,administer blocks,administer nodes'
 drush user-create developer --password=&quot;developer&quot;
 drush user-add-role developer developer
 
@@ -376,12 +376,12 @@ drush user-add-role user user
 
 drush role-create any
 drush user-create any --password=&quot;any&quot;
-drush role-add-perm any 'view the administration theme,access administration pages,access toolbar,access yamlform overview,create yamlform,edit any yamlform,delete any yamlform,view yamlform submissions any node,edit yamlform submissions any node,delete yamlform submissions any node'
+drush role-add-perm any 'view the administration theme,access administration pages,access toolbar,access yamlform overview,edit yamlform assets,create yamlform,edit any yamlform,delete any yamlform,view yamlform submissions any node,edit yamlform submissions any node,delete yamlform submissions any node'
 drush user-add-role any any
 
 drush role-create own
 drush user-create own --password=&quot;own&quot;
-drush role-add-perm own 'view the administration theme,access administration pages,access toolbar,access yamlform overview,create yamlform,edit own yamlform,delete own yamlform,view yamlform submissions own node,edit yamlform submissions own node,delete yamlform submissions own node'
+drush role-add-perm own 'view the administration theme,access administration pages,access toolbar,access yamlform overview,edit yamlform assets,create yamlform,edit own yamlform,delete own yamlform,view yamlform submissions own node,edit yamlform submissions own node,delete yamlform submissions own node'
 drush user-add-role own own
 </code></pre>
 
